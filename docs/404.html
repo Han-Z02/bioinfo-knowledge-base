@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="data:,">
+<title>需要解锁 · 生信知识库</title>
+<style>
+:root{--bg:#f2f5f6;--paper:#fff;--fg:#172125;--muted:#67767d;--line:#d8e0e3;--accent:#16756c;--danger:#a33a32;--soft:#e9f2f0}
+@media(prefers-color-scheme:dark){:root{--bg:#111719;--paper:#182023;--fg:#edf3f3;--muted:#96a4aa;--line:#2c383c;--accent:#65c7ba;--danger:#f09991;--soft:#1b302e}}
+*{box-sizing:border-box}html,body{min-height:100%}body{margin:0;background:var(--bg);color:var(--fg);font-family:"Noto Sans CJK SC","Microsoft YaHei",system-ui,sans-serif;display:grid;place-items:center;padding:24px}
+.gate{width:min(100%,390px);background:var(--paper);border:1px solid var(--line);border-radius:8px;box-shadow:0 18px 60px rgba(16,35,39,.12);padding:31px}
+.brand{display:flex;align-items:center;gap:11px;margin-bottom:32px}.mark{width:34px;height:34px;display:grid;place-items:center;background:var(--soft);border:1px solid color-mix(in srgb,var(--accent) 35%,var(--line));border-radius:7px;color:var(--accent);font:700 12px/1 ui-monospace,monospace}
+.brand-name{font-size:.92rem;font-weight:750}.brand-caption{font-size:.72rem;color:var(--muted);margin-top:2px}
+h1{font-family:"Noto Serif CJK SC","Songti SC",Georgia,serif;font-size:1.55rem;line-height:1.35;margin:0 0 8px}.intro{font-size:.82rem;line-height:1.65;color:var(--muted);margin:0 0 22px}
+label{display:block;font-size:.76rem;font-weight:700;margin:0 0 7px}input{width:100%;height:42px;border:1px solid var(--line);border-radius:6px;background:var(--paper);color:var(--fg);padding:0 12px;font:inherit;outline:none}
+input:focus{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 14%,transparent)}button{width:100%;height:42px;margin-top:12px;border:1px solid var(--accent);border-radius:6px;background:var(--accent);color:#fff;font:inherit;font-size:.84rem;font-weight:750;cursor:pointer}
+button:hover{filter:brightness(.95)}button:disabled{opacity:.65;cursor:wait}.status{min-height:18px;font-size:.75rem;color:var(--muted);margin:10px 0 0}.status[data-state="error"]{color:var(--danger)}
+.note{border-top:1px solid var(--line);margin-top:22px;padding-top:14px;font-size:.7rem;line-height:1.6;color:var(--muted)}
+</style>
+</head>
+<body>
+<main class="gate">
+<div class="brand"><div class="mark">KB</div><div><div class="brand-name">生信知识库</div><div class="brand-caption">Team reading space</div></div></div>
+<h1>解锁知识库</h1>
+<p class="intro">请输入维护者提供的团队共享密码。</p>
+<form id="kb-unlock-form">
+<label for="kb-password">共享密码</label>
+<input id="kb-password" name="password" type="password" autocomplete="current-password" spellcheck="false" required>
+<button type="submit">进入知识库</button>
+<p class="status" id="kb-status" role="status" aria-live="polite"></p>
+</form>
+<div class="note">解锁状态仅在当前浏览器标签页会话内保留。</div>
+</main>
+<script id="kb-payload" type="application/octet-stream" data-salt="qFhJNm27uECFt3Ui0xCtJA==" data-iterations="310000">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</script>
+<script src="./assets/gate.js?v=c3a203de5e"></script>
+</body>
+</html>
