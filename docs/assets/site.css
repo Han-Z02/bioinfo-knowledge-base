@@ -29,6 +29,7 @@ a{color:var(--accent-2);text-decoration:none}a:hover{text-decoration:underline}
 .subtitle{font-size:1rem;color:var(--muted);line-height:1.5;margin:11px 0 0;max-width:900px}
 .meta-badges,.tags,.actions{display:flex;gap:7px;flex-wrap:wrap}.meta-badges{margin-top:18px}
 .badge{display:inline-flex;align-items:center;border:1px solid var(--line);background:var(--paper);color:var(--muted);border-radius:999px;padding:3px 9px;font-size:.76rem}
+.badge-note-id{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--accent);background:var(--soft)}
 .badge-status{border-color:color-mix(in srgb,var(--amber) 45%,var(--line));color:var(--amber)}
 .badge-mixed{border-color:color-mix(in srgb,var(--accent) 40%,var(--line));color:var(--accent)}
 .tag{display:inline-flex;background:var(--soft);color:var(--muted);border-radius:4px;padding:2px 7px;font-size:.74rem}

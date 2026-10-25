@@ -60,7 +60,8 @@ if(storedKey){Promise.all(protectedMedia.map(async function(item){try{var respon
     results.replaceChildren();
     matches.slice(0, limit).forEach(function(match) {
       var item = match.note, article = node('article', 'search-result');
-      article.appendChild(node('div', 'recent-meta', item.sectionTitle + ' / ' + item.category + ' · ' + item.updated.slice(0, 10)));
+      var metadata = node('div', 'recent-meta', item.sectionTitle + ' / ' + item.category + ' · ' + item.updated.slice(0, 10));
+      var identifier = node('span', 'kb-id-badge', item.kbId); identifier.setAttribute('aria-label', '站内唯一编号 ' + item.kbId); metadata.appendChild(identifier); article.appendChild(metadata);
       var heading = node('h2'), link = node('a'); link.href = item.url; highlight(link, item.title, query); heading.appendChild(link); article.appendChild(heading);
       var excerpt = node('p', 'search-excerpt'); highlight(excerpt, engine.snippet(item, query), query); article.appendChild(excerpt);
       var tags = node('div', 'tag-row'); (item.tags || []).slice(0, 6).forEach(function(tag) { tags.appendChild(node('span', 'tag-pill', tag)); }); article.appendChild(tags);
@@ -93,7 +94,7 @@ if(storedKey){Promise.all(protectedMedia.map(async function(item){try{var respon
   function normalise(value) { return String(value || '').normalize('NFKC').toLocaleLowerCase('zh-CN').replace(/\s+/g, ' ').trim(); }
   function tokens(query) { return [...new Set(normalise(query).slice(0, 300).split(' ').filter(Boolean))]; }
   function prepare(notes) {
-    return notes.map(note => ({ ...note, fields: { title: normalise(note.title + ' ' + (note.subtitle || '')), tags: normalise((note.tags || []).join(' ')), summary: normalise(note.summary), body: normalise(note.body), category: normalise(note.sectionTitle + ' ' + note.category) } }));
+    return notes.map(note => ({ ...note, fields: { id: normalise(note.kbId), title: normalise(note.title + ' ' + (note.subtitle || '')), tags: normalise((note.tags || []).join(' ')), summary: normalise(note.summary), body: normalise(note.body), category: normalise(note.sectionTitle + ' ' + note.category) } }));
   }
   function search(notes, query, section = '', sort = 'relevance') {
     const terms = tokens(query), phrase = normalise(query);
@@ -101,7 +102,7 @@ if(storedKey){Promise.all(protectedMedia.map(async function(item){try{var respon
       const fields = note.fields, all = Object.values(fields).join(' ');
       if (!terms.every(term => all.includes(term))) return null;
       let score = 0;
-      for (const term of terms) for (const [field, weight] of Object.entries({ title: 30, tags: 20, summary: 8, category: 4, body: 2 })) if (fields[field].includes(term)) score += weight;
+      for (const term of terms) for (const [field, weight] of Object.entries({ id: 40, title: 30, tags: 20, summary: 8, category: 4, body: 2 })) if (fields[field].includes(term)) score += weight;
       if (phrase && fields.title.includes(phrase)) score += 15;
       return { note, score };
     }).filter(Boolean).sort((a, b) => (sort === 'updated' ? 0 : b.score - a.score) || String(b.note.updated).localeCompare(String(a.note.updated)) || a.note.url.localeCompare(b.note.url));
