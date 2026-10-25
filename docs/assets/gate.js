@@ -53,6 +53,7 @@
       key,
       encrypted.slice(12)
     );
+    try { sessionStorage.setItem('kb-unlock-key', bytesToBase64(new Uint8Array(await crypto.subtle.exportKey('raw', key)))); } catch (_) { /* Reading remains available when storage is disabled. */ }
     var html = new TextDecoder().decode(plain);
     var parsed = new DOMParser().parseFromString(html, 'text/html');
     var scripts = Array.from(parsed.querySelectorAll('script'));
@@ -109,7 +110,6 @@
     setStatus('正在验证…', false);
     try {
       var key = await deriveKey(password);
-      sessionStorage.setItem('kb-unlock-key', bytesToBase64(new Uint8Array(await crypto.subtle.exportKey('raw', key))));
       await openContent(key);
     } catch (error) {
       input.disabled = false;
@@ -124,7 +124,8 @@
       setStatus('当前浏览器不支持安全解密，请使用较新的浏览器。', true);
       return;
     }
-    var stored = sessionStorage.getItem('kb-unlock-key');
+    var stored;
+    try { stored = sessionStorage.getItem('kb-unlock-key'); } catch (_) { stored = null; }
     if (!stored) {
       input.focus();
       return;
@@ -133,7 +134,7 @@
       var key = await importStoredKey(stored);
       await openContent(key);
     } catch (error) {
-      sessionStorage.removeItem('kb-unlock-key');
+      try { sessionStorage.removeItem('kb-unlock-key'); } catch (_) { /* Storage may be disabled. */ }
       input.focus();
     }
   })();
