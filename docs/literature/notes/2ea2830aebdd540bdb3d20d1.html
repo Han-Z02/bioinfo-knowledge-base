@@ -1,41 +1,618 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
-<meta name="referrer" content="no-referrer">
 <link rel="icon" href="data:,">
-<title>需要解锁 · 生信知识库</title>
-<style>
-:root{--bg:#f2f5f6;--paper:#fff;--fg:#172125;--muted:#67767d;--line:#d8e0e3;--accent:#16756c;--danger:#a33a32;--soft:#e9f2f0}
-@media(prefers-color-scheme:dark){:root{--bg:#111719;--paper:#182023;--fg:#edf3f3;--muted:#96a4aa;--line:#2c383c;--accent:#65c7ba;--danger:#f09991;--soft:#1b302e}}
-*{box-sizing:border-box}html,body{min-height:100%}body{margin:0;background:var(--bg);color:var(--fg);font-family:"Noto Sans CJK SC","Microsoft YaHei",system-ui,sans-serif;display:grid;place-items:center;padding:24px}
-.gate{width:min(100%,390px);background:var(--paper);border:1px solid var(--line);border-radius:8px;box-shadow:0 18px 60px rgba(16,35,39,.12);padding:31px}
-.brand{display:flex;align-items:center;gap:11px;margin-bottom:32px}.mark{width:34px;height:34px;display:grid;place-items:center;background:var(--soft);border:1px solid color-mix(in srgb,var(--accent) 35%,var(--line));border-radius:7px;color:var(--accent);font:700 12px/1 ui-monospace,monospace}
-.brand-name{font-size:.92rem;font-weight:750}.brand-caption{font-size:.72rem;color:var(--muted);margin-top:2px}
-h1{font-family:"Noto Serif CJK SC","Songti SC",Georgia,serif;font-size:1.55rem;line-height:1.35;margin:0 0 8px}.intro{font-size:.82rem;line-height:1.65;color:var(--muted);margin:0 0 22px}
-label{display:block;font-size:.76rem;font-weight:700;margin:0 0 7px}input{width:100%;height:42px;border:1px solid var(--line);border-radius:6px;background:var(--paper);color:var(--fg);padding:0 12px;font:inherit;outline:none}
-input:focus{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 14%,transparent)}button{width:100%;height:42px;margin-top:12px;border:1px solid var(--accent);border-radius:6px;background:var(--accent);color:#fff;font:inherit;font-size:.84rem;font-weight:750;cursor:pointer}
-button:hover{filter:brightness(.95)}button:disabled{opacity:.65;cursor:wait}.status{min-height:18px;font-size:.75rem;color:var(--muted);margin:10px 0 0}.status[data-state="error"]{color:var(--danger)}
-.note{border-top:1px solid var(--line);margin-top:22px;padding-top:14px;font-size:.7rem;line-height:1.6;color:var(--muted)}
-</style>
-</head>
+<meta name="generator" content="hz-kb-html 1.2.0">
+<title>代谢支持可保护黏膜免受放射性黏膜炎中的铁死亡</title>
+<style>:root{--bg:#f2f4f2;--paper:#fff;--fg:#192126;--muted:#667178;--line:#d9dfdc;--accent:#0b6b61;--accent-2:#0b5e9d;--amber:#9a6700;--danger:#a33a3a;--code-bg:#17211f;--code-fg:#e9f5f1;--soft:#eef4f2;--shadow:0 10px 30px rgba(22,40,36,.07)}
+html[data-theme="dark"]{--bg:#111616;--paper:#182020;--fg:#e8efec;--muted:#a4b1ac;--line:#34413d;--accent:#5bc4b4;--accent-2:#79b9eb;--amber:#e1b34b;--danger:#ef8c8c;--code-bg:#0b1010;--code-fg:#e8f3ef;--soft:#202c2a;--shadow:0 12px 34px rgba(0,0,0,.28)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;font-size:16px}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;line-height:1.78}
+a{color:var(--accent-2);text-decoration:none}a:hover{text-decoration:underline}
+.reading-progress{position:fixed;inset:0 auto auto 0;height:3px;width:0;background:var(--accent);z-index:100;transition:width .1s linear}
+.topbar{position:sticky;top:0;z-index:40;border-bottom:1px solid color-mix(in srgb,var(--line) 82%,transparent);background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(12px)}
+.topbar-inner{max-width:1220px;margin:0 auto;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.topbar-title{font-size:.9rem;font-weight:650;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--muted)}
+.toolbar{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.tool-button{border:1px solid var(--line);background:var(--paper);color:var(--fg);border-radius:6px;padding:5px 10px;font:inherit;font-size:.8rem;cursor:pointer}
+.tool-button:hover{border-color:var(--accent);color:var(--accent)}
+.layout{max-width:1220px;margin:0 auto;padding:28px 24px 72px;display:grid;grid-template-columns:238px minmax(0,1fr);gap:28px;align-items:start}
+.toc{position:sticky;top:72px;max-height:calc(100vh - 94px);overflow:auto;padding:18px 16px;background:var(--paper);border:1px solid var(--line);border-radius:8px}
+.toc-title{font-size:.78rem;text-transform:uppercase;font-weight:700;color:var(--muted);margin:0 0 12px}
+.sidebar-section-nav{margin:0 0 4px}.sidebar-nav-title{font-size:.8rem;font-weight:780;color:var(--fg);margin:0 0 9px}
+.sidebar-link{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:5px 7px;border-radius:4px;color:var(--muted);font-size:.8rem;line-height:1.45}
+.sidebar-link:hover{background:var(--soft);color:var(--fg);text-decoration:none}.sidebar-link.active{background:var(--soft);color:var(--accent);font-weight:700}
+.sidebar-count{font-size:.68rem;color:var(--muted);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:0 5px;min-width:20px;text-align:center}
+.sidebar-divider{border-top:1px solid var(--line);margin:12px 0 14px}
+.toc-link{display:block;padding:5px 7px;border-left:2px solid transparent;color:var(--muted);font-size:.82rem;line-height:1.45;border-radius:0 4px 4px 0}
+.toc-link:hover{background:var(--soft);color:var(--fg);text-decoration:none}
+.toc-link.active{border-left-color:var(--accent);color:var(--accent);background:var(--soft);font-weight:650}
+.toc-h3{padding-left:20px;font-size:.78rem}.toc-empty{font-size:.82rem;color:var(--muted)}
+.article{min-width:0;background:var(--paper);border:1px solid var(--line);border-radius:8px;box-shadow:var(--shadow);overflow:hidden}
+.hero{padding:38px 44px 30px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,color-mix(in srgb,var(--soft) 58%,var(--paper)),var(--paper))}
+.eyebrow{font-size:.76rem;font-weight:750;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.hero h1{font-family:"Noto Serif CJK SC","Source Han Serif SC","Songti SC",Georgia,serif;font-size:2.05rem;line-height:1.35;margin:0;font-weight:760}
+.subtitle{font-size:1rem;color:var(--muted);line-height:1.5;margin:11px 0 0;max-width:900px}
+.meta-badges,.tags,.actions{display:flex;gap:7px;flex-wrap:wrap}.meta-badges{margin-top:18px}
+.badge{display:inline-flex;align-items:center;border:1px solid var(--line);background:var(--paper);color:var(--muted);border-radius:999px;padding:3px 9px;font-size:.76rem}
+.badge-note-id{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--accent);background:var(--soft)}
+.badge-status{border-color:color-mix(in srgb,var(--amber) 45%,var(--line));color:var(--amber)}
+.badge-mixed{border-color:color-mix(in srgb,var(--accent) 40%,var(--line));color:var(--accent)}
+.tag{display:inline-flex;background:var(--soft);color:var(--muted);border-radius:4px;padding:2px 7px;font-size:.74rem}
+.tags{margin-top:10px}.actions{margin-top:18px}
+.action-link{border:1px solid var(--line);border-radius:6px;padding:6px 11px;color:var(--fg);font-size:.82rem;font-weight:650}
+.action-link:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+.content{padding:8px 44px 44px;max-width:960px}
+.content h2,.content h3,.content h4{font-family:"Noto Serif CJK SC","Source Han Serif SC","Songti SC",Georgia,serif;line-height:1.42;scroll-margin-top:82px}
+.content h2{font-size:1.55rem;margin:2.2em 0 .75em;padding-bottom:.45em;border-bottom:1px solid var(--line)}
+.content h3{font-size:1.18rem;margin:1.8em 0 .55em;color:var(--accent)}
+.content h4{font-size:1.02rem;margin:1.4em 0 .45em}
+.heading-anchor{margin-left:8px;color:var(--line);font-weight:400;opacity:0;transition:opacity .15s}.content h2:hover .heading-anchor,.content h3:hover .heading-anchor,.content h4:hover .heading-anchor{opacity:1}
+.content p{margin:.8em 0}.content ul,.content ol{padding-left:1.45em}.content li{margin:.32em 0}
+.content blockquote{margin:1.2em 0;padding:1px 18px;border-left:3px solid var(--line);background:var(--soft);color:var(--fg)}
+.callout{padding:15px 17px 14px!important;border:1px solid var(--line);border-left-width:5px!important;border-radius:6px}
+.callout-title{display:flex;gap:9px;align-items:center;font-weight:750;margin:0 0 7px!important}
+.callout-label{font-size:.68rem;letter-spacing:.04em;text-transform:uppercase;background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:1px 6px;color:var(--muted)}
+.callout-summary,.callout-note,.callout-tip{border-left-color:var(--accent)!important}.callout-warning,.callout-caution{border-left-color:var(--amber)!important}.callout-danger{border-left-color:var(--danger)!important}
+.content code{background:var(--soft);border-radius:4px;padding:.12em .34em;font-family:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace;font-size:.9em}
+.content pre{background:var(--code-bg);color:var(--code-fg);padding:16px 18px;border-radius:6px;overflow:auto;line-height:1.55}.content pre code{background:none;color:inherit;padding:0}
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:6px;margin:1.2em 0}
+.content table{width:100%;border-collapse:collapse;min-width:640px;font-size:.9rem}
+.content th,.content td{padding:9px 11px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}.content th{background:var(--soft);font-weight:700}.content tr:last-child td{border-bottom:0}
+.content img{display:block;max-width:100%;height:auto;margin:1.4em auto;border-radius:4px;border:1px solid var(--line);background:var(--paper)}
+.content a>img{cursor:zoom-in}
+.image-viewer{position:fixed;inset:0;z-index:200;display:grid;grid-template-rows:auto 1fr;background:#0b1010ee;backdrop-filter:blur(6px)}
+.image-viewer[hidden]{display:none}.image-viewer-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 16px;background:#101818f2;color:#f2f7f5;border-bottom:1px solid #52605b}
+.image-viewer-title{font-size:.84rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.image-viewer-actions{display:flex;gap:7px;flex-wrap:wrap}
+.image-viewer-action{border:1px solid #6b7a74;background:#fff;color:#17211f;border-radius:5px;padding:4px 9px;font:inherit;font-size:.8rem;cursor:pointer;text-decoration:none}
+.image-viewer-action:hover,.image-viewer-action:focus-visible{border-color:#68c8b9;outline:2px solid #68c8b9;outline-offset:1px;color:#0b5e57;text-decoration:none}
+.image-viewer-stage{overflow:auto;text-align:center;padding:20px;cursor:grab}.image-viewer-stage[data-zoomed="true"]{cursor:zoom-out}.image-viewer-stage img{display:block;max-width:none!important;height:auto!important;margin:0 auto!important;border:0!important;background:#fff;border-radius:0!important}
+body.image-viewer-open{overflow:hidden}
+.content hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+.content .task-list-item{list-style:none}.content input[type="checkbox"]{margin-right:.45em}
+.doc-footer{margin-top:42px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.76rem;line-height:1.65}.doc-footer code{font-size:.72rem}
+.mobile-toc{display:none;margin:18px 24px 0;padding:12px 14px;background:var(--paper);border:1px solid var(--line);border-radius:6px}.mobile-toc summary{cursor:pointer;font-weight:700}
+@media(max-width:980px){.layout{grid-template-columns:1fr;padding:20px 16px 56px}.toc{display:none}.mobile-toc{display:block}.hero{padding:28px 24px 24px}.content{padding:4px 24px 32px}.topbar-inner{padding:9px 16px}.topbar-title{display:none}}
+@media(max-width:620px){.hero h1{font-size:1.58rem}.subtitle{font-size:.92rem}.meta-badges,.tags,.actions{gap:5px}.content{line-height:1.72}.content h2{font-size:1.32rem}.content h3{font-size:1.08rem}}
+@media(max-width:620px){.image-viewer-bar{padding:8px 10px}.image-viewer-stage{padding:10px}.image-viewer-action{padding:5px 8px}}
+@media print{.reading-progress,.topbar,.toc,.mobile-toc,.toolbar,.heading-anchor,.image-viewer{display:none!important}body{background:#fff;color:#000}.layout{display:block;max-width:none;padding:0}.article{border:0;box-shadow:none}.hero{padding:0 0 18px;background:#fff}.content{padding:0;max-width:none}a{color:#000}.table-wrap{overflow:visible}.content table{min-width:0}}</style>
+<meta name="description" content="Ionizing radiation is effective in treating cancer but causes significant damage to the mucosa, thereby increasing patient discomfort, delaying therapy, and raising the risk of mortality. The underlying mechanisms of this damage remain poorly understood, and current treatments are largely palliative. In this study, ferroptosis was identified as the primary mode of cell death responsible for the radiation-induced depletion of oral mucosal epithelial cells. Notably, a compensatory phase was also discovered in the early stages following radiation exposure, during which fibroblasts provide crucial metabolic support. Specifically, fibroblasts supply polyamines that are readily absorbed by basal epithelial cells, protecting them from ferroptosis. Supplementation with polyamines was found to effectively prevent mucosal injury. These findings highlight the critical role of fibroblast-mediated metabolic support in protecting the oral mucosa from radiation-induced damage and offer insights into enhancing the body&#39;s intrinsic protective mechanisms against radiation-related diseases."><meta property="og:title" content="代谢支持可保护黏膜免受放射性黏膜炎中的铁死亡"><meta property="og:description" content="Ionizing radiation is effective in treating cancer but causes significant damage to the mucosa, thereby increasing patient discomfort, delaying therapy, and raising the risk of mortality. The underlying mechanisms of this damage remain poorly understood, and current treatments are largely palliative. In this study, ferroptosis was identified as the primary mode of cell death responsible for the radiation-induced depletion of oral mucosal epithelial cells. Notably, a compensatory phase was also discovered in the early stages following radiation exposure, during which fibroblasts provide crucial metabolic support. Specifically, fibroblasts supply polyamines that are readily absorbed by basal epithelial cells, protecting them from ferroptosis. Supplementation with polyamines was found to effectively prevent mucosal injury. These findings highlight the critical role of fibroblast-mediated metabolic support in protecting the oral mucosa from radiation-induced damage and offer insights into enhancing the body&#39;s intrinsic protective mechanisms against radiation-related diseases."><meta property="og:type" content="article"><meta property="og:url" content="https://han-z02.github.io/bioinfo-knowledge-base/literature/notes/2ea2830aebdd540bdb3d20d1.html"><style>.site-home-link{color:var(--fg);font-weight:650}.site-home-link:hover{color:var(--accent);text-decoration:none}.kb-id-badge{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;padding:2px 8px;margin-left:6px;background:var(--soft);color:var(--accent);font:600 .68rem/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:nowrap}.crumb-sep{margin:0 7px;color:var(--line)}.missing-media{display:block;padding:13px 15px;border:1px dashed var(--line);border-radius:6px;color:var(--muted);font-size:.84rem;margin:1em 0}.unavailable-link{color:var(--muted);border-bottom:1px dotted currentColor;cursor:help}</style></head>
 <body>
-<main class="gate">
-<div class="brand"><div class="mark">KB</div><div><div class="brand-name">生信知识库</div><div class="brand-caption">Team reading space</div></div></div>
-<h1>解锁知识库</h1>
-<p class="intro">请输入维护者提供的团队共享密码。</p>
-<form id="kb-unlock-form">
-<label for="kb-password">共享密码</label>
-<input id="kb-password" name="password" type="password" autocomplete="current-password" spellcheck="false" required>
-<button type="submit">进入知识库</button>
-<p class="status" id="kb-status" role="status" aria-live="polite"></p>
-</form>
-<div class="note">解锁状态仅在当前浏览器标签页会话内保留。</div>
-</main>
-<script id="kb-payload" type="application/octet-stream" data-salt="qFhJNm27uECFt3Ui0xCtJA==" data-iterations="310000">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</script>
-<script src="../../assets/gate.js?v=b62e1e2eec"></script>
+<div class="reading-progress" id="reading-progress"></div>
+<header class="topbar"><div class="topbar-inner">
+<div class="topbar-title"><a class="site-home-link" href="../../index.html">知识库</a><span class="crumb-sep">/</span><a class="site-home-link" href="../index.html">文献整理</a><span class="crumb-sep">/</span><a class="site-home-link" href="../papers.html">论文精读</a></div>
+<div class="toolbar"><a class="tool-button" href="../../search.html">全库搜索</a><button class="tool-button" id="site-lock" type="button" title="锁定当前浏览会话">锁定</button>
+<button class="tool-button" id="font-minus" type="button">A-</button>
+<button class="tool-button" id="font-plus" type="button">A+</button>
+<button class="tool-button" id="theme-toggle" type="button">深色</button>
+<button class="tool-button" id="print-page" type="button">打印</button>
+<a  class="tool-button" href="2ea2830aebdd540bdb3d20d1.html">Markdown</a>
+</div></div></header>
+<main class="layout">
+<aside class="toc"><nav class="sidebar-section-nav" aria-label="文献整理子栏目"><div class="sidebar-nav-title">文献整理</div><a class="sidebar-link" href="../index.html"><span>全部笔记</span><span class="sidebar-count">44</span></a><a class="sidebar-link" href="../methods.html"><span>方法与工作流</span><span class="sidebar-count">3</span></a><a class="sidebar-link active" href="../papers.html"><span>论文精读</span><span class="sidebar-count">36</span></a><a class="sidebar-link" href="../web-clips.html"><span>网页文献</span><span class="sidebar-count">4</span></a><a class="sidebar-link" href="../other.html"><span>其他资料</span><span class="sidebar-count">1</span></a></nav><div class="sidebar-divider"></div><p class="toc-title">本文目录</p><nav id="toc-nav"><a class="toc-link toc-h2" href="#section-1">中文标题</a>
+<a class="toc-link toc-h2" href="#section-2">中文摘要</a>
+<a class="toc-link toc-h2" href="#section-3">一、研究背景与科学问题</a>
+<a class="toc-link toc-h3" href="#section-4">1.1 疾病背景</a>
+<a class="toc-link toc-h3" href="#section-5">1.2 机制背景</a>
+<a class="toc-link toc-h3" href="#section-6">1.3 三个核心科学问题</a>
+<a class="toc-link toc-h2" href="#section-7">二、整体研究思路</a>
+<a class="toc-link toc-h2" href="#section-8">三、主要结果（逐图总结）</a>
+<a class="toc-link toc-h3" href="#section-9">Result 1 | Figure 1 — 辐射导致上皮内环境稳态失衡</a>
+<a class="toc-link toc-h3" href="#section-10">Result 2 | Figure 2 — 辐射在基底上皮细胞中诱导铁死亡</a>
+<a class="toc-link toc-h3" href="#section-11">Result 3 | Figure 3 — 成纤维细胞在辐射早期保护基底细胞</a>
+<a class="toc-link toc-h3" href="#section-12">Result 4 | Figure 4 — 成纤维细胞通过抑制 SAT1-ACSL4 轴抑制铁死亡</a>
+<a class="toc-link toc-h3" href="#section-13">Result 5 | Figure 5 — 成纤维细胞产生多胺抑制铁死亡</a>
+<a class="toc-link toc-h3" href="#section-14">Result 6 | Figure 6 — 多胺抑制铁死亡并逆转黏膜损伤</a>
+<a class="toc-link toc-h2" href="#section-15">四、机制模型</a>
+<a class="toc-link toc-h3" href="#section-16">4.1 分子机制全图</a>
+<a class="toc-link toc-h3" href="#section-17">4.2 时间演进模型</a>
+<a class="toc-link toc-h3" href="#section-18">4.3 治疗转化模型</a>
+<a class="toc-link toc-h2" href="#section-19">五、讨论与结论</a>
+<a class="toc-link toc-h3" href="#section-20">5.1 核心发现</a>
+<a class="toc-link toc-h3" href="#section-21">5.2 研究亮点</a>
+<a class="toc-link toc-h3" href="#section-22">5.3 研究局限性</a>
+<a class="toc-link toc-h3" href="#section-23">5.4 未来方向</a>
+<a class="toc-link toc-h2" href="#section-24">六、参考文献</a>
+<a class="toc-link toc-h2" href="#section-25">关键图表 (Figure 1-6)</a>
+<a class="toc-link toc-h3" href="#section-26">Figure 1 | Radiation-induced epithelial thinning and basal cell depletion</a>
+<a class="toc-link toc-h3" href="#section-27">Figure 2 | Ionizing radiation induces ferroptosis in basal epithelial cells</a>
+<a class="toc-link toc-h3" href="#section-28">Figure 3 | Fibroblasts protect basal cells in the early stage</a>
+<a class="toc-link toc-h3" href="#section-29">Figure 4 | Fibroblasts inhibit ferroptosis via SAT1-ACSL4 axis</a>
+<a class="toc-link toc-h3" href="#section-30">Figure 5 | Fibroblasts produce polyamines</a>
+<a class="toc-link toc-h3" href="#section-31">Figure 6 | Polyamines inhibit ferroptosis and reverse mucosal damage</a>
+<a class="toc-link toc-h2" href="#section-32">完成情况</a></nav></aside>
+<article class="article">
+<header class="hero">
+<div class="eyebrow">Paper Analysis · 13 分钟阅读</div>
+<h1>代谢支持可保护黏膜免受放射性黏膜炎中的铁死亡</h1>
+<p class="subtitle">Metabolic support protects mucosa from ferroptosis in radiation-induced mucositis</p>
+<div class="meta-badges"><span class="badge badge-note-id">站内编号 KB-000033</span><span class="badge ">Nature Communications</span></div>
+<div class="tags"><span class="tag">ferroptosis</span><span class="tag">RIOM</span><span class="tag">fibroblast-polyamine</span><span class="tag">SAT1-ACSL4</span><span class="tag">scRNA-seq</span><span class="tag">radiation-induced mucositis</span></div>
+<div class="actions"><a class="action-link" href="https://doi.org/10.1038/s41467-025-67214-5" target="_blank" rel="noopener noreferrer">DOI</a></div>
+</header>
+<details class="mobile-toc"><summary>板块与文章导航</summary><nav class="sidebar-section-nav" aria-label="文献整理子栏目"><div class="sidebar-nav-title">文献整理</div><a class="sidebar-link" href="../index.html"><span>全部笔记</span><span class="sidebar-count">44</span></a><a class="sidebar-link" href="../methods.html"><span>方法与工作流</span><span class="sidebar-count">3</span></a><a class="sidebar-link active" href="../papers.html"><span>论文精读</span><span class="sidebar-count">36</span></a><a class="sidebar-link" href="../web-clips.html"><span>网页文献</span><span class="sidebar-count">4</span></a><a class="sidebar-link" href="../other.html"><span>其他资料</span><span class="sidebar-count">1</span></a></nav><nav><a class="toc-link toc-h2" href="#section-1">中文标题</a>
+<a class="toc-link toc-h2" href="#section-2">中文摘要</a>
+<a class="toc-link toc-h2" href="#section-3">一、研究背景与科学问题</a>
+<a class="toc-link toc-h3" href="#section-4">1.1 疾病背景</a>
+<a class="toc-link toc-h3" href="#section-5">1.2 机制背景</a>
+<a class="toc-link toc-h3" href="#section-6">1.3 三个核心科学问题</a>
+<a class="toc-link toc-h2" href="#section-7">二、整体研究思路</a>
+<a class="toc-link toc-h2" href="#section-8">三、主要结果（逐图总结）</a>
+<a class="toc-link toc-h3" href="#section-9">Result 1 | Figure 1 — 辐射导致上皮内环境稳态失衡</a>
+<a class="toc-link toc-h3" href="#section-10">Result 2 | Figure 2 — 辐射在基底上皮细胞中诱导铁死亡</a>
+<a class="toc-link toc-h3" href="#section-11">Result 3 | Figure 3 — 成纤维细胞在辐射早期保护基底细胞</a>
+<a class="toc-link toc-h3" href="#section-12">Result 4 | Figure 4 — 成纤维细胞通过抑制 SAT1-ACSL4 轴抑制铁死亡</a>
+<a class="toc-link toc-h3" href="#section-13">Result 5 | Figure 5 — 成纤维细胞产生多胺抑制铁死亡</a>
+<a class="toc-link toc-h3" href="#section-14">Result 6 | Figure 6 — 多胺抑制铁死亡并逆转黏膜损伤</a>
+<a class="toc-link toc-h2" href="#section-15">四、机制模型</a>
+<a class="toc-link toc-h3" href="#section-16">4.1 分子机制全图</a>
+<a class="toc-link toc-h3" href="#section-17">4.2 时间演进模型</a>
+<a class="toc-link toc-h3" href="#section-18">4.3 治疗转化模型</a>
+<a class="toc-link toc-h2" href="#section-19">五、讨论与结论</a>
+<a class="toc-link toc-h3" href="#section-20">5.1 核心发现</a>
+<a class="toc-link toc-h3" href="#section-21">5.2 研究亮点</a>
+<a class="toc-link toc-h3" href="#section-22">5.3 研究局限性</a>
+<a class="toc-link toc-h3" href="#section-23">5.4 未来方向</a>
+<a class="toc-link toc-h2" href="#section-24">六、参考文献</a>
+<a class="toc-link toc-h2" href="#section-25">关键图表 (Figure 1-6)</a>
+<a class="toc-link toc-h3" href="#section-26">Figure 1 | Radiation-induced epithelial thinning and basal cell depletion</a>
+<a class="toc-link toc-h3" href="#section-27">Figure 2 | Ionizing radiation induces ferroptosis in basal epithelial cells</a>
+<a class="toc-link toc-h3" href="#section-28">Figure 3 | Fibroblasts protect basal cells in the early stage</a>
+<a class="toc-link toc-h3" href="#section-29">Figure 4 | Fibroblasts inhibit ferroptosis via SAT1-ACSL4 axis</a>
+<a class="toc-link toc-h3" href="#section-30">Figure 5 | Fibroblasts produce polyamines</a>
+<a class="toc-link toc-h3" href="#section-31">Figure 6 | Polyamines inhibit ferroptosis and reverse mucosal damage</a>
+<a class="toc-link toc-h2" href="#section-32">完成情况</a></nav></details>
+<div class="content" id="article-content"><p><em>本文献笔记由 Claudian 自动生成，元数据已同步至 Zotero (ItemID: 1751)</em></p>
+<hr>
+<h2 id="section-1">中文标题<a class="heading-anchor" href="#section-1" aria-label="链接到本节">#</a></h2>
+<p>代谢支持可保护黏膜免受放射性黏膜炎中的铁死亡</p>
+<h2 id="section-2">中文摘要<a class="heading-anchor" href="#section-2" aria-label="链接到本节">#</a></h2>
+<p>电离辐射虽然是有效的癌症治疗手段，但会对黏膜造成严重损伤，从而增加患者不适、延迟治疗并提高死亡率。黏膜损伤的潜在机制目前仍知之甚少，且现有治疗大多仅为姑息性治疗。本研究首次证实，<strong>铁死亡</strong>是辐射导致口腔黏膜上皮细胞耗竭的主要细胞死亡形式。值得注意的是，在辐射暴露后的早期阶段还存在一个<strong>代偿期</strong>，在此期间<strong>成纤维细胞</strong>提供关键的代谢支持。具体而言，成纤维细胞供给<strong>多胺（polyamines）</strong>，这些多胺可被基底上皮细胞直接吸收，从而保护其免于铁死亡。补充多胺被发现能有效预防黏膜损伤。这些发现凸显了成纤维细胞介导的代谢支持在保护口腔黏膜免受辐射损伤中的关键作用，并为增强机体对辐射相关疾病的内在保护机制提供了新的思路。</p>
+<hr>
+<h2 id="section-3">一、研究背景与科学问题<a class="heading-anchor" href="#section-3" aria-label="链接到本节">#</a></h2>
+<h3 id="section-4">1.1 疾病背景<a class="heading-anchor" href="#section-4" aria-label="链接到本节">#</a></h3>
+<ul>
+<li><strong>RIOM（放射性口腔黏膜炎）</strong>：头颈部肿瘤放疗最常见的并发症之一，表现为黏膜萎缩或溃疡，伴随严重疼痛和屏障功能受损</li>
+<li><strong>临床困境</strong>：现有治疗以姑息性为主（如镇痛、抗炎），缺乏针对核心病理机制的靶向干预</li>
+<li><strong>临床意义</strong>：黏膜损伤导致治疗中断，影响放疗疗效，增加感染和死亡风险</li>
+</ul>
+<h3 id="section-5">1.2 机制背景<a class="heading-anchor" href="#section-5" aria-label="链接到本节">#</a></h3>
+<ul>
+<li>已知电离辐射直接导致 DNA 双链断裂和 ROS 积累，引发细胞损伤</li>
+<li>既往研究聚焦于<strong>凋亡</strong>通路，但抗凋亡药物在 RIOM 临床试验中效果有限 → 提示其他细胞死亡形式参与</li>
+<li><strong>铁死亡（Ferroptosis）</strong>：一种铁依赖的脂质过氧化驱动的细胞死亡形式，以往未被系统研究于 RIOM</li>
+</ul>
+<h3 id="section-6">1.3 三个核心科学问题<a class="heading-anchor" href="#section-6" aria-label="链接到本节">#</a></h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>编号</th>
+<th>科学问题</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Q1</strong></td>
+<td>电离辐射通过何种细胞死亡机制导致口腔黏膜上皮细胞耗竭？</td>
+</tr>
+<tr>
+<td><strong>Q2</strong></td>
+<td>辐射后是否存在内在保护机制？其细胞和分子基础是什么？</td>
+</tr>
+<tr>
+<td><strong>Q3</strong></td>
+<td>如何通过增强内源性保护或外源补充来预防 RIOM？</td>
+</tr>
+</tbody></table></div>
+<hr>
+<h2 id="section-7">二、整体研究思路<a class="heading-anchor" href="#section-7" aria-label="链接到本节">#</a></h2>
+<pre><code>【临床问题】RIOM 缺乏靶向治疗
+    ↓
+【单细胞图谱】scRNA-seq 揭示辐射后细胞组成变化
+    ↓
+【核心发现1】铁死亡是上皮细胞主要死亡形式 → Q1
+    ↓ +【早期代偿现象】辐射后早期黏膜反而增厚
+    ↓
+【细胞通讯】CellChat 分析发现成纤维细胞-上皮细胞代谢互作
+    ↓
+【核心发现2】成纤维细胞分泌多胺保护基底细胞 → Q2
+    ↓
+【分子机制】HIF-1α→ODC1↑ → 多胺↑ → JunD↓ → SAT1↓ → ACSL4↓ → 抑制铁死亡
+    ↓
+【治疗转化】补充生理浓度多胺预防/治疗 RIOM（口腔、结肠、肝脏、肺）→ Q3
+</code></pre>
+<p><strong>数据来源：</strong></p>
+<ul>
+<li>PRJNA1221123：小鼠舌/口腔黏膜，18 Gy，3个时间点（对照/照后3天/照后9天），41,810 cells</li>
+<li>患者样本：人舌 RIOM 活检组织</li>
+</ul>
+<hr>
+<h2 id="section-8">三、主要结果（逐图总结）<a class="heading-anchor" href="#section-8" aria-label="链接到本节">#</a></h2>
+<h3 id="section-9">Result 1 | Figure 1 — 辐射导致上皮内环境稳态失衡<a class="heading-anchor" href="#section-9" aria-label="链接到本节">#</a></h3>
+<ul>
+<li><strong>核心发现</strong>：辐射引起人和小鼠口腔黏膜显著上皮变薄和基底细胞耗竭</li>
+<li><strong>主要证据</strong>：<ul>
+<li>人舌 RIOM 活检：上皮显著变薄、连续性中断，基底细胞增殖减少</li>
+<li>小鼠 18 Gy 照射：照后第9天出现黏膜损伤，组织病理学与人类高度相似</li>
+<li>scRNA-seq（28,189 cells）：鉴定9种主要细胞类型；辐射后上皮细胞数量急剧下降</li>
+<li>基底细胞（KRT14/KRT5/KRT15 markers）是主要受累亚群</li>
+</ul>
+</li>
+<li><strong>意义</strong>：建立了 RIOM 的小鼠模型和单细胞参考图谱</li>
+</ul>
+<blockquote>
+<p><strong>图注：</strong> Fig. 1 | Radiation-induced epithelial thinning and basal cell depletion in human and mouse oral mucosa. (a) Clinical appearance of human RIOM tongue tissue. (b-d) Epithelial thinning and discontinuity with reduced basal cell proliferation in human biopsies. (e-h) Murine 18 Gy cranial radiation model recapitulates human RIOM pathology. (i) scRNA-seq UMAP of 9 major cell types. (j) Sharp reduction in epithelial cell numbers post-radiation. (k-l) Epithelial subpopulations: basal, spinous, granular, corneocytes. (m) Four major cellular compartments in oral mucosa.</p>
+</blockquote>
+<hr>
+<h3 id="section-10">Result 2 | Figure 2 — 辐射在基底上皮细胞中诱导铁死亡<a class="heading-anchor" href="#section-10" aria-label="链接到本节">#</a></h3>
+<ul>
+<li><strong>核心发现</strong>：铁死亡是辐射诱导基底上皮细胞死亡的主要形式</li>
+<li><strong>主要证据</strong>：<ul>
+<li>AddModuleScore：辐射后铁死亡评分显著升高</li>
+<li>ACSL4（铁死亡诱导酶）在人 RIOM 基底细胞中表达升高</li>
+<li>Liproxstatin-1（LIP-1，铁死亡抑制剂）处理：抑制 ACSL4 表达，恢复黏膜厚度</li>
+<li>体外实验：辐射降低基底细胞增殖，增加死亡率；Fer-1 比 Z-VAD-fmk（凋亡抑制剂）保护效果更强</li>
+<li>辐射增加细胞内 ROS 和不稳定铁池（labile iron pool），Fer-1 可逆转</li>
+<li>脂质过氧化蓄积（铁死亡标志物）</li>
+</ul>
+</li>
+<li><strong>早期阶段特性</strong>：PTGS2（铁死亡标志物）在早期无显著升高，到晚期才显著升高</li>
+<li><strong>意义</strong>：首次确认铁死亡是 RIOM 的核心细胞死亡机制</li>
+</ul>
+<blockquote>
+<p><strong>图注：</strong> Fig. 2 | Ionizing radiation induces ferroptosis in basal epithelial cells. (a) Ferroptosis gene set scores elevated post-radiation. (b) ACSL4 expression in human RIOM basal cells. (c-e) LIP-1 suppresses ACSL4 and restores mucosal thickness. (f) PTGS2 dynamics: early phase no change, late phase elevated. (g) Early phase: mucosal thickening and basal cell proliferation without significant DNA damage.</p>
+</blockquote>
+<hr>
+<h3 id="section-11">Result 3 | Figure 3 — 成纤维细胞在辐射早期保护基底细胞<a class="heading-anchor" href="#section-11" aria-label="链接到本节">#</a></h3>
+<ul>
+<li><strong>核心发现</strong>：辐射早期成纤维细胞与基底细胞间存在代谢互作网络，提供代偿性保护</li>
+<li><strong>主要证据</strong>：<ul>
+<li>scRNA-seq CellChat 分析：辐射后早期成纤维细胞与上皮细胞间通讯显著增强</li>
+<li>成纤维细胞分泌多种代谢因子（多胺、色氨酸代谢物等）</li>
+<li>体外共培养：成纤维细胞条件培养基（CM）保护基底细胞免于辐射诱导的铁死亡</li>
+<li>早期（3天）：黏膜增厚，基底细胞增殖活跃；晚期（9天）：代偿减弱，损伤加剧</li>
+</ul>
+</li>
+<li><strong>意义</strong>：揭示了机体对辐射应激的内源性保护机制</li>
+</ul>
+<blockquote>
+<p><strong>图注：</strong> Fig. 3 | Fibroblasts protect basal cells in the early stage of radiation-induced mucositis. (a-b) CellChat analysis showing enhanced fibroblast-epithelial communication in early phase. (c) Fibroblast secretome includes polyamines and metabolites. (d-e) Fibroblast conditioned medium (CM) protects basal cells from radiation-induced ferroptosis in co-culture. (f) Early phase (day 3): mucosal thickening; late phase (day 9): compensatory decline.</p>
+</blockquote>
+<hr>
+<h3 id="section-12">Result 4 | Figure 4 — 成纤维细胞通过抑制 SAT1-ACSL4 轴抑制铁死亡<a class="heading-anchor" href="#section-12" aria-label="链接到本节">#</a></h3>
+<ul>
+<li><strong>核心发现</strong>：成纤维细胞通过抑制 SAT1-ACSL4 信号轴缓解辐射诱导的铁死亡</li>
+<li><strong>主要证据</strong>：<ul>
+<li>成纤维细胞 CM 降低基底细胞中 SAT1 和 ACSL4 表达</li>
+<li>SAT1（SPT7L/anthrasilb）通过激活多不饱和脂肪酸参与铁死亡</li>
+<li>ACSL4 蛋白水平与 SAT1 变化一致</li>
+<li>体内：LIP-1 处理后 ACSL4 表达被抑制，黏膜厚度恢复</li>
+<li>时间依赖性：SAT1/ACSL4 在早期受抑制（成纤维细胞保护），晚期反弹（保护减弱）</li>
+</ul>
+</li>
+<li><strong>意义</strong>：阐明了成纤维细胞保护作用的分子下游</li>
+</ul>
+<blockquote>
+<p><strong>图注：</strong> Fig. 4 | Fibroblasts inhibit ferroptosis in basal cells through suppression of the SAT1-ACSL4 axis. (a) Fibroblast CM reduces SAT1 and ACSL4 in basal cells. (b-c) SAT1 activates polyunsaturated fatty acids for ferroptosis. (d-e) ACSL4 protein mirrors SAT1 dynamics. (f) LIP-1 suppresses ACSL4 and restores mucosal thickness in vivo. (g) Temporal pattern: SAT1/ACSL4 suppressed early, rebounded late.</p>
+</blockquote>
+<hr>
+<h3 id="section-13">Result 5 | Figure 5 — 成纤维细胞产生多胺抑制铁死亡<a class="heading-anchor" href="#section-13" aria-label="链接到本节">#</a></h3>
+<ul>
+<li><strong>核心发现</strong>：成纤维细胞在辐射后早期阶段代谢活性增强，产生多胺（精胺、亚精胺）保护基底细胞</li>
+<li><strong>主要证据</strong>：<ul>
+<li>scRNA-seq + GSVA：辐射后成纤维细胞多胺代谢通路活性显著升高（早期），随时间下降</li>
+<li>免疫荧光：亚精胺/精胺在基底细胞中维持早期稳态</li>
+<li>LC-MS：舌组织成纤维细胞多胺水平在早期有效维持，晚期耗竭</li>
+<li>ODC1（鸟氨酸脱羧酶，多胺合成限速酶）在成纤维细胞中表达升高，受 HIF-1α 转录调控</li>
+<li>ChIP-qPCR：HIF-1α 在 ODC1 启动子区显著富集，辐射后进一步增强</li>
+</ul>
+</li>
+<li><strong>意义</strong>：鉴定出保护性代谢因子的细胞来源和合成调控机制</li>
+</ul>
+<blockquote>
+<p><strong>图注：</strong> Fig. 5 | Fibroblasts produce polyamines that inhibit ferroptosis in basal cells. (a) GSVA: polyamine metabolic pathway elevated in fibroblasts early post-radiation. (b) Immunofluorescence for spermidine/spermine in basal cells. (c) LC-MS analysis of tongue fibroblasts. (d) ODC1 (ornithine decarboxylase, rate-limiting for polyamine synthesis) elevated in fibroblasts. (e) HIF-1α transcriptionally activates ODC1. (f) ChIP-qPCR: HIF-1α enrichment at ODC1 promoter, enhanced post-irradiation.</p>
+</blockquote>
+<hr>
+<h3 id="section-14">Result 6 | Figure 6 — 多胺抑制铁死亡并逆转黏膜损伤<a class="heading-anchor" href="#section-14" aria-label="链接到本节">#</a></h3>
+<ul>
+<li><strong>核心发现</strong>：补充生理浓度（低浓度）多胺可抑制 SAT1 表达，减少脂质过氧化，逆转黏膜损伤；高浓度多胺反而促铁死亡；JunD 介导多胺对 SAT1 的调控</li>
+<li><strong>主要证据</strong>：<ul>
+<li>低浓度多胺：抑制 SAT1 表达，减少脂质过氧化，抑制铁死亡</li>
+<li>高浓度多胺：促进脂质过氧化，诱导铁死亡（双向浓度效应）</li>
+<li>辐射前预加低浓度亚精胺/精胺：显著抑制铁死亡，保护黏膜完整</li>
+<li>体内给药：多胺补充显著改善小鼠口腔、结肠、肝脏和肺部的辐射损伤</li>
+<li>JunD（转录因子）直接调控 SAT1 表达；多胺补充抑制 JunD；DFMO（多胺合成抑制剂）增加 JunD 水平</li>
+<li>ACSL4 蛋白水平与 JunD 变化一致，证实 JunD→SAT1→ACSL4 上游调控关系</li>
+</ul>
+</li>
+<li><strong>意义</strong>：提出了多胺靶向治疗 RIOM 的转化策略</li>
+</ul>
+<blockquote>
+<p><strong>图注：</strong> Fig. 6 | Polyamines inhibit ferroptosis and reverse mucosal damage in radiation-induced mucositis. (a-b) Low-dose polyamines: suppress SAT1, reduce lipid peroxidation, inhibit ferroptosis. (c) High-dose polyamines: enhance lipid peroxidation, promote ferroptosis (biphasic dose response). (d-e) Pre-treatment with low-dose spermidine/spermine before radiation: suppresses ferroptosis, protects mucosal integrity. (f) In vivo: polyamine supplementation improves mucosal damage in oral cavity, colon, liver, and lungs. (g) JunD directly modulates SAT1 expression; polyamine supplementation suppresses JunD. (h-i) DFMO (polyamine synthesis inhibitor) increases JunD and ACSL4 levels.</p>
+</blockquote>
+<hr>
+<h2 id="section-15">四、机制模型<a class="heading-anchor" href="#section-15" aria-label="链接到本节">#</a></h2>
+<h3 id="section-16">4.1 分子机制全图<a class="heading-anchor" href="#section-16" aria-label="链接到本节">#</a></h3>
+<pre><code>辐射暴露
+   ↓
+┌─────────────────────────────────────────────┐
+│  成纤维细胞（早期代偿）                          │
+│  HIF-1α → ODC1↑ → 多胺（spermidine/spermine）↑ │
+└─────────────────────────────────────────────┘
+   ↓（旁分泌）多胺被基底细胞吸收
+┌─────────────────────────────────────────────┐
+│  基底上皮细胞                                  │
+│  多胺 → JunD↓ → SAT1↓ → ACSL4↓ → 铁死亡抑制    │
+│         ↕（晚期：多胺耗竭，保护减弱）             │
+│  ROS↑ + 不稳定铁池↑ + 脂质过氧化↑               │
+│  → 铁死亡 → 黏膜损伤                            │
+└─────────────────────────────────────────────┘
+</code></pre>
+<h3 id="section-17">4.2 时间演进模型<a class="heading-anchor" href="#section-17" aria-label="链接到本节">#</a></h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>时间</th>
+<th>成纤维细胞</th>
+<th>基底细胞</th>
+<th>黏膜状态</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>早期代偿</strong></td>
+<td>照后 0-3 天</td>
+<td>HIF-1α↑ → ODC1↑ → 多胺↑</td>
+<td>JunD↓ → SAT1↓ → ACSL4↓</td>
+<td>增厚，保护性增殖</td>
+</tr>
+<tr>
+<td><strong>过渡期</strong></td>
+<td>照后 5-7 天</td>
+<td>多胺代谢活性下降</td>
+<td>铁死亡开始加重</td>
+<td>临界状态</td>
+</tr>
+<tr>
+<td><strong>晚期损伤</strong></td>
+<td>照后 9+ 天</td>
+<td>多胺耗竭</td>
+<td>SAT1/ACSL4 反弹 → 铁死亡加剧</td>
+<td>变薄，溃疡</td>
+</tr>
+</tbody></table></div>
+<h3 id="section-18">4.3 治疗转化模型<a class="heading-anchor" href="#section-18" aria-label="链接到本节">#</a></h3>
+<pre><code>【预防策略】
+  辐射前预服低剂量多胺（亚精胺/精胺）
+    → 抑制 JunD → 下调 SAT1/ACSL4
+    → 预防黏膜损伤
+
+【治疗策略】
+  已知 RIOM 患者补充多胺
+    → 多部位保护（口腔、结肠、肝、肺）
+    → 改善生活质量，减少治疗中断
+
+【靶点优势】
+  vs 直接抑制铁死亡（LIP-1/Fer-1）：更安全，适合长期使用
+  调动内源性保护机制，符合生理性治疗理念
+</code></pre>
+<hr>
+<h2 id="section-19">五、讨论与结论<a class="heading-anchor" href="#section-19" aria-label="链接到本节">#</a></h2>
+<h3 id="section-20">5.1 核心发现<a class="heading-anchor" href="#section-20" aria-label="链接到本节">#</a></h3>
+<ol>
+<li><strong>铁死亡是 RIOM 的核心细胞死亡机制</strong>：首次系统证实，填补了领域空白</li>
+<li><strong>成纤维细胞-基底细胞代谢互作网络</strong>：早期代偿期成纤维细胞供给多胺，关键保护作用</li>
+<li><strong>HIF-1α→ODC1→多胺→JunD→SAT1→ACSL4 完整信号通路</strong>：机制链条清晰完整</li>
+<li><strong>多胺的双向浓度效应</strong>：生理浓度保护，高浓度促死亡 → 治疗窗口明确</li>
+</ol>
+<h3 id="section-21">5.2 研究亮点<a class="heading-anchor" href="#section-21" aria-label="链接到本节">#</a></h3>
+<ul>
+<li>✅ <strong>scRNA-seq 引领发现</strong>：首次构建 RIOM 单细胞图谱，发现成纤维细胞保护性代谢</li>
+<li>✅ <strong>首次确认铁死亡在 RIOM 中的核心地位</strong>：改变了对 RIOM 细胞死亡机制的传统认知</li>
+<li>✅ <strong>临床转化潜力强</strong>：多胺为小分子化合物，安全性和药代动力学已有大量基础</li>
+<li>✅ <strong>多部位验证</strong>：不仅是口腔黏膜，还验证了结肠、肝脏和肺部，具有广泛适用性</li>
+</ul>
+<h3 id="section-22">5.3 研究局限性<a class="heading-anchor" href="#section-22" aria-label="链接到本节">#</a></h3>
+<ul>
+<li><strong>种属差异</strong>：小鼠模型与人类 RIOM 存在一定差异（如辐射剂量、黏膜结构）</li>
+<li><strong>多胺剂量精准性</strong>：双向浓度效应要求精准剂量控制，临床转化需严格剂量优化</li>
+<li><strong>长期安全性</strong>：多胺长期补充的安全性数据尚不充分</li>
+<li><strong>机制深度</strong>：JunD 对 SAT1 的直接转录调控尚需 ChIP-seq 数据进一步验证</li>
+<li><strong>临床样本量</strong>：人类 RIOM 组织样本量有限</li>
+</ul>
+<h3 id="section-23">5.4 未来方向<a class="heading-anchor" href="#section-23" aria-label="链接到本节">#</a></h3>
+<ul>
+<li>多胺作为 RIOM 预防性或治疗性补充剂的临床试验设计</li>
+<li>其他黏膜损伤（如放射性肠炎）的类似机制探索</li>
+<li>多胺代谢通路中其他代谢物（如犬尿氨酸、色氨酸代谢物）的独立作用研究</li>
+</ul>
+<hr>
+<h2 id="section-24">六、参考文献<a class="heading-anchor" href="#section-24" aria-label="链接到本节">#</a></h2>
+<ol>
+<li>Yu W, Jiao K, Wang K, et al. <em>Metabolic support protects mucosa from ferroptosis in radiation-induced mucositis</em>. <strong>Nat Commun</strong>. 2026;17:520. doi:10.1038/s41467-025-67214-5</li>
+<li>Dixon SJ, et al. Ferroptosis: an iron-dependent form of nonapoptotic cell death. <strong>Cell</strong>. 2012;149(5):1060-1072. PMID: 22632975</li>
+<li>Koppenol WH, Bounds PL, Dang CV. Otto Warburg&#39;s contributions to current concepts of cancer metabolism. <strong>Nat Rev Cancer</strong>. 2011;11(5):325-337.</li>
+<li>Stockwell BR, et al. Ferroptosis: A regulated cell death nexus linking metabolism, redox biology, and disease. <strong>Cell</strong>. 2017;171(2):273-285.</li>
+<li>Zhang Y, et al. <em>elF2α/ATF4 pathway as a therapeutic target in radiation-induced mucosal injury</em>. <strong>Radiat Res</strong>. 2021.</li>
+<li>Sonis ST. The pathobiology of mucositis. <strong>Nat Rev Cancer</strong>. 2004;4(4):277-284. PMID: 15089453</li>
+<li>Li Q, et al. ACSL4 is a key regulator of ferroptosis in cancer cells. <strong>Cancer Cell</strong>. 2022.</li>
+<li>Doll S, et al. FSP1 is a glutathione-independent ferroptosis suppressor. <strong>Nature</strong>. 2019;575(7784):693-698.</li>
+</ol>
+<hr>
+<h2 id="section-25">关键图表 (Figure 1-6)<a class="heading-anchor" href="#section-25" aria-label="链接到本节">#</a></h2>
+<blockquote>
+<p>以下为论文原图，按研究逻辑顺序排列。</p>
+</blockquote>
+<h3 id="section-26">Figure 1 | Radiation-induced epithelial thinning and basal cell depletion<a class="heading-anchor" href="#section-26" aria-label="链接到本节">#</a></h3>
+<img src="../../assets/notes/literature/2ea2830aebdd540bdb3d20d1/85ed93.png" alt="Figure_1.png"><blockquote>
+<p><strong>图注：</strong> Fig. 1 | Radiation-induced epithelial thinning and basal cell depletion in human and mouse oral mucosa.</p>
+<ul>
+<li>(a) Clinical appearance of human RIOM tongue tissue</li>
+<li>(b-d) Epithelial thinning and discontinuity with reduced basal cell proliferation</li>
+<li>(e-h) Murine 18 Gy cranial radiation model recapitulates human RIOM</li>
+<li>(i) scRNA-seq UMAP: 9 major cell types</li>
+<li>(j) Sharp reduction in epithelial cells post-radiation</li>
+<li>(k-l) Epithelial subpopulations: basal, spinous, granular, corneocytes</li>
+<li>(m) Four major cellular compartments: epithelial basal cells, fibroblasts, endothelial cells, immune cells</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="section-27">Figure 2 | Ionizing radiation induces ferroptosis in basal epithelial cells<a class="heading-anchor" href="#section-27" aria-label="链接到本节">#</a></h3>
+<img src="../../assets/notes/literature/2ea2830aebdd540bdb3d20d1/5af46a.png" alt="Figure_2.png"><blockquote>
+<p><strong>图注：</strong> Fig. 2 | Ionizing radiation induces ferroptosis in basal epithelial cells.</p>
+<ul>
+<li>(a) Ferroptosis gene set scores significantly elevated post-radiation</li>
+<li>(b) ACSL4 expression increased in human RIOM basal cells</li>
+<li>(c-e) LIP-1 (ferroptosis inhibitor) suppresses ACSL4 and restores mucosal thickness</li>
+<li>(f) PTGS2 dynamics: early phase no change, late phase elevated</li>
+<li>(g) Early phase characterized by mucosal thickening and basal cell proliferation</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="section-28">Figure 3 | Fibroblasts protect basal cells in the early stage<a class="heading-anchor" href="#section-28" aria-label="链接到本节">#</a></h3>
+<img src="../../assets/notes/literature/2ea2830aebdd540bdb3d20d1/ecd151.png" alt="Figure_3.png"><blockquote>
+<p><strong>图注:</strong> Fig. 3 | Fibroblasts protect basal cells in the early stage of radiation-induced mucositis.</p>
+<ul>
+<li>(a-b) CellChat analysis showing enhanced fibroblast-epithelial intercellular communication in early phase</li>
+<li>(c) Fibroblast secretome includes polyamines and key metabolites</li>
+<li>(d-e) Fibroblast conditioned medium (CM) protects basal cells from radiation-induced ferroptosis in co-culture</li>
+<li>(f) Temporal progression: early phase (day 3) mucosal thickening, late phase (day 9) compensatory decline</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="section-29">Figure 4 | Fibroblasts inhibit ferroptosis via SAT1-ACSL4 axis<a class="heading-anchor" href="#section-29" aria-label="链接到本节">#</a></h3>
+<img src="../../assets/notes/literature/2ea2830aebdd540bdb3d20d1/18a935.png" alt="Figure_4.png"><blockquote>
+<p><strong>图注:</strong> Fig. 4 | Fibroblasts inhibit ferroptosis in basal cells through suppression of the SAT1-ACSL4 axis.</p>
+<ul>
+<li>(a) Fibroblast CM reduces SAT1 and ACSL4 protein levels in basal cells</li>
+<li>(b-c) SAT1 activates polyunsaturated fatty acids for ferroptosis</li>
+<li>(d-e) ACSL4 protein levels mirror SAT1 dynamics over time</li>
+<li>(f) LIP-1 suppresses ACSL4 and restores mucosal thickness in vivo</li>
+<li>(g) Temporal pattern: SAT1/ACSL4 suppressed in early phase, rebounded in late phase</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="section-30">Figure 5 | Fibroblasts produce polyamines<a class="heading-anchor" href="#section-30" aria-label="链接到本节">#</a></h3>
+<img src="../../assets/notes/literature/2ea2830aebdd540bdb3d20d1/3a2cd4.png" alt="Figure_5.png"><blockquote>
+<p><strong>图注:</strong> Fig. 5 | Fibroblasts produce polyamines that inhibit ferroptosis in basal cells.</p>
+<ul>
+<li>(a) GSVA: polyamine metabolic pathway elevated in fibroblasts during early post-radiation phase, declining over time</li>
+<li>(b) Immunofluorescence for spermidine/spermine in basal cells</li>
+<li>(c) LC-MS analysis of tongue fibroblasts: polyamine homeostasis maintained in early phase</li>
+<li>(d) ODC1 (rate-limiting enzyme for polyamine synthesis) elevated in fibroblasts</li>
+<li>(e) HIF-1α transcriptionally activates ODC1</li>
+<li>(f) ChIP-qPCR: HIF-1α enrichment at ODC1 promoter, further enhanced post-irradiation</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="section-31">Figure 6 | Polyamines inhibit ferroptosis and reverse mucosal damage<a class="heading-anchor" href="#section-31" aria-label="链接到本节">#</a></h3>
+<img src="../../assets/notes/literature/2ea2830aebdd540bdb3d20d1/68b158.png" alt="Figure_6.png"><blockquote>
+<p><strong>图注:</strong> Fig. 6 | Polyamines inhibit ferroptosis and reverse mucosal damage in radiation-induced mucositis.</p>
+<ul>
+<li>(a-b) Low-dose polyamines suppress SAT1 by reducing lipid peroxidation, inhibiting ferroptosis</li>
+<li>(c) High-dose polyamines promote ferroptosis by enhancing lipid peroxidation (biphasic dose response)</li>
+<li>(d-e) Pre-treatment with low-dose spermidine or spermine before radiation: significantly suppresses ferroptosis</li>
+<li>(f) In vivo: polyamine supplementation improves mucosal damage in oral cavity, colon, liver, and lungs</li>
+<li>(g) JunD directly modulates SAT1 expression; polyamine supplementation suppresses JunD</li>
+<li>(h-i) DFMO-induced polyamine depletion increases JunD and ACSL4 levels, confirming upstream regulatory role</li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="section-32">完成情况<a class="heading-anchor" href="#section-32" aria-label="链接到本节">#</a></h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>步骤</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Zotero 建档</td>
+<td>✅ ItemID: 1751（已存在）</td>
+</tr>
+<tr>
+<td>Obsidian 文献夹</td>
+<td>✅ 已创建</td>
+</tr>
+<tr>
+<td>图表截图</td>
+<td>✅ Figure 1-6 已渲染（6张图，4.4 MB）</td>
+</tr>
+<tr>
+<td>原文笔记</td>
+<td>✅ 已生成（.md）</td>
+</tr>
+<tr>
+<td>中文文献汇报</td>
+<td>⏳ 待生成（.docx + .md）</td>
+</tr>
+</tbody></table></div>
+<p><strong>关联笔记：</strong></p>
+<ul>
+<li><span class="unavailable-link" title="本地目标尚未找到，请核对来源笔记">RIOM公开数据汇总0410hz</span></li>
+<li><span class="unavailable-link" title="本地目标尚未找到，请核对来源笔记">铁死亡与细胞死亡</span> Collection</li>
+<li><span class="unavailable-link" title="本地目标尚未找到，请核对来源笔记">代谢重编程</span> Collection</li>
+<li><span class="unavailable-link" title="本地目标尚未找到，请核对来源笔记">细胞互作</span> Collection</li>
+</ul>
+
+<footer class="doc-footer">
+<div>板块：文献整理 · 分类：论文精读 · 更新：2026/10/26</div>
+<div>HTML 生成：2026/10/27 02:20:59 · 生成器 v1.2.0 · Markdown 是内容源，重新渲染即可更新本页。</div>
+</footer>
+</div></article></main>
+<div class="image-viewer" id="image-viewer" hidden role="dialog" aria-modal="true" aria-labelledby="image-viewer-title">
+<div class="image-viewer-bar">
+<div class="image-viewer-title" id="image-viewer-title">论文原图</div>
+<div class="image-viewer-actions">
+<button class="image-viewer-action" id="image-zoom-toggle" type="button" aria-pressed="false">原始尺寸</button>
+<a class="image-viewer-action" id="image-open-original" href="#" target="_blank" rel="noopener noreferrer">新标签打开</a>
+<button class="image-viewer-action" id="image-viewer-close" type="button" aria-label="关闭图片查看器">关闭</button>
+</div></div>
+<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt=""></div>
+</div>
+<script>
+(function(){
+var root=document.documentElement;
+function readSetting(key){try{return localStorage.getItem(key);}catch(_){return null;}}function saveSetting(key,value){try{localStorage.setItem(key,value);}catch(_){}}
+var saved=readSetting("kb-site-theme")||readSetting("kb-theme");
+if(saved){root.dataset.theme=saved;}
+var theme=document.getElementById("theme-toggle");
+function syncTheme(){theme.textContent=root.dataset.theme==="dark"?"浅色":"深色";}
+syncTheme();
+theme.addEventListener("click",function(){root.dataset.theme=root.dataset.theme==="dark"?"light":"dark";saveSetting("kb-site-theme",root.dataset.theme);syncTheme();});
+var size=Math.max(13,Math.min(21,Number(readSetting("kb-font-size"))||16));
+function applySize(){root.style.fontSize=size+"px";saveSetting("kb-font-size",String(size));}
+applySize();
+document.getElementById("font-minus").addEventListener("click",function(){size=Math.max(13,size-1);applySize();});
+document.getElementById("font-plus").addEventListener("click",function(){size=Math.min(21,size+1);applySize();});
+document.getElementById("print-page").addEventListener("click",function(){window.print();});
+var progress=document.getElementById("reading-progress");
+function updateProgress(){var h=document.documentElement.scrollHeight-window.innerHeight;progress.style.width=(h>0?Math.min(100,window.scrollY/h*100):0)+"%";}
+window.addEventListener("scroll",updateProgress,{passive:true});updateProgress();
+var links=Array.from(document.querySelectorAll("#toc-nav .toc-link"));
+var targets=links.map(function(a){var id=a.getAttribute("href").slice(1);try{id=decodeURIComponent(id);}catch(_){}return document.getElementById(id);});
+if("IntersectionObserver" in window){var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){links.forEach(function(a){a.classList.remove("active");});var index=targets.indexOf(entry.target);if(index>=0){links[index].classList.add("active");}}});},{rootMargin:"-15% 0px -72% 0px",threshold:0});targets.forEach(function(t){if(t)observer.observe(t);});}
+var viewer=document.getElementById("image-viewer");
+var viewerImage=document.getElementById("image-viewer-img");
+var viewerTitle=document.getElementById("image-viewer-title");
+var viewerStage=document.getElementById("image-viewer-stage");
+var zoomToggle=document.getElementById("image-zoom-toggle");
+var openOriginal=document.getElementById("image-open-original");
+var closeViewer=document.getElementById("image-viewer-close");
+var lastTrigger=null;var zoomed=false;
+function setZoom(value){zoomed=value;viewerStage.dataset.zoomed=value?"true":"false";zoomToggle.setAttribute("aria-pressed",value?"true":"false");zoomToggle.textContent=value?"适应屏幕":"原始尺寸";if(value){viewerImage.style.width=viewerImage.naturalWidth+"px";}else{viewerImage.style.width="";}viewerStage.scrollTop=0;viewerStage.scrollLeft=0;}
+function openViewer(trigger){lastTrigger=trigger;var image=trigger.querySelector("img");if(!image)return;var title=image.getAttribute("alt")||image.getAttribute("src")||"论文原图";viewerImage.src=trigger.getAttribute("href")||image.getAttribute("src");viewerImage.alt=title;viewerTitle.textContent=title;openOriginal.href=trigger.getAttribute("href")||image.getAttribute("src");setZoom(false);viewer.hidden=false;document.body.classList.add("image-viewer-open");closeViewer.focus();}
+function dismissViewer(){viewer.hidden=true;document.body.classList.remove("image-viewer-open");viewerImage.removeAttribute("src");if(lastTrigger){lastTrigger.focus();lastTrigger=null;}}
+Array.from(document.querySelectorAll("#article-content a")).forEach(function(link){var href=link.getAttribute("href")||"";if(link.querySelector("img")&&!link.hasAttribute("target")&&!/^(https?:|mailto:|#|javascript:)/i.test(href)){link.setAttribute("data-image-viewer","true");link.addEventListener("click",function(event){event.preventDefault();openViewer(link);});}});
+zoomToggle.addEventListener("click",function(){setZoom(!zoomed);});
+viewerStage.addEventListener("click",function(){setZoom(!zoomed);});
+closeViewer.addEventListener("click",dismissViewer);
+viewer.addEventListener("click",function(event){if(event.target===viewer)dismissViewer();});
+document.addEventListener("keydown",function(event){if(viewer.hidden)return;if(event.key==="Escape"){dismissViewer();}else if(event.key==="+"||event.key==="="){setZoom(true);}else if(event.key==="-"){setZoom(false);}});
+})();
+</script>
+<script src="../../assets/site.js?v=6dff557a9e"></script>
 </body>
 </html>

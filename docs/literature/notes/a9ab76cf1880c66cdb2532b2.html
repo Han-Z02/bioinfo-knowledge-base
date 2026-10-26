@@ -1,41 +1,446 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
-<meta name="referrer" content="no-referrer">
 <link rel="icon" href="data:,">
-<title>需要解锁 · 生信知识库</title>
-<style>
-:root{--bg:#f2f5f6;--paper:#fff;--fg:#172125;--muted:#67767d;--line:#d8e0e3;--accent:#16756c;--danger:#a33a32;--soft:#e9f2f0}
-@media(prefers-color-scheme:dark){:root{--bg:#111719;--paper:#182023;--fg:#edf3f3;--muted:#96a4aa;--line:#2c383c;--accent:#65c7ba;--danger:#f09991;--soft:#1b302e}}
-*{box-sizing:border-box}html,body{min-height:100%}body{margin:0;background:var(--bg);color:var(--fg);font-family:"Noto Sans CJK SC","Microsoft YaHei",system-ui,sans-serif;display:grid;place-items:center;padding:24px}
-.gate{width:min(100%,390px);background:var(--paper);border:1px solid var(--line);border-radius:8px;box-shadow:0 18px 60px rgba(16,35,39,.12);padding:31px}
-.brand{display:flex;align-items:center;gap:11px;margin-bottom:32px}.mark{width:34px;height:34px;display:grid;place-items:center;background:var(--soft);border:1px solid color-mix(in srgb,var(--accent) 35%,var(--line));border-radius:7px;color:var(--accent);font:700 12px/1 ui-monospace,monospace}
-.brand-name{font-size:.92rem;font-weight:750}.brand-caption{font-size:.72rem;color:var(--muted);margin-top:2px}
-h1{font-family:"Noto Serif CJK SC","Songti SC",Georgia,serif;font-size:1.55rem;line-height:1.35;margin:0 0 8px}.intro{font-size:.82rem;line-height:1.65;color:var(--muted);margin:0 0 22px}
-label{display:block;font-size:.76rem;font-weight:700;margin:0 0 7px}input{width:100%;height:42px;border:1px solid var(--line);border-radius:6px;background:var(--paper);color:var(--fg);padding:0 12px;font:inherit;outline:none}
-input:focus{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 14%,transparent)}button{width:100%;height:42px;margin-top:12px;border:1px solid var(--accent);border-radius:6px;background:var(--accent);color:#fff;font:inherit;font-size:.84rem;font-weight:750;cursor:pointer}
-button:hover{filter:brightness(.95)}button:disabled{opacity:.65;cursor:wait}.status{min-height:18px;font-size:.75rem;color:var(--muted);margin:10px 0 0}.status[data-state="error"]{color:var(--danger)}
-.note{border-top:1px solid var(--line);margin-top:22px;padding-top:14px;font-size:.7rem;line-height:1.6;color:var(--muted)}
-</style>
-</head>
+<meta name="generator" content="hz-kb-html 1.2.0">
+<title>EGFR-STAT1 pathway drives fibrosis initiation in fibroinflammatory skin diseases</title>
+<style>:root{--bg:#f2f4f2;--paper:#fff;--fg:#192126;--muted:#667178;--line:#d9dfdc;--accent:#0b6b61;--accent-2:#0b5e9d;--amber:#9a6700;--danger:#a33a3a;--code-bg:#17211f;--code-fg:#e9f5f1;--soft:#eef4f2;--shadow:0 10px 30px rgba(22,40,36,.07)}
+html[data-theme="dark"]{--bg:#111616;--paper:#182020;--fg:#e8efec;--muted:#a4b1ac;--line:#34413d;--accent:#5bc4b4;--accent-2:#79b9eb;--amber:#e1b34b;--danger:#ef8c8c;--code-bg:#0b1010;--code-fg:#e8f3ef;--soft:#202c2a;--shadow:0 12px 34px rgba(0,0,0,.28)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;font-size:16px}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;line-height:1.78}
+a{color:var(--accent-2);text-decoration:none}a:hover{text-decoration:underline}
+.reading-progress{position:fixed;inset:0 auto auto 0;height:3px;width:0;background:var(--accent);z-index:100;transition:width .1s linear}
+.topbar{position:sticky;top:0;z-index:40;border-bottom:1px solid color-mix(in srgb,var(--line) 82%,transparent);background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(12px)}
+.topbar-inner{max-width:1220px;margin:0 auto;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.topbar-title{font-size:.9rem;font-weight:650;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--muted)}
+.toolbar{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.tool-button{border:1px solid var(--line);background:var(--paper);color:var(--fg);border-radius:6px;padding:5px 10px;font:inherit;font-size:.8rem;cursor:pointer}
+.tool-button:hover{border-color:var(--accent);color:var(--accent)}
+.layout{max-width:1220px;margin:0 auto;padding:28px 24px 72px;display:grid;grid-template-columns:238px minmax(0,1fr);gap:28px;align-items:start}
+.toc{position:sticky;top:72px;max-height:calc(100vh - 94px);overflow:auto;padding:18px 16px;background:var(--paper);border:1px solid var(--line);border-radius:8px}
+.toc-title{font-size:.78rem;text-transform:uppercase;font-weight:700;color:var(--muted);margin:0 0 12px}
+.sidebar-section-nav{margin:0 0 4px}.sidebar-nav-title{font-size:.8rem;font-weight:780;color:var(--fg);margin:0 0 9px}
+.sidebar-link{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:5px 7px;border-radius:4px;color:var(--muted);font-size:.8rem;line-height:1.45}
+.sidebar-link:hover{background:var(--soft);color:var(--fg);text-decoration:none}.sidebar-link.active{background:var(--soft);color:var(--accent);font-weight:700}
+.sidebar-count{font-size:.68rem;color:var(--muted);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:0 5px;min-width:20px;text-align:center}
+.sidebar-divider{border-top:1px solid var(--line);margin:12px 0 14px}
+.toc-link{display:block;padding:5px 7px;border-left:2px solid transparent;color:var(--muted);font-size:.82rem;line-height:1.45;border-radius:0 4px 4px 0}
+.toc-link:hover{background:var(--soft);color:var(--fg);text-decoration:none}
+.toc-link.active{border-left-color:var(--accent);color:var(--accent);background:var(--soft);font-weight:650}
+.toc-h3{padding-left:20px;font-size:.78rem}.toc-empty{font-size:.82rem;color:var(--muted)}
+.article{min-width:0;background:var(--paper);border:1px solid var(--line);border-radius:8px;box-shadow:var(--shadow);overflow:hidden}
+.hero{padding:38px 44px 30px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,color-mix(in srgb,var(--soft) 58%,var(--paper)),var(--paper))}
+.eyebrow{font-size:.76rem;font-weight:750;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.hero h1{font-family:"Noto Serif CJK SC","Source Han Serif SC","Songti SC",Georgia,serif;font-size:2.05rem;line-height:1.35;margin:0;font-weight:760}
+.subtitle{font-size:1rem;color:var(--muted);line-height:1.5;margin:11px 0 0;max-width:900px}
+.meta-badges,.tags,.actions{display:flex;gap:7px;flex-wrap:wrap}.meta-badges{margin-top:18px}
+.badge{display:inline-flex;align-items:center;border:1px solid var(--line);background:var(--paper);color:var(--muted);border-radius:999px;padding:3px 9px;font-size:.76rem}
+.badge-note-id{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--accent);background:var(--soft)}
+.badge-status{border-color:color-mix(in srgb,var(--amber) 45%,var(--line));color:var(--amber)}
+.badge-mixed{border-color:color-mix(in srgb,var(--accent) 40%,var(--line));color:var(--accent)}
+.tag{display:inline-flex;background:var(--soft);color:var(--muted);border-radius:4px;padding:2px 7px;font-size:.74rem}
+.tags{margin-top:10px}.actions{margin-top:18px}
+.action-link{border:1px solid var(--line);border-radius:6px;padding:6px 11px;color:var(--fg);font-size:.82rem;font-weight:650}
+.action-link:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+.content{padding:8px 44px 44px;max-width:960px}
+.content h2,.content h3,.content h4{font-family:"Noto Serif CJK SC","Source Han Serif SC","Songti SC",Georgia,serif;line-height:1.42;scroll-margin-top:82px}
+.content h2{font-size:1.55rem;margin:2.2em 0 .75em;padding-bottom:.45em;border-bottom:1px solid var(--line)}
+.content h3{font-size:1.18rem;margin:1.8em 0 .55em;color:var(--accent)}
+.content h4{font-size:1.02rem;margin:1.4em 0 .45em}
+.heading-anchor{margin-left:8px;color:var(--line);font-weight:400;opacity:0;transition:opacity .15s}.content h2:hover .heading-anchor,.content h3:hover .heading-anchor,.content h4:hover .heading-anchor{opacity:1}
+.content p{margin:.8em 0}.content ul,.content ol{padding-left:1.45em}.content li{margin:.32em 0}
+.content blockquote{margin:1.2em 0;padding:1px 18px;border-left:3px solid var(--line);background:var(--soft);color:var(--fg)}
+.callout{padding:15px 17px 14px!important;border:1px solid var(--line);border-left-width:5px!important;border-radius:6px}
+.callout-title{display:flex;gap:9px;align-items:center;font-weight:750;margin:0 0 7px!important}
+.callout-label{font-size:.68rem;letter-spacing:.04em;text-transform:uppercase;background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:1px 6px;color:var(--muted)}
+.callout-summary,.callout-note,.callout-tip{border-left-color:var(--accent)!important}.callout-warning,.callout-caution{border-left-color:var(--amber)!important}.callout-danger{border-left-color:var(--danger)!important}
+.content code{background:var(--soft);border-radius:4px;padding:.12em .34em;font-family:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace;font-size:.9em}
+.content pre{background:var(--code-bg);color:var(--code-fg);padding:16px 18px;border-radius:6px;overflow:auto;line-height:1.55}.content pre code{background:none;color:inherit;padding:0}
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:6px;margin:1.2em 0}
+.content table{width:100%;border-collapse:collapse;min-width:640px;font-size:.9rem}
+.content th,.content td{padding:9px 11px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}.content th{background:var(--soft);font-weight:700}.content tr:last-child td{border-bottom:0}
+.content img{display:block;max-width:100%;height:auto;margin:1.4em auto;border-radius:4px;border:1px solid var(--line);background:var(--paper)}
+.content a>img{cursor:zoom-in}
+.image-viewer{position:fixed;inset:0;z-index:200;display:grid;grid-template-rows:auto 1fr;background:#0b1010ee;backdrop-filter:blur(6px)}
+.image-viewer[hidden]{display:none}.image-viewer-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 16px;background:#101818f2;color:#f2f7f5;border-bottom:1px solid #52605b}
+.image-viewer-title{font-size:.84rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.image-viewer-actions{display:flex;gap:7px;flex-wrap:wrap}
+.image-viewer-action{border:1px solid #6b7a74;background:#fff;color:#17211f;border-radius:5px;padding:4px 9px;font:inherit;font-size:.8rem;cursor:pointer;text-decoration:none}
+.image-viewer-action:hover,.image-viewer-action:focus-visible{border-color:#68c8b9;outline:2px solid #68c8b9;outline-offset:1px;color:#0b5e57;text-decoration:none}
+.image-viewer-stage{overflow:auto;text-align:center;padding:20px;cursor:grab}.image-viewer-stage[data-zoomed="true"]{cursor:zoom-out}.image-viewer-stage img{display:block;max-width:none!important;height:auto!important;margin:0 auto!important;border:0!important;background:#fff;border-radius:0!important}
+body.image-viewer-open{overflow:hidden}
+.content hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+.content .task-list-item{list-style:none}.content input[type="checkbox"]{margin-right:.45em}
+.doc-footer{margin-top:42px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.76rem;line-height:1.65}.doc-footer code{font-size:.72rem}
+.mobile-toc{display:none;margin:18px 24px 0;padding:12px 14px;background:var(--paper);border:1px solid var(--line);border-radius:6px}.mobile-toc summary{cursor:pointer;font-weight:700}
+@media(max-width:980px){.layout{grid-template-columns:1fr;padding:20px 16px 56px}.toc{display:none}.mobile-toc{display:block}.hero{padding:28px 24px 24px}.content{padding:4px 24px 32px}.topbar-inner{padding:9px 16px}.topbar-title{display:none}}
+@media(max-width:620px){.hero h1{font-size:1.58rem}.subtitle{font-size:.92rem}.meta-badges,.tags,.actions{gap:5px}.content{line-height:1.72}.content h2{font-size:1.32rem}.content h3{font-size:1.08rem}}
+@media(max-width:620px){.image-viewer-bar{padding:8px 10px}.image-viewer-stage{padding:10px}.image-viewer-action{padding:5px 8px}}
+@media print{.reading-progress,.topbar,.toc,.mobile-toc,.toolbar,.heading-anchor,.image-viewer{display:none!important}body{background:#fff;color:#000}.layout{display:block;max-width:none;padding:0}.article{border:0;box-shadow:none}.hero{padding:0 0 18px;background:#fff}.content{padding:0;max-width:none}a{color:#000}.table-wrap{overflow:visible}.content table{min-width:0}}</style>
+<meta name="description" content="Odell et al., 2025, Nature Medicine The EGFR-STAT1 axis drives fibrosis across fibroinflammatory skin diseases including systemic sclerosis (SSc), hidradenitis suppurativa (HS), and lupus. Epidermal keratinocytes in these diseases upregulat"><meta property="og:title" content="EGFR-STAT1 pathway drives fibrosis initiation in fibroinflammatory skin diseases"><meta property="og:description" content="Odell et al., 2025, Nature Medicine The EGFR-STAT1 axis drives fibrosis across fibroinflammatory skin diseases including systemic sclerosis (SSc), hidradenitis suppurativa (HS), and lupus. Epidermal keratinocytes in these diseases upregulat"><meta property="og:type" content="article"><meta property="og:url" content="https://han-z02.github.io/bioinfo-knowledge-base/literature/notes/a9ab76cf1880c66cdb2532b2.html"><style>.site-home-link{color:var(--fg);font-weight:650}.site-home-link:hover{color:var(--accent);text-decoration:none}.kb-id-badge{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;padding:2px 8px;margin-left:6px;background:var(--soft);color:var(--accent);font:600 .68rem/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:nowrap}.crumb-sep{margin:0 7px;color:var(--line)}.missing-media{display:block;padding:13px 15px;border:1px dashed var(--line);border-radius:6px;color:var(--muted);font-size:.84rem;margin:1em 0}.unavailable-link{color:var(--muted);border-bottom:1px dotted currentColor;cursor:help}</style></head>
 <body>
-<main class="gate">
-<div class="brand"><div class="mark">KB</div><div><div class="brand-name">生信知识库</div><div class="brand-caption">Team reading space</div></div></div>
-<h1>解锁知识库</h1>
-<p class="intro">请输入维护者提供的团队共享密码。</p>
-<form id="kb-unlock-form">
-<label for="kb-password">共享密码</label>
-<input id="kb-password" name="password" type="password" autocomplete="current-password" spellcheck="false" required>
-<button type="submit">进入知识库</button>
-<p class="status" id="kb-status" role="status" aria-live="polite"></p>
-</form>
-<div class="note">解锁状态仅在当前浏览器标签页会话内保留。</div>
-</main>
-<script id="kb-payload" type="application/octet-stream" data-salt="qFhJNm27uECFt3Ui0xCtJA==" data-iterations="310000">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</script>
-<script src="../../assets/gate.js?v=b62e1e2eec"></script>
+<div class="reading-progress" id="reading-progress"></div>
+<header class="topbar"><div class="topbar-inner">
+<div class="topbar-title"><a class="site-home-link" href="../../index.html">知识库</a><span class="crumb-sep">/</span><a class="site-home-link" href="../index.html">文献整理</a><span class="crumb-sep">/</span><a class="site-home-link" href="../papers.html">论文精读</a></div>
+<div class="toolbar"><a class="tool-button" href="../../search.html">全库搜索</a><button class="tool-button" id="site-lock" type="button" title="锁定当前浏览会话">锁定</button>
+<button class="tool-button" id="font-minus" type="button">A-</button>
+<button class="tool-button" id="font-plus" type="button">A+</button>
+<button class="tool-button" id="theme-toggle" type="button">深色</button>
+<button class="tool-button" id="print-page" type="button">打印</button>
+<a  class="tool-button" href="a9ab76cf1880c66cdb2532b2.html">Markdown</a>
+</div></div></header>
+<main class="layout">
+<aside class="toc"><nav class="sidebar-section-nav" aria-label="文献整理子栏目"><div class="sidebar-nav-title">文献整理</div><a class="sidebar-link" href="../index.html"><span>全部笔记</span><span class="sidebar-count">44</span></a><a class="sidebar-link" href="../methods.html"><span>方法与工作流</span><span class="sidebar-count">3</span></a><a class="sidebar-link active" href="../papers.html"><span>论文精读</span><span class="sidebar-count">36</span></a><a class="sidebar-link" href="../web-clips.html"><span>网页文献</span><span class="sidebar-count">4</span></a><a class="sidebar-link" href="../other.html"><span>其他资料</span><span class="sidebar-count">1</span></a></nav><div class="sidebar-divider"></div><p class="toc-title">本文目录</p><nav id="toc-nav"><a class="toc-link toc-h2" href="#section-1">Abstract | 摘要</a>
+<a class="toc-link toc-h2" href="#section-2">Key Findings | 核心发现</a>
+<a class="toc-link toc-h2" href="#section-3">Background | 背景</a>
+<a class="toc-link toc-h2" href="#section-4">Methods | 方法</a>
+<a class="toc-link toc-h2" href="#section-5">Results | 主要结果</a>
+<a class="toc-link toc-h3" href="#section-6">Fig. 1 | 整合 fibroinflammatory 皮肤疾病 atlas</a>
+<a class="toc-link toc-h3" href="#section-7">Fig. 2 | STAT1 是 SFRP2+ 成纤维细胞的核心 regulon</a>
+<a class="toc-link toc-h3" href="#section-8">Fig. 3 | 成纤维细胞 STAT1 + EGFR 是纤维化发生的必要条件</a>
+<a class="toc-link toc-h3" href="#section-9">Fig. 4 | EGFR 直接磷酸化 STAT1（非 JAK 依赖）</a>
+<a class="toc-link toc-h3" href="#section-10">Fig. 5 | TGFA 诱导 STAT1 依赖性纤维化转录组</a>
+<a class="toc-link toc-h3" href="#section-11">Fig. 6 | ERK-EGR1/FOS 启动通路</a>
+<a class="toc-link toc-h3" href="#section-12">Fig. 7 | 角质形成细胞是 TGFA 的主要来源</a>
+<a class="toc-link toc-h3" href="#section-13">Fig. 8 | 机制模型</a>
+<a class="toc-link toc-h2" href="#section-14">Signaling Pathway Model | 信号通路模型</a>
+<a class="toc-link toc-h2" href="#section-15">Therapeutic Implications | 治疗启示</a>
+<a class="toc-link toc-h2" href="#section-16">Limitations | 局限性</a>
+<a class="toc-link toc-h2" href="#section-17">References | 核心参考文献</a>
+<a class="toc-link toc-h2" href="#section-18">Related Notes | 相关笔记</a></nav></aside>
+<article class="article">
+<header class="hero">
+<div class="eyebrow">Paper Analysis · 8 分钟阅读</div>
+<h1>EGFR-STAT1 pathway drives fibrosis initiation in fibroinflammatory skin diseases</h1>
+
+<div class="meta-badges"><span class="badge badge-note-id">站内编号 KB-000026</span><span class="badge ">Nature Medicine</span><span class="badge ">2025</span></div>
+<div class="tags"><span class="tag">EGFR</span><span class="tag">STAT1</span><span class="tag">fibrosis</span><span class="tag">fibroinflammatory</span><span class="tag">systemic_sclerosis</span><span class="tag">scRNA-seq</span><span class="tag">SSc</span><span class="tag">hidradenitis_suppurativa</span><span class="tag">lupus</span><span class="tag">skin</span><span class="tag">keratinocyte</span><span class="tag">fibroblast</span><span class="tag">signaling_pathway</span></div>
+<div class="actions"><a class="action-link" href="https://doi.org/10.1038/s41591-025-0471-6" target="_blank" rel="noopener noreferrer">DOI</a></div>
+</header>
+<details class="mobile-toc"><summary>板块与文章导航</summary><nav class="sidebar-section-nav" aria-label="文献整理子栏目"><div class="sidebar-nav-title">文献整理</div><a class="sidebar-link" href="../index.html"><span>全部笔记</span><span class="sidebar-count">44</span></a><a class="sidebar-link" href="../methods.html"><span>方法与工作流</span><span class="sidebar-count">3</span></a><a class="sidebar-link active" href="../papers.html"><span>论文精读</span><span class="sidebar-count">36</span></a><a class="sidebar-link" href="../web-clips.html"><span>网页文献</span><span class="sidebar-count">4</span></a><a class="sidebar-link" href="../other.html"><span>其他资料</span><span class="sidebar-count">1</span></a></nav><nav><a class="toc-link toc-h2" href="#section-1">Abstract | 摘要</a>
+<a class="toc-link toc-h2" href="#section-2">Key Findings | 核心发现</a>
+<a class="toc-link toc-h2" href="#section-3">Background | 背景</a>
+<a class="toc-link toc-h2" href="#section-4">Methods | 方法</a>
+<a class="toc-link toc-h2" href="#section-5">Results | 主要结果</a>
+<a class="toc-link toc-h3" href="#section-6">Fig. 1 | 整合 fibroinflammatory 皮肤疾病 atlas</a>
+<a class="toc-link toc-h3" href="#section-7">Fig. 2 | STAT1 是 SFRP2+ 成纤维细胞的核心 regulon</a>
+<a class="toc-link toc-h3" href="#section-8">Fig. 3 | 成纤维细胞 STAT1 + EGFR 是纤维化发生的必要条件</a>
+<a class="toc-link toc-h3" href="#section-9">Fig. 4 | EGFR 直接磷酸化 STAT1（非 JAK 依赖）</a>
+<a class="toc-link toc-h3" href="#section-10">Fig. 5 | TGFA 诱导 STAT1 依赖性纤维化转录组</a>
+<a class="toc-link toc-h3" href="#section-11">Fig. 6 | ERK-EGR1/FOS 启动通路</a>
+<a class="toc-link toc-h3" href="#section-12">Fig. 7 | 角质形成细胞是 TGFA 的主要来源</a>
+<a class="toc-link toc-h3" href="#section-13">Fig. 8 | 机制模型</a>
+<a class="toc-link toc-h2" href="#section-14">Signaling Pathway Model | 信号通路模型</a>
+<a class="toc-link toc-h2" href="#section-15">Therapeutic Implications | 治疗启示</a>
+<a class="toc-link toc-h2" href="#section-16">Limitations | 局限性</a>
+<a class="toc-link toc-h2" href="#section-17">References | 核心参考文献</a>
+<a class="toc-link toc-h2" href="#section-18">Related Notes | 相关笔记</a></nav></details>
+<div class="content" id="article-content"><p><strong>Odell et al., 2025, Nature Medicine</strong></p>
+<hr>
+<h2 id="section-1">Abstract | 摘要<a class="heading-anchor" href="#section-1" aria-label="链接到本节">#</a></h2>
+<blockquote>
+<p>The EGFR-STAT1 axis drives fibrosis across fibroinflammatory skin diseases including systemic sclerosis (SSc), hidradenitis suppurativa (HS), and lupus. Epidermal keratinocytes in these diseases upregulate high-affinity EGFR ligand TGFA, which directly phosphorylates STAT1 in dermal fibroblasts via EGFR, inducing a distinct pro-fibrotic transcriptional program (EGR1, FOS, CTGF, CCL2, IL6) that is <strong>independent of classical JAK-STAT/IFN signaling</strong>. ERK signaling via EGR1/FOS acts as the initiating step. TGFA is thus a keratinocyte-derived damage signal and therapeutic target; <strong>fludarabine blocks EGFR-STAT1 fibrosis in vivo</strong>.</p>
+</blockquote>
+<hr>
+<h2 id="section-2">Key Findings | 核心发现<a class="heading-anchor" href="#section-2" aria-label="链接到本节">#</a></h2>
+<ol>
+<li><strong>EGFR-STAT1 是核心纤维化驱动轴</strong>：在硬皮病 (SSc)、化脓性汗腺炎 (HS)、红斑狼疮 (lupus) 等 fibroinflammatory 皮肤病中，EGFR-STAT1 信号是共同的纤维化驱动通路</li>
+<li><strong>STAT1 是成纤维细胞的 master regulon</strong>：scRNA-seq + SCENIC 分析发现 SFRP2+ 成纤维细胞簇中 STAT1 是核心转录调控因子，而非经典的 IFN 应激通路</li>
+<li><strong>EGFR 直接磷酸化 STAT1</strong>：EGFR 不通过 JAK 激酶，直接磷酸化 STAT1 (Y701)，诱导独特的纤维化转录组</li>
+<li><strong>ERK-EGR1/FOS 启动通路</strong>：EGFR → ERK → EGR1/FOS 是启动步骤，随后激活 STAT1 依赖性纤维化基因</li>
+<li><strong>角质形成细胞是 TGFA 来源</strong>：活化的角质形成细胞大量表达 TGFA（高亲和力 EGFR 配体），是皮肤纤维化的上游损伤信号</li>
+<li><strong>潜在治疗靶点</strong>：Fludarabine（STAT1 磷酸化抑制剂）和 EGFR 抑制剂在体内模型中均显示抗纤维化效果</li>
+</ol>
+<hr>
+<h2 id="section-3">Background | 背景<a class="heading-anchor" href="#section-3" aria-label="链接到本节">#</a></h2>
+<p> fibroinflammatory 皮肤病包括：</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>疾病</th>
+<th>特征</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>系统性硬化症 (SSc)</td>
+<td>皮肤和内脏器官纤维化，缺乏有效皮肤治疗</td>
+</tr>
+<tr>
+<td>化脓性汗腺炎 (HS)</td>
+<td>慢性炎症性皮肤结节，纤维化</td>
+</tr>
+<tr>
+<td>红斑狼疮 (lupus)</td>
+<td>自身免疫性皮肤损伤</td>
+</tr>
+</tbody></table></div>
+<p>既往问题：</p>
+<ul>
+<li>各疾病 scRNA-seq 数据各自独立，<strong>未整合分析</strong></li>
+<li>EGFR 激活已知可促纤维化，但 <strong>EGFR 与 STAT1 的分子连接不清</strong></li>
+<li>STAT1 传统上与 JAK-STAT/IFN 信号相关，<strong>其在纤维化中的非经典作用未被系统研究</strong></li>
+</ul>
+<hr>
+<h2 id="section-4">Methods | 方法<a class="heading-anchor" href="#section-4" aria-label="链接到本节">#</a></h2>
+<ol>
+<li><strong>整合单细胞 atlas</strong>：整合 SSc (n=5) + HS (n=?) + lupus (n=?) 患者皮肤 scRNA-seq，与健康对照 (HC n=6) 比较，共 21,910 个细胞</li>
+<li><strong>SCENIC 分析</strong>：转录因子 regulon 富集分析，识别 SFRP2+ 成纤维细胞中的 master regulator</li>
+<li><strong>体内小鼠模型</strong>：<ul>
+<li>Stat1 floxed × Pdgfrα-Cre → 成纤维细胞条件性敲除 Stat1</li>
+<li>Bleomycin 诱导皮肤纤维化</li>
+<li>AZD8330 (MEK 抑制剂)、erlotinib (EGFR 抑制剂)、fludarabine (STAT1 磷酸化抑制剂) 处理</li>
+</ul>
+</li>
+<li><strong>体外细胞实验</strong>：人皮肤成纤维细胞 (HFF)、TGFA/IFNA2 刺激</li>
+<li><strong>免疫共沉淀、磷酸化 Western blot</strong>：验证 EGFR-STAT1 直接相互作用</li>
+<li><strong>TGFA 免疫荧光</strong>：患者皮肤活检 KRT16 + TGFA 共染色</li>
+</ol>
+<hr>
+<h2 id="section-5">Results | 主要结果<a class="heading-anchor" href="#section-5" aria-label="链接到本节">#</a></h2>
+<h3 id="section-6">Fig. 1 | 整合 fibroinflammatory 皮肤疾病 atlas<a class="heading-anchor" href="#section-6" aria-label="链接到本节">#</a></h3>
+<img src="../../assets/notes/literature/a9ab76cf1880c66cdb2532b2/e6b755.png" alt="Figure 1.png"><ul>
+<li>整合 SSc + HS + lupus 三个疾病的 scRNA-seq（对比健康对照）</li>
+<li>鉴定 8 种主要细胞类型（ keratinocytes, fibroblasts, T cells, myeloid cells 等）</li>
+<li>成纤维细胞在疾病组织中比例改变；<strong>myofibroblasts (TAGLN+)</strong> 显著增加</li>
+<li><strong>上皮损伤特征基因</strong>（KRT6A, KRT16）在角质形成细胞中共享性上调</li>
+</ul>
+<blockquote>
+<p>Fig. 1 | Integrated inflammatory skin disease atlas shows upregulated STAT1 signaling in fibroblasts</p>
+</blockquote>
+<hr>
+<h3 id="section-7">Fig. 2 | STAT1 是 SFRP2+ 成纤维细胞的核心 regulon<a class="heading-anchor" href="#section-7" aria-label="链接到本节">#</a></h3>
+<img src="../../assets/notes/literature/a9ab76cf1880c66cdb2532b2/cac7ca.png" alt="Figure 2.png"><ul>
+<li><strong>SCENIC 分析</strong>：识别 SFRP2+ 成纤维细胞 cluster 中的核心转录因子 regulon</li>
+<li><strong>STAT1 regulon 活性</strong>在 SSc 中显著升高（p=2.13E-105 vs HC）</li>
+<li>其他活化 TF regulons：<strong>TWIST1, FOS, EGR1, RUNX1, HIF1A, IRF7</strong>（与 EGFR 激活一致）</li>
+<li><strong>Ingenuity pathway 分析</strong>：富集 collagen formation, ECM organization, EMT, wound healing pathways</li>
+<li>EGFR 活化 TF（FOS, EGR1）与 STAT1 regulon <strong>共激活</strong></li>
+</ul>
+<blockquote>
+<p>Fig. 2 | SCENIC analysis of fibroblasts identifies STAT1 as a central regulon in fibrotic skin. UMAP embedding of SSc scRNA-seq (n=5 SSc, n=6 HC)</p>
+</blockquote>
+<hr>
+<h3 id="section-8">Fig. 3 | 成纤维细胞 STAT1 + EGFR 是纤维化发生的必要条件<a class="heading-anchor" href="#section-8" aria-label="链接到本节">#</a></h3>
+<img src="../../assets/notes/literature/a9ab76cf1880c66cdb2532b2/9e834e.png" alt="Figure 3.png"><ul>
+<li><strong>Stat1 条件性敲除（Pdgfra-Cre）</strong>：完全阻止 bleomycin 诱导的皮肤纤维化（COL1A1, FN-EDA 表达下降）</li>
+<li><strong>AZD8330 (MEK i) + erlotinib (EGFR i)</strong>：同样阻止纤维化</li>
+<li>免疫细胞比例在 STAT1 敲除后<strong>不受影响</strong>（排除免疫间接效应）</li>
+<li>证明：<strong>成纤维细胞自身的 STAT1 + EGFR 活性是纤维化发生的细胞自主性必要条件</strong></li>
+</ul>
+<blockquote>
+<p>Fig. 3 | Fibroblast STAT1 and EGFR activity are required for fibrosis development in vivo</p>
+</blockquote>
+<hr>
+<h3 id="section-9">Fig. 4 | EGFR 直接磷酸化 STAT1（非 JAK 依赖）<a class="heading-anchor" href="#section-9" aria-label="链接到本节">#</a></h3>
+<img src="../../assets/notes/literature/a9ab76cf1880c66cdb2532b2/ebc31b.png" alt="Figure 4.png"><ul>
+<li><strong>Co-IP 实验</strong>：EGFR 与 STAT1 直接相互作用</li>
+<li><strong>TGFA 刺激</strong>：在 30 min 达到 STAT1 Y701 磷酸化峰值（早于 IFN 诱导的延迟 STAT1 磷酸化）</li>
+<li><strong>IFN 诱导的 STAT1 磷酸化</strong>：由 JAK1/JAK2 介导，peak 在 2-6 h</li>
+<li><strong>EGFR 磷酸化 STAT1 不依赖 JAK 激酶</strong>：磷酸化谱与 IFN 刺激不同</li>
+<li><strong>EGFR-STAT1 诱导的纤维化基因</strong>（CTGF, CCL2, IL6, CYR61）与 <strong>IFN 诱导的 ISG（BST2, IFIH1）转录组谱显著不同</strong></li>
+</ul>
+<blockquote>
+<p>Fig. 4 | EGFR can directly phosphorylate STAT1 in human dermal fibroblasts in a JAK-independent manner</p>
+</blockquote>
+<hr>
+<h3 id="section-10">Fig. 5 | TGFA 诱导 STAT1 依赖性纤维化转录组<a class="heading-anchor" href="#section-10" aria-label="链接到本节">#</a></h3>
+<img src="../../assets/notes/literature/a9ab76cf1880c66cdb2532b2/09a960.png" alt="Figure 5.png"><ul>
+<li><strong>TGFA 处理 HFF</strong>：EGR1, FOS 在 1 h 内快速上调（STAT1 非依赖），随后 STAT1 依赖性纤维化基因 CTGF, CCL2, IL6, CYR61, WISP1, WISP2 在 4 h 达峰</li>
+<li><strong>IFNα2 诱导 ISG（BST2, IFIH1）</strong>：在 24 h 持续升高，STAT1 依赖但 <strong>不诱导纤维化基因</strong></li>
+<li><strong>STAT1 结合位点</strong>：EGR1, FOS 启动子含 EGFR/ERK/ELK4 结合位点（不依赖 STAT1）；CTGF, CCL2 含 STAT1 结合位点</li>
+<li><strong>关键区别</strong>：TGFA-EGFR-STAT1 与 IFN-JAK-STAT1 产生<strong>功能不同的转录组</strong></li>
+</ul>
+<blockquote>
+<p>Fig. 5 | EGFR activation by TGFA leads to a fibrotic STAT1-dependent transcriptional profile distinct from IFN signaling</p>
+</blockquote>
+<hr>
+<h3 id="section-11">Fig. 6 | ERK-EGR1/FOS 启动通路<a class="heading-anchor" href="#section-11" aria-label="链接到本节">#</a></h3>
+<img src="../../assets/notes/literature/a9ab76cf1880c66cdb2532b2/86b813.png" alt="Figure 6.png"><ul>
+<li><strong>MEK 抑制剂 AZD8330</strong>：阻断 ERK 磷酸化后，TGFA 仍可磷酸化 EGFR 和 STAT1，但 <strong>EGR1, CTGF, CCL2 表达下降</strong></li>
+<li><strong>EGR1, FOS 启动子</strong>：含 ELK4（ERK 下游 TF）结合位点</li>
+<li><strong>ERK 抑制剂（temuterkib, AZD8330）</strong>：阻断 EGR1/CTGF/CCL2 诱导，但不阻断 STAT1 磷酸化</li>
+<li><strong>通路顺序</strong>：TGFA → EGFR → ERK → ELK4 → EGR1/FOS → <strong>(启动)</strong> → STAT1 → 纤维化基因</li>
+</ul>
+<blockquote>
+<p>Fig. 6 | EGFR initiates fibrotic gene expression through ERK-dependent EGR1/FOS activation (initiation step), then STAT1 drives the fibrotic gene program</p>
+</blockquote>
+<hr>
+<h3 id="section-12">Fig. 7 | 角质形成细胞是 TGFA 的主要来源<a class="heading-anchor" href="#section-12" aria-label="链接到本节">#</a></h3>
+<img src="../../assets/notes/literature/a9ab76cf1880c66cdb2532b2/3d6911.png" alt="Figure 7.png">
+<img src="../../assets/notes/literature/a9ab76cf1880c66cdb2532b2/355a0e.png" alt="Figure 7K-M.png"><ul>
+<li><strong>TGFA 免疫荧光</strong>：疾病皮肤表皮中 KRT16+ 角质形成细胞强共表达 TGFA，健康皮肤无</li>
+<li><strong>KRT6A/KRT16</strong>：表皮各层均有，在 fibroinflammatory 疾病中共享性上调</li>
+<li><strong>TGFA 是最早上调的 EGFR 配体</strong>：在小鼠 bleomycin 模型中，<strong>Tgfa 在纤维化早期（day 3）即上调</strong>，而 Ereg 在维持期上调</li>
+<li><strong>角质形成细胞 shared stress response</strong>：SSc + HS + lupus 角质形成细胞共有 100 个上调基因（stress keratins + 损伤信号）</li>
+<li><strong>FnEDA, Tnc</strong>（纤维化 ECM marker）与 Tgfa 表达时间一致</li>
+</ul>
+<blockquote>
+<p>Fig. 7 | Activated keratinocytes are the main source of TGFA in fibrotic skin. KRT16+ keratinocytes co-express TGFA in diseased skin; Tgfa upregulation early in mouse fibrosis corresponds with ECM gene expression</p>
+</blockquote>
+<hr>
+<h3 id="section-13">Fig. 8 | 机制模型<a class="heading-anchor" href="#section-13" aria-label="链接到本节">#</a></h3>
+<img src="../../assets/notes/literature/a9ab76cf1880c66cdb2532b2/a20a4a.png" alt="Figure 8.png"><blockquote>
+<p>Fig. 8 | Model: Keratinocyte-derived high-affinity EGFR ligand (TGFA) activates EGFR-STAT1 signaling in dermal fibroblasts, driving a pro-fibrotic transcriptional program. TGFA is a keratinocyte damage signal; fludarabine blocks EGFR-STAT1-driven fibrosis</p>
+</blockquote>
+<hr>
+<h2 id="section-14">Signaling Pathway Model | 信号通路模型<a class="heading-anchor" href="#section-14" aria-label="链接到本节">#</a></h2>
+<pre><code>角质形成细胞（损伤/应激）
+        ↓ TGFA（高亲和力 EGFR 配体，上调）
+        
+EGFR（成纤维细胞膜）
+  ├─→ ERK ─→ ELK4 ─→ EGR1/FOS  ←── STAT1 非依赖（启动步骤）
+  │
+  └─→ (直接) STAT1 Y701 磷酸化  ←── JAK 非依赖
+            ↓
+     STAT1 二聚体 → 核转位
+            ↓
+     纤维化基因转录：CTGF, CCL2, IL6, CYR61, WISP1, WISP2
+            ↓
+     细胞外基质沉积 → 皮肤纤维化
+</code></pre>
+<blockquote>
+<p><strong>注意</strong>：IFN-JAK-STAT1 通路（STAT1 磷酸化由 JAK1/JAK2 介导）→ ISG 表达（BST2, IFIH1）≠ 纤维化</p>
+</blockquote>
+<hr>
+<h2 id="section-15">Therapeutic Implications | 治疗启示<a class="heading-anchor" href="#section-15" aria-label="链接到本节">#</a></h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>药物</th>
+<th>靶点</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Fludarabine</strong> (STAT1 磷酸化抑制剂)</td>
+<td>STAT1</td>
+<td>阻断 TGFA 诱导的纤维化基因，体内抗纤维化</td>
+</tr>
+<tr>
+<td><strong>Erlotinib</strong> (EGFR 抑制剂)</td>
+<td>EGFR</td>
+<td>阻断纤维化发展</td>
+</tr>
+<tr>
+<td><strong>AZD8330</strong> (MEK 抑制剂)</td>
+<td>MEK/ERK</td>
+<td>阻断 EGR1/FOS 启动步骤</td>
+</tr>
+</tbody></table></div>
+<ul>
+<li><strong>Fludarabine</strong> 目前用于血液肿瘤（STAT1 在肿瘤免疫逃逸中的作用），有潜在皮肤纤维化治疗价值</li>
+<li><strong>EGFR 抑制剂</strong>（已在肝纤维化、移植物抗宿主病中证实抗纤维化）可能对 SSc 皮肤有效</li>
+</ul>
+<hr>
+<h2 id="section-16">Limitations | 局限性<a class="heading-anchor" href="#section-16" aria-label="链接到本节">#</a></h2>
+<ol>
+<li>Fibroinflammatory 皮肤疾病具有<strong>阶段性和内型异质性</strong>（SSc 分为水肿期/纤维化期/萎缩期），现有 atlas 缺乏详细的患者分期 metadata</li>
+<li>轻症与重症疾病亚群的信号机制差异尚不清楚</li>
+<li>临床转化仍需人体试验验证</li>
+</ol>
+<hr>
+<h2 id="section-17">References | 核心参考文献<a class="heading-anchor" href="#section-17" aria-label="链接到本节">#</a></h2>
+<ul>
+<li><ol start="14">
+<li>Fuchs, B. C. et al. EGFR inhibition attenuates liver fibrosis. <em>Hepatology</em> 59, 1577–1590 (2014)</li>
+</ol>
+</li>
+<li><ol start="17">
+<li>Morin, F. et al. EGFR inhibition prevents sclerodermatous GVHD. <em>J Invest Dermatol</em> 135, 2385–2393 (2015)</li>
+</ol>
+</li>
+<li><ol start="18">
+<li>Cao, S. et al. EGFR activation is essential for kidney fibrosis. <em>Nat Commun</em> 14, 7357 (2023)</li>
+</ol>
+</li>
+<li><ol start="26">
+<li>[Ereg 在皮肤纤维化维持期上调的既往研究]</li>
+</ol>
+</li>
+<li><ol start="50">
+<li>ORegAnno database（STAT1 promoter binding sites）</li>
+</ol>
+</li>
+<li><ol start="60">
+<li>Maul, J. T. et al. Skin disease treatment response data</li>
+</ol>
+</li>
+<li><ol start="71">
+<li>SSc 疾病分期</li>
+</ol>
+</li>
+<li>72-74. HS 疾病表型分类</li>
+</ul>
+<hr>
+<h2 id="section-18">Related Notes | 相关笔记<a class="heading-anchor" href="#section-18" aria-label="链接到本节">#</a></h2>
+<ul>
+<li><span class="unavailable-link" title="本地目标尚未找到，请核对来源笔记">EGFR signaling pathway</span> — EGFR 信号通路的经典与新兴功能</li>
+<li><span class="unavailable-link" title="本地目标尚未找到，请核对来源笔记">STAT1 signaling</span> — STAT1 在免疫与纤维化中的双重角色</li>
+<li><span class="unavailable-link" title="本地目标尚未找到，请核对来源笔记">Systemic sclerosis pathogenesis</span> — 系统性硬化症发病机制</li>
+<li><span class="unavailable-link" title="本地目标尚未找到，请核对来源笔记">Fibroblast scRNA-seq</span> — 成纤维细胞单细胞分析综述</li>
+<li><span class="unavailable-link" title="本地目标尚未找到，请核对来源笔记">Hidradenitis suppurativa</span> — 化脓性汗腺炎研究进展</li>
+</ul>
+<hr>
+<p><em>文献导入时间：2026-04-14 | Zotero ItemID: 1747 | PDF: <span class="unavailable-link" title="此资料未包含在阅读站点，请在本地知识库打开">2025_Odell_EGFR-STAT1_fibrosis.pdf</span></em></p>
+
+<footer class="doc-footer">
+<div>板块：文献整理 · 分类：论文精读 · 更新：2026/10/26</div>
+<div>HTML 生成：2026/10/27 02:20:59 · 生成器 v1.2.0 · Markdown 是内容源，重新渲染即可更新本页。</div>
+</footer>
+</div></article></main>
+<div class="image-viewer" id="image-viewer" hidden role="dialog" aria-modal="true" aria-labelledby="image-viewer-title">
+<div class="image-viewer-bar">
+<div class="image-viewer-title" id="image-viewer-title">论文原图</div>
+<div class="image-viewer-actions">
+<button class="image-viewer-action" id="image-zoom-toggle" type="button" aria-pressed="false">原始尺寸</button>
+<a class="image-viewer-action" id="image-open-original" href="#" target="_blank" rel="noopener noreferrer">新标签打开</a>
+<button class="image-viewer-action" id="image-viewer-close" type="button" aria-label="关闭图片查看器">关闭</button>
+</div></div>
+<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt=""></div>
+</div>
+<script>
+(function(){
+var root=document.documentElement;
+function readSetting(key){try{return localStorage.getItem(key);}catch(_){return null;}}function saveSetting(key,value){try{localStorage.setItem(key,value);}catch(_){}}
+var saved=readSetting("kb-site-theme")||readSetting("kb-theme");
+if(saved){root.dataset.theme=saved;}
+var theme=document.getElementById("theme-toggle");
+function syncTheme(){theme.textContent=root.dataset.theme==="dark"?"浅色":"深色";}
+syncTheme();
+theme.addEventListener("click",function(){root.dataset.theme=root.dataset.theme==="dark"?"light":"dark";saveSetting("kb-site-theme",root.dataset.theme);syncTheme();});
+var size=Math.max(13,Math.min(21,Number(readSetting("kb-font-size"))||16));
+function applySize(){root.style.fontSize=size+"px";saveSetting("kb-font-size",String(size));}
+applySize();
+document.getElementById("font-minus").addEventListener("click",function(){size=Math.max(13,size-1);applySize();});
+document.getElementById("font-plus").addEventListener("click",function(){size=Math.min(21,size+1);applySize();});
+document.getElementById("print-page").addEventListener("click",function(){window.print();});
+var progress=document.getElementById("reading-progress");
+function updateProgress(){var h=document.documentElement.scrollHeight-window.innerHeight;progress.style.width=(h>0?Math.min(100,window.scrollY/h*100):0)+"%";}
+window.addEventListener("scroll",updateProgress,{passive:true});updateProgress();
+var links=Array.from(document.querySelectorAll("#toc-nav .toc-link"));
+var targets=links.map(function(a){var id=a.getAttribute("href").slice(1);try{id=decodeURIComponent(id);}catch(_){}return document.getElementById(id);});
+if("IntersectionObserver" in window){var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){links.forEach(function(a){a.classList.remove("active");});var index=targets.indexOf(entry.target);if(index>=0){links[index].classList.add("active");}}});},{rootMargin:"-15% 0px -72% 0px",threshold:0});targets.forEach(function(t){if(t)observer.observe(t);});}
+var viewer=document.getElementById("image-viewer");
+var viewerImage=document.getElementById("image-viewer-img");
+var viewerTitle=document.getElementById("image-viewer-title");
+var viewerStage=document.getElementById("image-viewer-stage");
+var zoomToggle=document.getElementById("image-zoom-toggle");
+var openOriginal=document.getElementById("image-open-original");
+var closeViewer=document.getElementById("image-viewer-close");
+var lastTrigger=null;var zoomed=false;
+function setZoom(value){zoomed=value;viewerStage.dataset.zoomed=value?"true":"false";zoomToggle.setAttribute("aria-pressed",value?"true":"false");zoomToggle.textContent=value?"适应屏幕":"原始尺寸";if(value){viewerImage.style.width=viewerImage.naturalWidth+"px";}else{viewerImage.style.width="";}viewerStage.scrollTop=0;viewerStage.scrollLeft=0;}
+function openViewer(trigger){lastTrigger=trigger;var image=trigger.querySelector("img");if(!image)return;var title=image.getAttribute("alt")||image.getAttribute("src")||"论文原图";viewerImage.src=trigger.getAttribute("href")||image.getAttribute("src");viewerImage.alt=title;viewerTitle.textContent=title;openOriginal.href=trigger.getAttribute("href")||image.getAttribute("src");setZoom(false);viewer.hidden=false;document.body.classList.add("image-viewer-open");closeViewer.focus();}
+function dismissViewer(){viewer.hidden=true;document.body.classList.remove("image-viewer-open");viewerImage.removeAttribute("src");if(lastTrigger){lastTrigger.focus();lastTrigger=null;}}
+Array.from(document.querySelectorAll("#article-content a")).forEach(function(link){var href=link.getAttribute("href")||"";if(link.querySelector("img")&&!link.hasAttribute("target")&&!/^(https?:|mailto:|#|javascript:)/i.test(href)){link.setAttribute("data-image-viewer","true");link.addEventListener("click",function(event){event.preventDefault();openViewer(link);});}});
+zoomToggle.addEventListener("click",function(){setZoom(!zoomed);});
+viewerStage.addEventListener("click",function(){setZoom(!zoomed);});
+closeViewer.addEventListener("click",dismissViewer);
+viewer.addEventListener("click",function(event){if(event.target===viewer)dismissViewer();});
+document.addEventListener("keydown",function(event){if(viewer.hidden)return;if(event.key==="Escape"){dismissViewer();}else if(event.key==="+"||event.key==="="){setZoom(true);}else if(event.key==="-"){setZoom(false);}});
+})();
+</script>
+<script src="../../assets/site.js?v=6dff557a9e"></script>
 </body>
 </html>
