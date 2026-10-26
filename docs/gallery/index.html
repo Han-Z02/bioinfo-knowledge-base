@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:,">
+<meta name="description" content="生信图册：按主题浏览可视化图例与可复现代码，每张图有唯一 plotN 编号。">
+<title>生信图册 · 生信知识库</title>
+<style>
+:root{--bg:#f2f4f2;--paper:#fff;--fg:#192126;--muted:#667178;--line:#d9dfdc;--accent:#0b6b61;--accent-2:#0b5e9d;--soft:#eef4f2;--shadow:0 10px 30px rgba(22,40,36,.07)}
+@media(prefers-color-scheme:dark){:root{--bg:#111616;--paper:#182020;--fg:#e8efec;--muted:#a4b1ac;--line:#34413d;--accent:#5bc4b4;--accent-2:#79b9eb;--soft:#202c2a;--shadow:0 12px 34px rgba(0,0,0,.28)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;line-height:1.78}
+a{color:var(--accent-2);text-decoration:none}a:hover{text-decoration:underline}
+.shell{max-width:1100px;margin:0 auto;padding:28px 24px 72px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:34px;font-size:.85rem}
+.top a{color:var(--muted)}
+.hero{background:var(--paper);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);padding:34px 36px;margin-bottom:26px}
+.eyebrow{font-size:.75rem;font-weight:750;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:12px}
+h1{font-family:"Noto Serif CJK SC","Songti SC",Georgia,serif;font-size:1.95rem;line-height:1.35;margin:0 0 12px;font-weight:760}
+.lede{color:var(--muted);margin:0;max-width:760px}
+.note{margin-top:16px;padding:11px 14px;background:var(--soft);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;font-size:.85rem;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(288px,1fr));gap:16px}
+.card{display:block;background:var(--paper);border:1px solid var(--line);border-radius:9px;padding:20px 22px;box-shadow:var(--shadow);transition:border-color .18s,transform .18s}
+.card:hover{border-color:var(--accent);text-decoration:none;transform:translateY(-2px)}
+.card h2{font-size:1.02rem;margin:0 0 8px;font-weight:700;color:var(--fg)}
+.card p{margin:0;font-size:.85rem;color:var(--muted);line-height:1.6}
+.card .go{display:inline-block;margin-top:12px;font-size:.8rem;color:var(--accent-2);font-weight:650}
+.sub{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px}
+.sub a{font-size:.74rem;padding:3px 9px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
+.sub a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:34px 0 14px;font-weight:700}
+.foot{margin-top:38px;padding-top:18px;border-top:1px solid var(--line);font-size:.79rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="shell">
+  <div class="top">
+    <a href="../index.html">← 生信知识库</a>
+    <a href="https://han-z02.github.io/bioinfo-figure-gallery/" target="_blank" rel="noopener noreferrer">打开图册站点 ↗</a>
+  </div>
+
+  <section class="hero">
+    <p class="eyebrow">Figure Gallery</p>
+    <h1>生信图册</h1>
+    <p class="lede">按主题浏览生信可视化图例与可复现代码。每个专题有一个全站唯一的
+      <code>plotN</code> 编号，站内 URL、MCP 绘图工具名与之一一对应。</p>
+    <div class="note">图册是<b>公开站点</b>，与本站（加密阅读层）用途不同，通过超链接串联：
+      知识库放笔记与流程，图册放图例与可跑代码。本页不加密。</div>
+  </section>
+
+  <h3>按分类进入</h3>
+  <div class="grid">
+    <a class="card" href="https://han-z02.github.io/bioinfo-figure-gallery/gallery/single-cell/" target="_blank" rel="noopener noreferrer">
+      <h2>单细胞转录组</h2>
+      <p>单细胞全流程：注释、聚类、通讯、拟时序、转录因子、代谢。</p>
+      <span class="go">浏览图例 →</span>
+    </a>
+    <a class="card" href="https://han-z02.github.io/bioinfo-figure-gallery/gallery/visualization/" target="_blank" rel="noopener noreferrer">
+      <h2>顶刊可视化复现</h2>
+      <p>小提琴、热图、火山、GSEA、雷达、三元图等纯绘图技巧。</p>
+      <span class="go">浏览图例 →</span>
+    </a>
+    <a class="card" href="https://han-z02.github.io/bioinfo-figure-gallery/gallery/spatial/" target="_blank" rel="noopener noreferrer">
+      <h2>空间转录组</h2>
+      <p>按平台分：Visium / Xenium / CosMx / Stereo-seq / 其他。</p>
+    <div class="sub">
+      <a href="https://han-z02.github.io/bioinfo-figure-gallery/gallery/spatial/overview/" target="_blank" rel="noopener noreferrer">平台总览</a>
+      <a href="https://han-z02.github.io/bioinfo-figure-gallery/gallery/spatial/visium/" target="_blank" rel="noopener noreferrer">10x Visium</a>
+      <a href="https://han-z02.github.io/bioinfo-figure-gallery/gallery/spatial/xenium/" target="_blank" rel="noopener noreferrer">10x Xenium</a>
+      <a href="https://han-z02.github.io/bioinfo-figure-gallery/gallery/spatial/cosmx/" target="_blank" rel="noopener noreferrer">CosMx</a>
+      <a href="https://han-z02.github.io/bioinfo-figure-gallery/gallery/spatial/stereo-seq/" target="_blank" rel="noopener noreferrer">Stereo-seq</a>
+      <a href="https://han-z02.github.io/bioinfo-figure-gallery/gallery/spatial/other/" target="_blank" rel="noopener noreferrer">其他平台</a>
+    </div>
+      <span class="go">浏览图例 →</span>
+    </a>
+    <a class="card" href="https://han-z02.github.io/bioinfo-figure-gallery/gallery/bulk/" target="_blank" rel="noopener noreferrer">
+      <h2>Bulk 转录组</h2>
+      <p>bulk 下游分析与 PCA 美化。</p>
+      <span class="go">浏览图例 →</span>
+    </a>
+    <a class="card" href="https://han-z02.github.io/bioinfo-figure-gallery/gallery/data/" target="_blank" rel="noopener noreferrer">
+      <h2>数据下载与备份</h2>
+      <p>Zenodo 加速、GSA 下载、网盘备份。</p>
+      <span class="go">浏览图例 →</span>
+    </a>
+    <a class="card" href="https://han-z02.github.io/bioinfo-figure-gallery/gallery/resources/" target="_blank" rel="noopener noreferrer">
+      <h2>数据库与资源</h2>
+      <p>按研究主题整理的数据集清单。</p>
+      <span class="go">浏览图例 →</span>
+    </a>
+    <a class="card" href="https://han-z02.github.io/bioinfo-figure-gallery/gallery/aivc/" target="_blank" rel="noopener noreferrer">
+      <h2>AIVC / 基础模型</h2>
+      <p>Geneformer 等单细胞基础模型实战。</p>
+      <span class="go">浏览图例 →</span>
+    </a>
+    <a class="card" href="https://han-z02.github.io/bioinfo-figure-gallery/gallery/svg/" target="_blank" rel="noopener noreferrer">
+      <h2>SVG 绘图</h2>
+      <p>程序化生成矢量图（富集图、比例图、棒棒糖）。</p>
+      <span class="go">浏览图例 →</span>
+    </a>
+    <a class="card" href="https://han-z02.github.io/bioinfo-figure-gallery/gallery/r-packages/" target="_blank" rel="noopener noreferrer">
+      <h2>R 包收藏</h2>
+      <p>包级专题：可运行示例 + 实测踩坑 + 预览图。</p>
+      <span class="go">浏览图例 →</span>
+    </a>
+  </div>
+
+  <div class="foot">
+    图册仓库：<a href="https://github.com/Han-Z02/bioinfo-figure-gallery" target="_blank" rel="noopener noreferrer">Han-Z02/bioinfo-figure-gallery</a>
+    · 代码来源：<code>hz-bioinfo-codes</code>（私有）
+  </div>
+</div>
+</body>
+</html>
