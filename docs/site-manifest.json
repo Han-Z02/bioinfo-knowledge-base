@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "siteUrl": "https://han-z02.github.io/bioinfo-knowledge-base",
-  "generatedAt": "2026-10-26T18:21:00.501Z",
+  "generatedAt": "2026-10-27T16:58:19Z",
   "sections": [
     {
       "id": "literature",
@@ -95,7 +95,7 @@
           ]
         },
         {
-          "title": "中文标题",
+          "title": "Zotero 论文导入与 Obsidian 归档工作流",
           "subtitle": "",
           "kb_id": "KB-000057",
           "url": "literature/notes/fe9fcdaa29ac8cb5c8b4b2d4.html",
@@ -152,7 +152,7 @@
           ]
         },
         {
-          "title": "文献汇报",
+          "title": "Deep-Phase：从凝聚体形态解码功能扰动",
           "subtitle": "",
           "kb_id": "KB-000053",
           "url": "literature/notes/d958971a35d1f67755b76c38.html",
@@ -288,7 +288,7 @@
           ]
         },
         {
-          "title": "文献汇报",
+          "title": "OXGR1 激活机制与玫瑰痤疮红斑治疗",
           "subtitle": "",
           "kb_id": "KB-000045",
           "url": "literature/notes/8482b1484fbd621a18e2d95f.html",
@@ -357,7 +357,7 @@
           ]
         },
         {
-          "title": "文献汇报",
+          "title": "GREM1 通过 LEPR+ 骨骼细胞介导植入周纤维化",
           "subtitle": "",
           "kb_id": "KB-000040",
           "url": "literature/notes/3731a46ebc1687f7e54110cf.html",
@@ -456,7 +456,7 @@
           ]
         },
         {
-          "title": "文献汇报",
+          "title": "代谢支持保护放射性黏膜炎中的黏膜免受铁死亡",
           "subtitle": "",
           "kb_id": "KB-000032",
           "url": "literature/notes/174dbdb5483c7b00db208737.html",
@@ -648,7 +648,7 @@
           ]
         },
         {
-          "title": "文献汇报",
+          "title": "功能性抑制 LEPR+ 骨骼细胞防治植入周纤维化",
           "subtitle": "",
           "kb_id": "KB-000025",
           "url": "literature/notes/b2ae10c63bedb9c060ac5d70.html",
@@ -658,7 +658,7 @@
           "tags": []
         },
         {
-          "title": "文献汇报",
+          "title": "基于图关联统一嵌入的单细胞多组学整合与调控推断",
           "subtitle": "",
           "kb_id": "KB-000023",
           "url": "literature/notes/7fdc9e098e82df552994ad97.html",
@@ -767,7 +767,7 @@
       "title": "口腔生信研究",
       "label": "Research",
       "description": "口腔医学与生物信息学交叉课题、数据集、方法笔记和项目进展。",
-      "count": 17,
+      "count": 16,
       "subsections": [
         {
           "id": "datasets",
@@ -787,7 +787,7 @@
           "id": "projects",
           "title": "研究项目",
           "description": "课题概览、研究计划和推进记录。",
-          "count": 3,
+          "count": 2,
           "url": "oral-research/projects.html"
         },
         {
@@ -812,16 +812,6 @@
             "llm-wiki",
             "research-os"
           ]
-        },
-        {
-          "title": "未命名笔记",
-          "subtitle": "",
-          "kb_id": "KB-000016",
-          "url": "oral-research/notes/5f4e1e33b41102ce86209910.html",
-          "category": "研究项目",
-          "subsection": "projects",
-          "updated": "2026-10-25T17:37:28.558Z",
-          "tags": []
         },
         {
           "title": "Project: Periodontitis Bioinformatics",
@@ -1036,7 +1026,7 @@
       "title": "生信教程与工具",
       "label": "Methods",
       "description": "单细胞、空间组学、可视化、服务器与生信工具的可复用教程。",
-      "count": 37,
+      "count": 36,
       "subsections": [
         {
           "id": "web-clips",
@@ -1049,7 +1039,7 @@
           "id": "workflows",
           "title": "分析流程",
           "description": "单细胞、空间组学等完整分析路线。",
-          "count": 7,
+          "count": 6,
           "url": "bioinfo-tools/workflows.html"
         },
         {
@@ -1110,16 +1100,6 @@
             "classification",
             "index"
           ]
-        },
-        {
-          "title": "未命名笔记",
-          "subtitle": "",
-          "kb_id": "KB-000093",
-          "url": "bioinfo-tools/notes/b963cf83cff6e2c061b0a9e4.html",
-          "category": "分析流程",
-          "subsection": "workflows",
-          "updated": "2026-10-25T17:37:28.601Z",
-          "tags": []
         },
         {
           "title": "单细胞动态分析：Vector Field 向量场分析 与 RNA velocity / scVelo 的关系",
@@ -1734,7 +1714,7 @@
       "title": "AI 与自动化",
       "label": "Automation",
       "description": "AI 编程、MCP、skills、API 与科研自动化工作流。",
-      "count": 24,
+      "count": 22,
       "subsections": [
         {
           "id": "clips",
@@ -1747,7 +1727,7 @@
           "id": "claude-code",
           "title": "Claude Code",
           "description": "Claude Code、终端代理与 AI 编程。",
-          "count": 5,
+          "count": 4,
           "url": "ai-automation/claude-code.html"
         },
         {
@@ -1763,13 +1743,6 @@
           "description": "Agent skills、提示词与可复用能力。",
           "count": 3,
           "url": "ai-automation/skills.html"
-        },
-        {
-          "id": "api",
-          "title": "API 与接入",
-          "description": "API 服务、模型接入和客户端配置。",
-          "count": 1,
-          "url": "ai-automation/api.html"
         },
         {
           "id": "automation",
@@ -1884,28 +1857,6 @@
             "ssh",
             "workflow",
             "暂未试用"
-          ]
-        },
-        {
-          "title": "未命名笔记",
-          "subtitle": "",
-          "kb_id": "KB-000111",
-          "url": "ai-automation/notes/4ea572683ebdd247268c97c9.html",
-          "category": "API 与接入",
-          "subsection": "api",
-          "updated": "2026-10-25T17:37:28.610Z",
-          "tags": []
-        },
-        {
-          "title": "chenhg5/cc-connect: Bridge local AI coding agents (Claude Code, Cursor, Gemini CLI, Codex) to messaging platforms (Feishu/Lark, DingTalk, Slack, Telegram, Discord, LINE, WeChat Work). Chat with your AI dev assistant from anywhere — no public IP required for most platforms.",
-          "subtitle": "",
-          "kb_id": "KB-000110",
-          "url": "ai-automation/notes/0e566e0f2532f22b34e2598f.html",
-          "category": "Claude Code",
-          "subsection": "claude-code",
-          "updated": "2026-10-25T17:37:28.609Z",
-          "tags": [
-            "clippings"
           ]
         },
         {

@@ -79,12 +79,12 @@ body.image-viewer-open{overflow:hidden}
 @media(max-width:620px){.hero h1{font-size:1.58rem}.subtitle{font-size:.92rem}.meta-badges,.tags,.actions{gap:5px}.content{line-height:1.72}.content h2{font-size:1.32rem}.content h3{font-size:1.08rem}}
 @media(max-width:620px){.image-viewer-bar{padding:8px 10px}.image-viewer-stage{padding:10px}.image-viewer-action{padding:5px 8px}}
 @media print{.reading-progress,.topbar,.toc,.mobile-toc,.toolbar,.heading-anchor,.image-viewer{display:none!important}body{background:#fff;color:#000}.layout{display:block;max-width:none;padding:0}.article{border:0;box-shadow:none}.hero{padding:0 0 18px;background:#fff}.content{padding:0;max-width:none}a{color:#000}.table-wrap{overflow:visible}.content table{min-width:0}}</style>
-<meta name="description" content="起 ，NCBI 将 停止支持 rsync 协议 下载。 受影响的是所有依赖 rsync 拉取 NCBI/FTP 数据的旧脚本、自动化流程和下载管线。 官方会在 2026-05-12 和 2026-05-27 进行 brownout（断网演练） ，可提前用来测试脚本是否会失效。 安全性 ：rsync 已不太适配现代网络安全要求。 稳定性/扩展性 ：NCBI 正转向 HTTPS 和专用 API / CLI 工具 ，以支撑更大规模并发下载。 数据规模增长 ：例如 GenBank R"><meta property="og:title" content="NCBI 下载方式变更速记"><meta property="og:description" content="起 ，NCBI 将 停止支持 rsync 协议 下载。 受影响的是所有依赖 rsync 拉取 NCBI/FTP 数据的旧脚本、自动化流程和下载管线。 官方会在 2026-05-12 和 2026-05-27 进行 brownout（断网演练） ，可提前用来测试脚本是否会失效。 安全性 ：rsync 已不太适配现代网络安全要求。 稳定性/扩展性 ：NCBI 正转向 HTTPS 和专用 API / CLI 工具 ，以支撑更大规模并发下载。 数据规模增长 ：例如 GenBank R"><meta property="og:type" content="article"><meta property="og:url" content="https://han-z02.github.io/bioinfo-knowledge-base/oral-research/notes/0e53b413ff145276e2d5036d.html"><style>.site-home-link{color:var(--fg);font-weight:650}.site-home-link:hover{color:var(--accent);text-decoration:none}.kb-id-badge{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;padding:2px 8px;margin-left:6px;background:var(--soft);color:var(--accent);font:600 .68rem/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:nowrap}.crumb-sep{margin:0 7px;color:var(--line)}.missing-media{display:block;padding:13px 15px;border:1px dashed var(--line);border-radius:6px;color:var(--muted);font-size:.84rem;margin:1em 0}.unavailable-link{color:var(--muted);border-bottom:1px dotted currentColor;cursor:help}</style></head>
+<meta name="description" content="起 ，NCBI 将 停止支持 rsync 协议 下载。 受影响的是所有依赖 rsync 拉取 NCBI/FTP 数据的旧脚本、自动化流程和下载管线。 官方会在 2026-05-12 和 2026-05-27 进行 brownout（断网演练） ，可提前用来测试脚本是否会失效。 安全性 ：rsync 已不太适配现代网络安全要求。 稳定性/扩展性 ：NCBI 正转向 HTTPS 和专用 API / CLI 工具 ，以支撑更大规模并发下载。 数据规模增长 ：例如 GenBank R"><meta property="og:title" content="NCBI 下载方式变更速记"><meta property="og:description" content="起 ，NCBI 将 停止支持 rsync 协议 下载。 受影响的是所有依赖 rsync 拉取 NCBI/FTP 数据的旧脚本、自动化流程和下载管线。 官方会在 2026-05-12 和 2026-05-27 进行 brownout（断网演练） ，可提前用来测试脚本是否会失效。 安全性 ：rsync 已不太适配现代网络安全要求。 稳定性/扩展性 ：NCBI 正转向 HTTPS 和专用 API / CLI 工具 ，以支撑更大规模并发下载。 数据规模增长 ：例如 GenBank R"><meta property="og:type" content="article"><meta property="og:url" content="https://han-z02.github.io/bioinfo-knowledge-base/oral-research/notes/0e53b413ff145276e2d5036d.html"><style>.site-home-link{color:var(--fg);font-weight:650}.site-home-link:hover{color:var(--accent);text-decoration:none}.kb-id-badge{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;padding:2px 8px;margin-left:6px;background:var(--soft);color:var(--accent);font:600 .68rem/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:nowrap}.crumb-sep{margin:0 7px;color:var(--line)}.missing-media{display:block;padding:13px 15px;border:1px dashed var(--line);border-radius:6px;color:var(--muted);font-size:.84rem;margin:1em 0}.unavailable-link{color:var(--muted);border-bottom:1px dotted currentColor;cursor:help}</style><link rel="canonical" href="https://han-z02.github.io/bioinfo-knowledge-base/oral-research/notes/0e53b413ff145276e2d5036d.html"></head>
 <body>
 <div class="reading-progress" id="reading-progress"></div>
 <header class="topbar"><div class="topbar-inner">
 <div class="topbar-title"><a class="site-home-link" href="../../index.html">知识库</a><span class="crumb-sep">/</span><a class="site-home-link" href="../index.html">口腔生信研究</a><span class="crumb-sep">/</span><a class="site-home-link" href="../knowledge.html">Wiki 知识</a></div>
-<div class="toolbar"><a class="tool-button" href="../../search.html">全库搜索</a><button class="tool-button" id="site-lock" type="button" title="锁定当前浏览会话">锁定</button>
+<div class="toolbar"><a class="tool-button" href="../../search.html">全库搜索</a>
 <button class="tool-button" id="font-minus" type="button">A-</button>
 <button class="tool-button" id="font-plus" type="button">A+</button>
 <button class="tool-button" id="theme-toggle" type="button">深色</button>
@@ -92,7 +92,7 @@ body.image-viewer-open{overflow:hidden}
 <a  class="tool-button" href="0e53b413ff145276e2d5036d.html">Markdown</a>
 <a class="tool-button" href="../../gallery/index.html" data-gallery-entry="btn">图册</a></div></div></header>
 <main class="layout">
-<aside class="toc"><nav class="sidebar-section-nav" aria-label="口腔生信研究子栏目"><div class="sidebar-nav-title">口腔生信研究</div><a class="sidebar-link" href="../index.html"><span>全部笔记</span><span class="sidebar-count">17</span></a><a class="sidebar-link" href="../datasets.html"><span>数据集与资料</span><span class="sidebar-count">2</span></a><a class="sidebar-link active" href="../knowledge.html"><span>Wiki 知识</span><span class="sidebar-count">11</span></a><a class="sidebar-link" href="../projects.html"><span>研究项目</span><span class="sidebar-count">3</span></a><a class="sidebar-link" href="../other.html"><span>其他资料</span><span class="sidebar-count">1</span></a></nav><div class="sidebar-divider"></div><p class="toc-title">本文目录</p><nav id="toc-nav"><a class="toc-link toc-h2" href="#section-1">核心变化</a>
+<aside class="toc"><nav class="sidebar-section-nav" aria-label="口腔生信研究子栏目"><div class="sidebar-nav-title">口腔生信研究</div><a class="sidebar-link" href="../index.html"><span>全部笔记</span><span class="sidebar-count">16</span></a><a class="sidebar-link" href="../datasets.html"><span>数据集与资料</span><span class="sidebar-count">2</span></a><a class="sidebar-link active" href="../knowledge.html"><span>Wiki 知识</span><span class="sidebar-count">11</span></a><a class="sidebar-link" href="../projects.html"><span>研究项目</span><span class="sidebar-count">2</span></a><a class="sidebar-link" href="../other.html"><span>其他资料</span><span class="sidebar-count">1</span></a></nav><div class="sidebar-divider"></div><p class="toc-title">本文目录</p><nav id="toc-nav"><a class="toc-link toc-h2" href="#section-1">核心变化</a>
 <a class="toc-link toc-h2" href="#section-2">为什么停用 rsync</a>
 <a class="toc-link toc-h2" href="#section-3">迁移建议</a>
 <a class="toc-link toc-h3" href="#section-4">1. 大型/结构化数据：优先用 NCBI Datasets CLI</a>
@@ -109,7 +109,7 @@ body.image-viewer-open{overflow:hidden}
 
 
 </header>
-<details class="mobile-toc"><summary>板块与文章导航</summary><nav class="sidebar-section-nav" aria-label="口腔生信研究子栏目"><div class="sidebar-nav-title">口腔生信研究</div><a class="sidebar-link" href="../index.html"><span>全部笔记</span><span class="sidebar-count">17</span></a><a class="sidebar-link" href="../datasets.html"><span>数据集与资料</span><span class="sidebar-count">2</span></a><a class="sidebar-link active" href="../knowledge.html"><span>Wiki 知识</span><span class="sidebar-count">11</span></a><a class="sidebar-link" href="../projects.html"><span>研究项目</span><span class="sidebar-count">3</span></a><a class="sidebar-link" href="../other.html"><span>其他资料</span><span class="sidebar-count">1</span></a></nav><nav><a class="toc-link toc-h2" href="#section-1">核心变化</a>
+<details class="mobile-toc"><summary>板块与文章导航</summary><nav class="sidebar-section-nav" aria-label="口腔生信研究子栏目"><div class="sidebar-nav-title">口腔生信研究</div><a class="sidebar-link" href="../index.html"><span>全部笔记</span><span class="sidebar-count">16</span></a><a class="sidebar-link" href="../datasets.html"><span>数据集与资料</span><span class="sidebar-count">2</span></a><a class="sidebar-link active" href="../knowledge.html"><span>Wiki 知识</span><span class="sidebar-count">11</span></a><a class="sidebar-link" href="../projects.html"><span>研究项目</span><span class="sidebar-count">2</span></a><a class="sidebar-link" href="../other.html"><span>其他资料</span><span class="sidebar-count">1</span></a></nav><nav><a class="toc-link toc-h2" href="#section-1">核心变化</a>
 <a class="toc-link toc-h2" href="#section-2">为什么停用 rsync</a>
 <a class="toc-link toc-h2" href="#section-3">迁移建议</a>
 <a class="toc-link toc-h3" href="#section-4">1. 大型/结构化数据：优先用 NCBI Datasets CLI</a>
@@ -175,7 +175,7 @@ curl -O https://sra-pub-run-odp.s3.amazonaws.com/sra/SRR38325455/SRR38325455
 
 <footer class="doc-footer">
 <div>板块：口腔生信研究 · 分类：Wiki 知识 · 更新：2026/10/26</div>
-<div>HTML 生成：2026/10/27 02:21:00 · 生成器 v1.2.0 · Markdown 是内容源，重新渲染即可更新本页。</div>
+<div>HTML 生成：2026/10/27 02:21:00 · 公开版维护：2026/10/28 · 生成器 v1.2.0 · Markdown 是内容源，重新渲染即可更新本页。</div>
 </footer>
 </div></article></main>
 <div class="image-viewer" id="image-viewer" hidden role="dialog" aria-modal="true" aria-labelledby="image-viewer-title">
@@ -229,6 +229,6 @@ viewer.addEventListener("click",function(event){if(event.target===viewer)dismiss
 document.addEventListener("keydown",function(event){if(viewer.hidden)return;if(event.key==="Escape"){dismissViewer();}else if(event.key==="+"||event.key==="="){setZoom(true);}else if(event.key==="-"){setZoom(false);}});
 })();
 </script>
-<script src="../../assets/site.js?v=6dff557a9e"></script>
+<script src="../../assets/site.js?v=0bc9f3ec57"></script>
 </body>
 </html>
