@@ -79,7 +79,7 @@ python3 scripts/check_site.py
 manifest、搜索索引、笔记页和板块卡片；如果后续在源知识库中维护标签，可跳过此脚本。
 
 `curate_home.py` 会把 5 个库索引页从首页“最近更新”中排除，并从搜索索引补齐
-最新 10 篇内容笔记，避免导航页长期占据更新列表。
+最新 10 篇内容笔记，每个板块最多 3 篇，避免导航页或单一板块长期占据更新列表。
 
 `build_sitemap.py` 会为除 `404.html` 外的页面写入 canonical，并重建
 `docs/sitemap.xml`。`check_site.py` 会检查：

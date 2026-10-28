@@ -7,6 +7,7 @@ import html
 import json
 import re
 import sys
+from collections import Counter
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -25,6 +26,7 @@ INDEX_NOTE_IDS = {
     "KB-000136",
     "KB-000137",
 }
+MAX_PER_SECTION = 3
 
 
 def recent_card(note: dict) -> str:
@@ -63,7 +65,17 @@ def main() -> int:
             key=lambda note: (note.get("updated", ""), note.get("kbId", "")),
             reverse=True,
         )
-        cards = "".join(recent_card(note) for note in notes[:10])
+        selected = []
+        section_counts: Counter[str] = Counter()
+        for note in notes:
+            section_id = note.get("section", "")
+            if section_counts[section_id] >= MAX_PER_SECTION:
+                continue
+            selected.append(note)
+            section_counts[section_id] += 1
+            if len(selected) == 10:
+                break
+        cards = "".join(recent_card(note) for note in selected)
 
         text = INDEX.read_text(encoding="utf-8")
         updated, count = re.subn(
@@ -81,7 +93,7 @@ def main() -> int:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 1
 
-    print(f"Recent cards refreshed: {len(notes[:10])}")
+    print(f"Recent cards refreshed: {len(selected)}")
     print(f"Index notes excluded: {len(INDEX_NOTE_IDS)}")
     return 0
 
