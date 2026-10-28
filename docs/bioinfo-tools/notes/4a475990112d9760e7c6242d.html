@@ -263,12 +263,12 @@ Wall time: 74.4 ms
 <pre><code>sc.pl.scatter(adata, x=&quot;total_counts&quot;, y=&quot;pct_counts_MT&quot;)
 sc.pl.scatter(adata, x=&quot;total_counts&quot;, y=&quot;n_genes_by_counts&quot;)
 </code></pre>
-<p><img src="https://rapids-singlecell.readthedocs.io/en/latest/_images/0fec43720500881ef04fbdcb48a55be3b6664bc25320c67c1a9b4d376f336e38.png" alt="../_images/0fec43720500881ef04fbdcb48a55be3b6664bc25320c67c1a9b4d376f336e38.png"> <img src="https://rapids-singlecell.readthedocs.io/en/latest/_images/6fbc470dfc267a4aec36cb9f80c6d9ea9ac09d32645f7400f61182939aaa037b.png" alt="../_images/6fbc470dfc267a4aec36cb9f80c6d9ea9ac09d32645f7400f61182939aaa037b.png"></p>
+<p><img src="https://rapids-singlecell.readthedocs.io/en/latest/_images/0fec43720500881ef04fbdcb48a55be3b6664bc25320c67c1a9b4d376f336e38.png" alt="../_images/0fec43720500881ef04fbdcb48a55be3b6664bc25320c67c1a9b4d376f336e38.png" loading="eager" decoding="async" fetchpriority="high"> <img src="https://rapids-singlecell.readthedocs.io/en/latest/_images/6fbc470dfc267a4aec36cb9f80c6d9ea9ac09d32645f7400f61182939aaa037b.png" alt="../_images/6fbc470dfc267a4aec36cb9f80c6d9ea9ac09d32645f7400f61182939aaa037b.png" loading="lazy" decoding="async"></p>
 <pre><code>sc.pl.violin(adata, &quot;n_genes_by_counts&quot;, jitter=0.4, groupby=&quot;assay&quot;)
 sc.pl.violin(adata, &quot;total_counts&quot;, jitter=0.4, groupby=&quot;assay&quot;)
 sc.pl.violin(adata, &quot;pct_counts_MT&quot;, jitter=0.4, groupby=&quot;assay&quot;)
 </code></pre>
-<p><img src="https://rapids-singlecell.readthedocs.io/en/latest/_images/e61a53f1ab5b84caa0e95f9fe48c0a3f43d5541e0980c12d4cf63b98e3a49587.png" alt="../_images/e61a53f1ab5b84caa0e95f9fe48c0a3f43d5541e0980c12d4cf63b98e3a49587.png"> <img src="https://rapids-singlecell.readthedocs.io/en/latest/_images/d672b5c4c59546d4293f85156433b8ab2f0c7e6261f86ce4a9a4c6e8f6a81689.png" alt="../_images/d672b5c4c59546d4293f85156433b8ab2f0c7e6261f86ce4a9a4c6e8f6a81689.png"> <img src="https://rapids-singlecell.readthedocs.io/en/latest/_images/141ef7ed9ee9db3e1e74f1a89a133a77b2f752a963a34c76e91085878e1a7509.png" alt="../_images/141ef7ed9ee9db3e1e74f1a89a133a77b2f752a963a34c76e91085878e1a7509.png"></p>
+<p><img src="https://rapids-singlecell.readthedocs.io/en/latest/_images/e61a53f1ab5b84caa0e95f9fe48c0a3f43d5541e0980c12d4cf63b98e3a49587.png" alt="../_images/e61a53f1ab5b84caa0e95f9fe48c0a3f43d5541e0980c12d4cf63b98e3a49587.png" loading="lazy" decoding="async"> <img src="https://rapids-singlecell.readthedocs.io/en/latest/_images/d672b5c4c59546d4293f85156433b8ab2f0c7e6261f86ce4a9a4c6e8f6a81689.png" alt="../_images/d672b5c4c59546d4293f85156433b8ab2f0c7e6261f86ce4a9a4c6e8f6a81689.png" loading="lazy" decoding="async"> <img src="https://rapids-singlecell.readthedocs.io/en/latest/_images/141ef7ed9ee9db3e1e74f1a89a133a77b2f752a963a34c76e91085878e1a7509.png" alt="../_images/141ef7ed9ee9db3e1e74f1a89a133a77b2f752a963a34c76e91085878e1a7509.png" loading="lazy" decoding="async"></p>
 <h3 id="section-5">Filter<a class="heading-anchor" href="#section-5" aria-label="链接到本节">#</a></h3>
 <p>We filter the count matrix to remove cells with an extreme number of genes expressed. We also filter out cells with a mitchondrial countent of more than 20%.</p>
 <pre><code>%%time
@@ -364,7 +364,7 @@ Wall time: 1.61 s
 <p>We can use scanpy <code>pca_variance_ratio</code> plot to inspect the contribution of single PCs to the total variance in the data.</p>
 <pre><code>sc.pl.pca_variance_ratio(adata, log=True, n_pcs=100)
 </code></pre>
-<p><img src="https://rapids-singlecell.readthedocs.io/en/latest/_images/26399926bb16af7ebf41ff3258c46ba1ef40a29deb7d154b0d2a3d39e37a11f8.png" alt="../_images/26399926bb16af7ebf41ff3258c46ba1ef40a29deb7d154b0d2a3d39e37a11f8.png"></p>
+<p><img src="https://rapids-singlecell.readthedocs.io/en/latest/_images/26399926bb16af7ebf41ff3258c46ba1ef40a29deb7d154b0d2a3d39e37a11f8.png" alt="../_images/26399926bb16af7ebf41ff3258c46ba1ef40a29deb7d154b0d2a3d39e37a11f8.png" loading="lazy" decoding="async"></p>
 <p>Now, we transfer the <code>.X</code> matrix back to host (CPU) memory to free up GPU resources.</p>
 <p>Since some downstream analyses or visualizations may not require GPU acceleration, this step helps optimize memory usage,<br>preventing unnecessary GPU load while still keeping the processed data accessible for further analysis.</p>
 <pre><code>rsc.get.anndata_to_CPU(adata)
@@ -417,13 +417,13 @@ Wall time: 1.82 s
 <pre><code>%%time
 sc.pl.umap(adata, color=[&quot;louvain&quot;, &quot;leiden&quot;], legend_loc=&quot;on data&quot;)
 </code></pre>
-<p><img src="https://rapids-singlecell.readthedocs.io/en/latest/_images/179503315dcebd41170544378612a041fd5b2777f091627090dfaf2f17ece856.png" alt="../_images/179503315dcebd41170544378612a041fd5b2777f091627090dfaf2f17ece856.png"></p>
+<p><img src="https://rapids-singlecell.readthedocs.io/en/latest/_images/179503315dcebd41170544378612a041fd5b2777f091627090dfaf2f17ece856.png" alt="../_images/179503315dcebd41170544378612a041fd5b2777f091627090dfaf2f17ece856.png" loading="lazy" decoding="async"></p>
 <pre><code>CPU times: user 1.37 s, sys: 17.7 ms, total: 1.39 s
 Wall time: 1.38 s
 </code></pre>
 <pre><code>sc.pl.umap(adata, color=[&quot;cell_type&quot;, &quot;assay&quot;],ncols=1,)
 </code></pre>
-<p><img src="https://rapids-singlecell.readthedocs.io/en/latest/_images/b6a80d582ecac46e4b56fb1a96725c5c00a28f7d8e84ceaab44db37e3cb26c3d.png" alt="../_images/b6a80d582ecac46e4b56fb1a96725c5c00a28f7d8e84ceaab44db37e3cb26c3d.png"></p>
+<p><img src="https://rapids-singlecell.readthedocs.io/en/latest/_images/b6a80d582ecac46e4b56fb1a96725c5c00a28f7d8e84ceaab44db37e3cb26c3d.png" alt="../_images/b6a80d582ecac46e4b56fb1a96725c5c00a28f7d8e84ceaab44db37e3cb26c3d.png" loading="lazy" decoding="async"></p>
 <h3 id="section-13">Batch Correction<a class="heading-anchor" href="#section-13" aria-label="链接到本节">#</a></h3>
 <p>In the previous UMAP, we observed strong batch effects between assay types.<br>To correct for this, we apply <strong>Harmony</strong>, a method that aligns different batches while preserving biological variation.</p>
 <p>After applying Harmony, we will redo:</p>
@@ -461,13 +461,13 @@ Wall time: 2.75 s
 <pre><code>%%time
 sc.pl.embedding(adata,basis=&quot;X_umap_harmony&quot;, color=[&quot;louvain_harmony&quot;, &quot;leiden_harmony&quot;], legend_loc=&quot;on data&quot;)
 </code></pre>
-<p><img src="https://rapids-singlecell.readthedocs.io/en/latest/_images/e7c619c78db4586e9b55e0c2812fb9b4db61bb92579b9ea593b9e6ab00cc83f4.png" alt="../_images/e7c619c78db4586e9b55e0c2812fb9b4db61bb92579b9ea593b9e6ab00cc83f4.png"></p>
+<p><img src="https://rapids-singlecell.readthedocs.io/en/latest/_images/e7c619c78db4586e9b55e0c2812fb9b4db61bb92579b9ea593b9e6ab00cc83f4.png" alt="../_images/e7c619c78db4586e9b55e0c2812fb9b4db61bb92579b9ea593b9e6ab00cc83f4.png" loading="lazy" decoding="async"></p>
 <pre><code>CPU times: user 1.38 s, sys: 12 ms, total: 1.39 s
 Wall time: 1.39 s
 </code></pre>
 <pre><code>sc.pl.embedding(adata,basis=&quot;X_umap_harmony&quot;, color=[&quot;cell_type&quot;, &quot;assay&quot;], ncols=1)
 </code></pre>
-<p><img src="https://rapids-singlecell.readthedocs.io/en/latest/_images/5ba253bcba2b4c23ce01a94b11bfbf31acc94b399656d4ce23ea99730b3abb84.png" alt="../_images/5ba253bcba2b4c23ce01a94b11bfbf31acc94b399656d4ce23ea99730b3abb84.png"></p>
+<p><img src="https://rapids-singlecell.readthedocs.io/en/latest/_images/5ba253bcba2b4c23ce01a94b11bfbf31acc94b399656d4ce23ea99730b3abb84.png" alt="../_images/5ba253bcba2b4c23ce01a94b11bfbf31acc94b399656d4ce23ea99730b3abb84.png" loading="lazy" decoding="async"></p>
 <h3 id="section-14">TSNE<a class="heading-anchor" href="#section-14" aria-label="链接到本节">#</a></h3>
 <p>Next, we use <strong>t-distributed Stochastic Neighbor Embedding (t-SNE)</strong> to visualize cells in two dimensions.<br>t-SNE is a non-linear dimensionality reduction technique that preserves local structure and reveals complex patterns in the data.</p>
 <p>We leverage the RAPIDS GPU implementation of t-SNE, which is significantly faster than CPU-based methods.<br>This allows us to efficiently process large datasets while maintaining high-quality embeddings.</p>
@@ -480,7 +480,7 @@ Wall time: 4.57 s
 </code></pre>
 <pre><code>sc.pl.tsne(adata, color=[&quot;cell_type&quot;, &quot;assay&quot;], ncols=1)
 </code></pre>
-<p><img src="https://rapids-singlecell.readthedocs.io/en/latest/_images/9cd088ef31f46c8b287ae9a36b489bfe8090e33aaed03b8cdd71da250a102f86.png" alt="../_images/9cd088ef31f46c8b287ae9a36b489bfe8090e33aaed03b8cdd71da250a102f86.png"></p>
+<p><img src="https://rapids-singlecell.readthedocs.io/en/latest/_images/9cd088ef31f46c8b287ae9a36b489bfe8090e33aaed03b8cdd71da250a102f86.png" alt="../_images/9cd088ef31f46c8b287ae9a36b489bfe8090e33aaed03b8cdd71da250a102f86.png" loading="lazy" decoding="async"></p>
 <h2 id="section-15">Differential expression analysis<a class="heading-anchor" href="#section-15" aria-label="链接到本节">#</a></h2>
 <p>To identify key marker genes for each cell type, we use <strong>logistic regression</strong> to compute a ranking of highly differential genes.<br>Unlike traditional statistical tests, logistic regression models the probability of a gene being highly expressed in a given cluster<br>while accounting for all genes simultaneously, making it more robust for complex datasets.</p>
 <p>We rank the top 50 genes that best distinguish each <strong>cell type</strong>, helping to characterize biological differences between clusters.</p>
@@ -494,7 +494,7 @@ Wall time: 17.7 s
 </code></pre>
 <pre><code>sc.pl.rank_genes_groups(adata)
 </code></pre>
-<p><img src="https://rapids-singlecell.readthedocs.io/en/latest/_images/55241a6efed02d1a5ee2b0a6c3f768629a7f541252042c01472b9606978430d5.png" alt="../_images/55241a6efed02d1a5ee2b0a6c3f768629a7f541252042c01472b9606978430d5.png"></p>
+<p><img src="https://rapids-singlecell.readthedocs.io/en/latest/_images/55241a6efed02d1a5ee2b0a6c3f768629a7f541252042c01472b9606978430d5.png" alt="../_images/55241a6efed02d1a5ee2b0a6c3f768629a7f541252042c01472b9606978430d5.png" loading="lazy" decoding="async"></p>
 <pre><code>post_time = time.time()
 </code></pre>
 <pre><code>print(&quot;Total Postprocessing time: %s&quot; % (post_time - preprocess_time))
@@ -514,7 +514,7 @@ Wall time: 1.54 s
 </code></pre>
 <pre><code>sc.pl.diffmap(adata, color=&quot;cell_type&quot;)
 </code></pre>
-<p><img src="https://rapids-singlecell.readthedocs.io/en/latest/_images/b4cc2f87dc4019a25aafac3419fc02e0f50e42f736fcb729e008e94d819e2c2d.png" alt="../_images/b4cc2f87dc4019a25aafac3419fc02e0f50e42f736fcb729e008e94d819e2c2d.png"></p>
+<p><img src="https://rapids-singlecell.readthedocs.io/en/latest/_images/b4cc2f87dc4019a25aafac3419fc02e0f50e42f736fcb729e008e94d819e2c2d.png" alt="../_images/b4cc2f87dc4019a25aafac3419fc02e0f50e42f736fcb729e008e94d819e2c2d.png" loading="lazy" decoding="async"></p>
 <pre><code>print(&quot;Total Processing time: %s&quot; % (time.time() - preprocess_start))
 </code></pre>
 <pre><code>Total Processing time: 57.584962129592896
@@ -535,7 +535,7 @@ Wall time: 1.54 s
 <a class="image-viewer-action" id="image-open-original" href="#" target="_blank" rel="noopener noreferrer">新标签打开</a>
 <button class="image-viewer-action" id="image-viewer-close" type="button" aria-label="关闭图片查看器">关闭</button>
 </div></div>
-<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt=""></div>
+<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt="" loading="lazy" decoding="async"></div>
 </div>
 <script>
 (function(){
@@ -578,6 +578,6 @@ viewer.addEventListener("click",function(event){if(event.target===viewer)dismiss
 document.addEventListener("keydown",function(event){if(viewer.hidden)return;if(event.key==="Escape"){dismissViewer();}else if(event.key==="+"||event.key==="="){setZoom(true);}else if(event.key==="-"){setZoom(false);}});
 })();
 </script>
-<script src="../../assets/site.js?v=0bc9f3ec57"></script>
+<script src="../../assets/site.js?v=a2ace07d37"></script>
 </body>
 </html>

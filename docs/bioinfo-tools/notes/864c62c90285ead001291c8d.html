@@ -320,7 +320,7 @@ adata.obs[&#39;aucell (GPU)&#39;] = scores_gpu[&#39;aucell&#39;]
     frameon=False,
 )
 </code></pre>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwlic1cf9KEqOpK2bqiaOibDnZfJXqo0erFalWJhUjFE4woC4qsicW0L5vgDEfE7ibZgibyH7MGKC1qztCNxRxnZeNw6xZxkvZRQgdMxyY/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="AUCell CPU 与 GPU 对比"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwlic1cf9KEqOpK2bqiaOibDnZfJXqo0erFalWJhUjFE4woC4qsicW0L5vgDEfE7ibZgibyH7MGKC1qztCNxRxnZeNw6xZxkvZRQgdMxyY/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="AUCell CPU 与 GPU 对比" loading="eager" decoding="async" fetchpriority="high"></p>
 <p>AUCell CPU 与 GPU 对比</p>
 <p>可以看到 CPU 和 GPU 的空间分布基本一致。对于这种基于排序的打分，GPU 的意义主要在于把大规模数据上的等待时间压下来。</p>
 <h2 id="section-6">6. GSEA、GSVA 和 ORA<a class="heading-anchor" href="#section-6" aria-label="链接到本节">#</a></h2>
@@ -334,7 +334,7 @@ ov.es.gsea(adata, signatures=signatures, tmin=3, engine=&#39;gpu&#39;, times=1)
 scores_gpu[&#39;gsea&#39;] = adata.obsm[&#39;score_gsea&#39;][geneset_name].astype(float).values
 adata.obs[&#39;gsea (GPU)&#39;] = scores_gpu[&#39;gsea&#39;]
 </code></pre>
-<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwlibnJrtVT0ZSesfKHmDWf1xrvQG74tmxyUYHibwKRiazgmC9qlylkwwic6FmSvekZ6J2CIAxxg3icm5hS8RiciaNMiawwk4lIDb1NicZqrI/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="GSEA CPU 与 GPU 对比"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwlibnJrtVT0ZSesfKHmDWf1xrvQG74tmxyUYHibwKRiazgmC9qlylkwwic6FmSvekZ6J2CIAxxg3icm5hS8RiciaNMiawwk4lIDb1NicZqrI/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="GSEA CPU 与 GPU 对比" loading="lazy" decoding="async"></p>
 <p>GSEA CPU 与 GPU 对比</p>
 <p>这里要注意一个细节：CPU 版本在 <code>times&gt;1</code> 时返回的是标准化后的 NES，而 GPU 版本在 <code>times=1</code> 时返回的是原始 ES。所以它们的空间模式相近，但数值尺度不完全一样，后面的散点图里也能看到这一点。</p>
 <p>GSVA：</p>
@@ -346,7 +346,7 @@ ov.es.gsva(adata, signatures=signatures, tmin=3, engine=&#39;gpu&#39;)
 scores_gpu[&#39;gsva&#39;] = adata.obsm[&#39;score_gsva&#39;][geneset_name].astype(float).values
 adata.obs[&#39;gsva (GPU)&#39;] = scores_gpu[&#39;gsva&#39;]
 </code></pre>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwl8l1TUbQPZicDbMerUtZIzdgkUBDbnMTEPy3z14u566ib1hzWrRaL5o6FeDdJ28uhxdJtHZDgDE8Q9elWvkJ9WQllpDV6GpHiakfU/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="GSVA CPU 与 GPU 对比"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwl8l1TUbQPZicDbMerUtZIzdgkUBDbnMTEPy3z14u566ib1hzWrRaL5o6FeDdJ28uhxdJtHZDgDE8Q9elWvkJ9WQllpDV6GpHiakfU/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="GSVA CPU 与 GPU 对比" loading="lazy" decoding="async"></p>
 <p>GSVA CPU 与 GPU 对比</p>
 <p>GSVA 在这个数据上的 CPU 用时是 5.4377 秒，GPU 用时是 0.1089 秒。这个差距就很明显了。</p>
 <p>ORA：</p>
@@ -358,7 +358,7 @@ ov.es.ora(adata, signatures=signatures, tmin=3, engine=&#39;gpu&#39;)
 scores_gpu[&#39;ora&#39;] = adata.obsm[&#39;score_ora&#39;][geneset_name].astype(float).values
 adata.obs[&#39;ora (GPU)&#39;] = scores_gpu[&#39;ora&#39;]
 </code></pre>
-<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwl9ThpjM421eJGq7dK0kZHiaz4oAQgGfoZougekLbaEiccQXXSle6R1HUMw9Vg7QQCe0TKIl0L221WdeibnHfASJQcMXib5GWg84xyg/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="ORA CPU 与 GPU 对比"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwl9ThpjM421eJGq7dK0kZHiaz4oAQgGfoZougekLbaEiccQXXSle6R1HUMw9Vg7QQCe0TKIl0L221WdeibnHfASJQcMXib5GWg84xyg/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="ORA CPU 与 GPU 对比" loading="lazy" decoding="async"></p>
 <p>ORA CPU 与 GPU 对比</p>
 <p>ORA 更依赖“哪些基因被认为显著”这个前提。如果你的输入本身没有一个很明确的显著基因集合，那么它的单细胞分辨率通常不如 AUCell 或 GSVA 那么细。</p>
 <h2 id="section-7">7. ULM、MLM、WAGGR 和 Z-score<a class="heading-anchor" href="#section-7" aria-label="链接到本节">#</a></h2>
@@ -372,7 +372,7 @@ ov.es.ulm(adata, signatures=signatures, tmin=3, engine=&#39;gpu&#39;)
 scores_gpu[&#39;ulm&#39;] = adata.obsm[&#39;score_ulm&#39;][geneset_name].astype(float).values
 adata.obs[&#39;ulm (GPU)&#39;] = scores_gpu[&#39;ulm&#39;]
 </code></pre>
-<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwlicwdYGJIyypsUEjwSGBLGCHhDnYK6aH88SLemeYtuAfNq5hAkSkibSaM11tc3yiafaSJhUFSWyEvibUzQ0S8NIDQ0ibcgYibbCBBGDM/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="ULM CPU 与 GPU 对比"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwlicwdYGJIyypsUEjwSGBLGCHhDnYK6aH88SLemeYtuAfNq5hAkSkibSaM11tc3yiafaSJhUFSWyEvibUzQ0S8NIDQ0ibcgYibbCBBGDM/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="ULM CPU 与 GPU 对比" loading="lazy" decoding="async"></p>
 <p>ULM CPU 与 GPU 对比</p>
 <p>MLM 是多元线性模型，也就是把多个 signature 一起放进模型里。如果你的基因集之间重叠很多，MLM 会更适合一点。</p>
 <pre><code>ov.es.mlm(adata, signatures=signatures, tmin=3, engine=&#39;cpu&#39;)
@@ -383,7 +383,7 @@ ov.es.mlm(adata, signatures=signatures, tmin=3, engine=&#39;gpu&#39;)
 scores_gpu[&#39;mlm&#39;] = adata.obsm[&#39;score_mlm&#39;][geneset_name].astype(float).values
 adata.obs[&#39;mlm (GPU)&#39;] = scores_gpu[&#39;mlm&#39;]
 </code></pre>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwl9SPeyLdcIBQjVXXwRZpKpJvFNpz8l9mGM2Fe76buz471dUL3Zib0CPG1Hr5g6blTcfuIOftJpk9O2SicayeRcLicoNXy6yhdQPibI/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="MLM CPU 与 GPU 对比"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwl9SPeyLdcIBQjVXXwRZpKpJvFNpz8l9mGM2Fe76buz471dUL3Zib0CPG1Hr5g6blTcfuIOftJpk9O2SicayeRcLicoNXy6yhdQPibI/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="MLM CPU 与 GPU 对比" loading="lazy" decoding="async"></p>
 <p>MLM CPU 与 GPU 对比</p>
 <p>WAGGR 就更直接了，其实就是基因表达的加权平均或加权求和。</p>
 <pre><code>ov.es.waggr(adata, signatures=signatures, tmin=3, engine=&#39;cpu&#39;, times=1)
@@ -394,7 +394,7 @@ ov.es.waggr(adata, signatures=signatures, tmin=3, engine=&#39;gpu&#39;, times=1)
 scores_gpu[&#39;waggr&#39;] = adata.obsm[&#39;score_waggr&#39;][geneset_name].astype(float).values
 adata.obs[&#39;waggr (GPU)&#39;] = scores_gpu[&#39;waggr&#39;]
 </code></pre>
-<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwl8icX5DPia9ykKbiaQMLq7x5A8mUA59wE8Ys2bejvgIRd2YiccpgEic4UsvoMhibf0T5xpjWheGm2y1pUxfSQDZgyrUvBOBYCs52ykFg/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="WAGGR CPU 与 GPU 对比"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwl8icX5DPia9ykKbiaQMLq7x5A8mUA59wE8Ys2bejvgIRd2YiccpgEic4UsvoMhibf0T5xpjWheGm2y1pUxfSQDZgyrUvBOBYCs52ykFg/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="WAGGR CPU 与 GPU 对比" loading="lazy" decoding="async"></p>
 <p>WAGGR CPU 与 GPU 对比</p>
 <p>Z-score 是我觉得很适合初筛的方法。它计算的是基因集平均表达相对于每个细胞背景分布的偏移。</p>
 <pre><code>ov.es.zscore(adata, signatures=signatures, tmin=3, engine=&#39;cpu&#39;)
@@ -405,7 +405,7 @@ ov.es.zscore(adata, signatures=signatures, tmin=3, engine=&#39;gpu&#39;)
 scores_gpu[&#39;zscore&#39;] = adata.obsm[&#39;score_zscore&#39;][geneset_name].astype(float).values
 adata.obs[&#39;zscore (GPU)&#39;] = scores_gpu[&#39;zscore&#39;]
 </code></pre>
-<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwl9TK4RjmhlkLPP7OTe1rpG0ib0cqoXvNWyZfSWibHB8zEibGeNiaiabdicvR7tj55R5PW5UHqKF1u4bricKvWBSlmfaz90xNibRLdibQSeA/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="Z-score CPU 与 GPU 对比"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwl9TK4RjmhlkLPP7OTe1rpG0ib0cqoXvNWyZfSWibHB8zEibGeNiaiabdicvR7tj55R5PW5UHqKF1u4bricKvWBSlmfaz90xNibRLdibQSeA/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="Z-score CPU 与 GPU 对比" loading="lazy" decoding="async"></p>
 <p>Z-score CPU 与 GPU 对比</p>
 <p>这几个方法的 CPU/GPU 结果都几乎完全一致。</p>
 <h2 id="section-8">8. VIPER、MDT 和 UDT<a class="heading-anchor" href="#section-8" aria-label="链接到本节">#</a></h2>
@@ -418,7 +418,7 @@ ov.es.viper(adata, signatures=signatures, tmin=3, engine=&#39;gpu&#39;)
 scores_gpu[&#39;viper&#39;] = adata.obsm[&#39;score_viper&#39;][geneset_name].astype(float).values
 adata.obs[&#39;viper (GPU)&#39;] = scores_gpu[&#39;viper&#39;]
 </code></pre>
-<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwlib5OkIy5V3kue2dtY1zZ36W9zoAOpwUOPepzsVqlylu9XCV2zqvd1wyEIRvHxVTMrD7RQOCQ82vicF6RY40mkA5PrsA54vlH66A/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="VIPER CPU 与 GPU 对比"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwlib5OkIy5V3kue2dtY1zZ36W9zoAOpwUOPepzsVqlylu9XCV2zqvd1wyEIRvHxVTMrD7RQOCQ82vicF6RY40mkA5PrsA54vlH66A/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="VIPER CPU 与 GPU 对比" loading="lazy" decoding="async"></p>
 <p>VIPER CPU 与 GPU 对比</p>
 <p>MDT 和 UDT 是基于决策树的打分方法。它们在 CPU 上逐细胞拟合树模型的成本比较高，所以这个教程只跑 GPU。</p>
 <p>MDT：</p>
@@ -426,14 +426,14 @@ adata.obs[&#39;viper (GPU)&#39;] = scores_gpu[&#39;viper&#39;]
 scores_gpu[&#39;mdt&#39;] = adata.obsm[&#39;score_mdt&#39;][geneset_name].astype(float).values
 adata.obs[&#39;mdt (GPU)&#39;] = scores_gpu[&#39;mdt&#39;]
 </code></pre>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwl9EXykbI7IuHSOqsGyNAoCN3CPqBicfjeibL0iapOdHgruHGXvJuQMnFLNruD8iaTYNRJZtH2r1aibaDaXnW7eOufJFKcLVc88YYiccY/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="MDT GPU 结果"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwl9EXykbI7IuHSOqsGyNAoCN3CPqBicfjeibL0iapOdHgruHGXvJuQMnFLNruD8iaTYNRJZtH2r1aibaDaXnW7eOufJFKcLVc88YYiccY/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="MDT GPU 结果" loading="lazy" decoding="async"></p>
 <p>MDT GPU 结果</p>
 <p>UDT：</p>
 <pre><code>ov.es.udt(adata, signatures=signatures, tmin=3, engine=&#39;gpu&#39;)
 scores_gpu[&#39;udt&#39;] = adata.obsm[&#39;score_udt&#39;][geneset_name].astype(float).values
 adata.obs[&#39;udt (GPU)&#39;] = scores_gpu[&#39;udt&#39;]
 </code></pre>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwl83ZskcJdaCdcVW0mdu8dGugF6o3aJ78f2p39IzHrVZtxSrrHDQwk9lMf5ehGOZdrNQhiaibXVO9ABUzkT0euNIWDJJsDTTnSaUM/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="UDT GPU 结果"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwl83ZskcJdaCdcVW0mdu8dGugF6o3aJ78f2p39IzHrVZtxSrrHDQwk9lMf5ehGOZdrNQhiaibXVO9ABUzkT0euNIWDJJsDTTnSaUM/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="UDT GPU 结果" loading="lazy" decoding="async"></p>
 <p>UDT GPU 结果</p>
 <p>我觉得这两个方法更适合在你已经有明确需求时使用。对于大多数通路活性可视化，AUCell、GSVA、Z-score 已经足够了。</p>
 <h2 id="section-9">9. CPU 和 GPU 的一致性<a class="heading-anchor" href="#section-9" aria-label="链接到本节">#</a></h2>
@@ -454,7 +454,7 @@ for _i, _m in enumerate(_methods):
 
 ax.plot([-6, 6], [-6, 6], &#39;--&#39;, color=&#39;grey&#39;, lw=0.8)
 </code></pre>
-<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwl9gk5KJagV1jo7E1flVUYoBDdTP31rYSC8UEA3K9e2XNr7hUmGygyTTmPM1HkUEqiaIia1cxE02jKUcGkhGcFPg3iaCZkwicKcUx30/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="CPU 与 GPU 分数一致性"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwl9gk5KJagV1jo7E1flVUYoBDdTP31rYSC8UEA3K9e2XNr7hUmGygyTTmPM1HkUEqiaIia1cxE02jKUcGkhGcFPg3iaCZkwicKcUx30/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="CPU 与 GPU 分数一致性" loading="lazy" decoding="async"></p>
 <p>CPU 与 GPU 分数一致性</p>
 <p>从图上看，绝大部分方法都落在对角线附近。GSEA 的点会有一点拉伸，原因前面也说过：CPU 版本这里返回的是 NES，GPU 版本返回的是 raw ES。</p>
 <p>再看数值表：</p>
@@ -602,7 +602,7 @@ ax.plot([-6, 6], [-6, 6], &#39;--&#39;, color=&#39;grey&#39;, lw=0.8)
 <p>作为 omicverse 开源重构生态的一部分，我们会继续把更多常用算法迁移到统一接口里。如果你有想重构的 R 包，或者希望某个算法接入 omicverse，也欢迎联系我们。</p>
 <h2 id="section-11">11. 交流群<a class="heading-anchor" href="#section-11" aria-label="链接到本节">#</a></h2>
 <p>如果你也很好奇我们omicverse生态的最新进展，想第一时间体验到新功能，欢迎加入我们的交流群～</p>
-<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/B5q0fKlEwl8l4g4VGMB0PtbwazmMHFzNZx3ZvlnsuIXrK6Lxrfnic6rlrmSiawgcUenBCtjkbU87iczficF94sMT54Yy39jm498r6iaj5sjSVGLk/640?wx_fmt=jpeg&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/B5q0fKlEwl8l4g4VGMB0PtbwazmMHFzNZx3ZvlnsuIXrK6Lxrfnic6rlrmSiawgcUenBCtjkbU87iczficF94sMT54Yy39jm498r6iaj5sjSVGLk/640?wx_fmt=jpeg&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="图片" loading="lazy" decoding="async"></p>
 <p>OmicVerse相关教程 · 目录</p>
 <p>阅读原文</p>
 <p>继续滑动看下一个</p>
@@ -905,7 +905,7 @@ comparison_df.to_csv(&quot;ov_es_cpu_gpu_consistency.csv&quot;, index=False)
 <a class="image-viewer-action" id="image-open-original" href="#" target="_blank" rel="noopener noreferrer">新标签打开</a>
 <button class="image-viewer-action" id="image-viewer-close" type="button" aria-label="关闭图片查看器">关闭</button>
 </div></div>
-<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt=""></div>
+<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt="" loading="lazy" decoding="async"></div>
 </div>
 <script>
 (function(){
@@ -948,6 +948,6 @@ viewer.addEventListener("click",function(event){if(event.target===viewer)dismiss
 document.addEventListener("keydown",function(event){if(viewer.hidden)return;if(event.key==="Escape"){dismissViewer();}else if(event.key==="+"||event.key==="="){setZoom(true);}else if(event.key==="-"){setZoom(false);}});
 })();
 </script>
-<script src="../../assets/site.js?v=0bc9f3ec57"></script>
+<script src="../../assets/site.js?v=a2ace07d37"></script>
 </body>
 </html>

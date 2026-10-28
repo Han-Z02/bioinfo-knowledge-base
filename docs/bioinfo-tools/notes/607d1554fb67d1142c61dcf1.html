@@ -149,12 +149,12 @@ body.image-viewer-open{overflow:hidden}
 <p><strong>Q1:如何锁定乳酸化修饰的具体组蛋白修饰位点</strong></p>
 </blockquote>
 <p>（如何锁定乳酸化，大家可以看看作者的介绍与前面的对应结果，此处咱们重点讲作者如何挑选出对应组蛋白对应的修饰位点）</p>
-<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Am8g3P7ZRq4AW66N9ovsEuvzKd1KsTghc9ZLmDycmNmibiaiaKKd8dOe634wvHdEao6JibBKqe5TZ51q7Kqmz01wplrWAJo833Bwpkfz4qhvYA4/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Am8g3P7ZRq4AW66N9ovsEuvzKd1KsTghc9ZLmDycmNmibiaiaKKd8dOe634wvHdEao6JibBKqe5TZ51q7Kqmz01wplrWAJo833Bwpkfz4qhvYA4/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片" loading="eager" decoding="async" fetchpriority="high"></p>
 <p>作者文献调研了三个已知的巨噬细胞参与H3组蛋白经典赖氨酸乳酸化的位点,从AB图中，我们可以看到三种乳酸化修饰，都有增强的趋势，但是出H3K9la在14dpi的SCI中最显著；C图将各条带强度标准化至上样对照后，仅 H3K9la 显著上调，而 H3K14la 和 H3K18la 的变化较小且不显著，所以作者锁定了H3K9la。</p>
 <blockquote>
 <p>Q2: <strong>组学联合锁定 H3K9la 的关键靶基因（全文核心机制）</strong></p>
 </blockquote>
-<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/Am8g3P7ZRq5c4BRLnVz9cWWMxIULtMQ971Rz2pLBulDrGuRj8rNBnEmK3fexibaOeib1BQqf9x5EBBVnoKu7aDuRibDd33CQItnJRmHsQTYenI/640?wx_fmt=jpeg&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="img"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/Am8g3P7ZRq5c4BRLnVz9cWWMxIULtMQ971Rz2pLBulDrGuRj8rNBnEmK3fexibaOeib1BQqf9x5EBBVnoKu7aDuRibDd33CQItnJRmHsQTYenI/640?wx_fmt=jpeg&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="img" loading="lazy" decoding="async"></p>
 <p>img</p>
 <p>前面的研究已经发现，脊髓损伤（SCI）后乳酸显著积累，同时 H3K9la 水平明显升高。但此时其实只回答了一个现象性问题： <strong>SCI 后发生了组蛋白乳酸化。</strong> 真正更关键的问题是： <strong>H3K9la 究竟修饰了哪些基因？这些修饰是否真的改变了基因表达，并进一步参与 SCI 的炎症损伤过程？</strong></p>
 <p>这是因为，组蛋白修饰本质上 <strong>并不是&quot;单纯的化学标记&quot;</strong> ，而是 <strong>能够通过改变染色质状态</strong> ，进一步 <strong>影响靶基因的转录激活或抑制</strong> 。因此，作者接下来真正想解决的问题是： <strong>SCI 后，H3K9la 是通过调控哪些关键基因参与病理过程的。</strong></p>
@@ -264,7 +264,7 @@ RNA-seq：
 <a class="image-viewer-action" id="image-open-original" href="#" target="_blank" rel="noopener noreferrer">新标签打开</a>
 <button class="image-viewer-action" id="image-viewer-close" type="button" aria-label="关闭图片查看器">关闭</button>
 </div></div>
-<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt=""></div>
+<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt="" loading="lazy" decoding="async"></div>
 </div>
 <script>
 (function(){
@@ -307,6 +307,6 @@ viewer.addEventListener("click",function(event){if(event.target===viewer)dismiss
 document.addEventListener("keydown",function(event){if(viewer.hidden)return;if(event.key==="Escape"){dismissViewer();}else if(event.key==="+"||event.key==="="){setZoom(true);}else if(event.key==="-"){setZoom(false);}});
 })();
 </script>
-<script src="../../assets/site.js?v=0bc9f3ec57"></script>
+<script src="../../assets/site.js?v=a2ace07d37"></script>
 </body>
 </html>

@@ -180,8 +180,8 @@ body.image-viewer-open{overflow:hidden}
 <p>这类图用于展示多个组织中共同变化的基因，并将上调或下调基因对应的功能富集结果同步呈现。<strong>左侧负责表达基因状态，右侧负责解释这些基因可能涉及的生物学过程。</strong></p>
 <h2 id="section-2">原图与复现效果<a class="heading-anchor" href="#section-2" aria-label="链接到本节">#</a></h2>
 <h3 id="section-3">原图（论文 Fig.）<a class="heading-anchor" href="#section-3" aria-label="链接到本节">#</a></h3>
-<img src="../../assets/notes/bioinfo-tools/9dc5e1a1af74fa465c82a7bd/8305bf.png" alt="Panel 原图"><h3 id="section-4">复现结果<a class="heading-anchor" href="#section-4" aria-label="链接到本节">#</a></h3>
-<img src="../../assets/notes/bioinfo-tools/9dc5e1a1af74fa465c82a7bd/e8f026.png" alt="Panel 复现"><hr>
+<img src="../../assets/notes/bioinfo-tools/9dc5e1a1af74fa465c82a7bd/8305bf.png" alt="Panel 原图" loading="eager" decoding="async" fetchpriority="high"><h3 id="section-4">复现结果<a class="heading-anchor" href="#section-4" aria-label="链接到本节">#</a></h3>
+<img src="../../assets/notes/bioinfo-tools/9dc5e1a1af74fa465c82a7bd/e8f026.png" alt="Panel 复现" loading="lazy" decoding="async"><hr>
 <h2 id="section-5">图片解读：整张图四个部分<a class="heading-anchor" href="#section-5" aria-label="链接到本节">#</a></h2>
 <ol>
 <li><strong>顶部组织注释条</strong> —— 不同颜色代表 Hypothalamus、Pituitary、Ovary 和 Uterus 等组织来源。</li>
@@ -542,7 +542,7 @@ ggsave(&quot;deg_heatmap_go_panel.pdf&quot;, p, width = 7.2, height = 4.35, bg =
 <a class="image-viewer-action" id="image-open-original" href="#" target="_blank" rel="noopener noreferrer">新标签打开</a>
 <button class="image-viewer-action" id="image-viewer-close" type="button" aria-label="关闭图片查看器">关闭</button>
 </div></div>
-<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt=""></div>
+<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt="" loading="lazy" decoding="async"></div>
 </div>
 <script>
 (function(){
@@ -585,6 +585,6 @@ viewer.addEventListener("click",function(event){if(event.target===viewer)dismiss
 document.addEventListener("keydown",function(event){if(viewer.hidden)return;if(event.key==="Escape"){dismissViewer();}else if(event.key==="+"||event.key==="="){setZoom(true);}else if(event.key==="-"){setZoom(false);}});
 })();
 </script>
-<script src="../../assets/site.js?v=0bc9f3ec57"></script>
+<script src="../../assets/site.js?v=a2ace07d37"></script>
 </body>
 </html>

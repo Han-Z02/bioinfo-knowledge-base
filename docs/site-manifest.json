@@ -102,7 +102,12 @@
           "category": "方法与工作流",
           "subsection": "methods",
           "updated": "2026-10-25T17:37:28.583Z",
-          "tags": []
+          "tags": [
+            "Zotero",
+            "Obsidian",
+            "文献管理",
+            "工作流"
+          ]
         },
         {
           "title": "DECODE: Deep learning-based common deconvolution framework for various omics data",
@@ -159,7 +164,13 @@
           "category": "论文精读",
           "subsection": "papers",
           "updated": "2026-10-25T17:37:28.581Z",
-          "tags": []
+          "tags": [
+            "论文精读",
+            "Deep-Phase",
+            "凝聚体",
+            "深度学习",
+            "核仁"
+          ]
         },
         {
           "title": "Deep learning of functional perturbations from condensate morphology",
@@ -206,7 +217,13 @@
           "category": "论文精读",
           "subsection": "papers",
           "updated": "2026-10-25T17:37:28.579Z",
-          "tags": []
+          "tags": [
+            "论文精读",
+            "透明质酸",
+            "组织力学",
+            "再生",
+            "纤维化"
+          ]
         },
         {
           "title": "Chemokine-defined macrophage niches establish spatial organization of tumor immunity",
@@ -267,7 +284,12 @@
           "category": "论文精读",
           "subsection": "papers",
           "updated": "2026-10-25T17:37:28.578Z",
-          "tags": []
+          "tags": [
+            "论文精读",
+            "皮肤微生物组",
+            "免疫检查点抑制剂",
+            "皮肤毒性"
+          ]
         },
         {
           "title": "Metabolite-gated vascular contractility switch: OXGR1 activation mechanism enables agonist therapy for rosacea erythema",
@@ -295,7 +317,13 @@
           "category": "论文精读",
           "subsection": "papers",
           "updated": "2026-10-25T17:37:28.577Z",
-          "tags": []
+          "tags": [
+            "论文精读",
+            "OXGR1",
+            "玫瑰痤疮",
+            "血管舒张",
+            "代谢物"
+          ]
         },
         {
           "title": "BioAgent Bench - An AI Agent Evaluation Suite for Bioinformatics",
@@ -324,7 +352,13 @@
           "category": "论文精读",
           "subsection": "papers",
           "updated": "2026-10-25T17:37:28.576Z",
-          "tags": []
+          "tags": [
+            "论文精读",
+            "铁死亡",
+            "犬尿氨酸",
+            "铁蛋白自噬",
+            "肿瘤免疫"
+          ]
         },
         {
           "title": "Peritumoural adipose tissue promotes ferroptosis resistance by 3-hydroxykynurenine-mediated suppression of ferritinophagy - Nature Cell Biology",
@@ -364,7 +398,13 @@
           "category": "论文精读",
           "subsection": "papers",
           "updated": "2026-10-25T17:37:28.574Z",
-          "tags": []
+          "tags": [
+            "论文精读",
+            "GREM1",
+            "LEPR+骨骼细胞",
+            "植入周纤维化",
+            "BMP/WNT"
+          ]
         },
         {
           "title": "腱周感觉神经中 YAP1/pSTAT3/NRP1 轴的激活促进肌腱愈合",
@@ -463,7 +503,13 @@
           "category": "论文精读",
           "subsection": "papers",
           "updated": "2026-10-25T17:37:28.569Z",
-          "tags": []
+          "tags": [
+            "论文精读",
+            "放射性黏膜炎",
+            "铁死亡",
+            "成纤维细胞",
+            "多胺"
+          ]
         },
         {
           "title": "代谢支持可保护黏膜免受放射性黏膜炎中的铁死亡",
@@ -655,7 +701,13 @@
           "category": "论文精读",
           "subsection": "papers",
           "updated": "2026-10-25T17:37:28.564Z",
-          "tags": []
+          "tags": [
+            "论文精读",
+            "LEPR+骨骼细胞",
+            "植入周纤维化",
+            "ADGRF5",
+            "骨形成"
+          ]
         },
         {
           "title": "基于图关联统一嵌入的单细胞多组学整合与调控推断",
@@ -665,7 +717,13 @@
           "category": "论文精读",
           "subsection": "papers",
           "updated": "2026-10-25T17:37:28.563Z",
-          "tags": []
+          "tags": [
+            "论文精读",
+            "单细胞多组学",
+            "图嵌入",
+            "调控推断",
+            "GLUE"
+          ]
         },
         {
           "title": "基于图关联统一嵌入的单细胞多组学数据整合与调控推断",
@@ -879,7 +937,12 @@
           "category": "Wiki 知识",
           "subsection": "knowledge",
           "updated": "2026-10-25T17:37:28.557Z",
-          "tags": []
+          "tags": [
+            "NCBI",
+            "SRA",
+            "数据下载",
+            "生物信息学"
+          ]
         },
         {
           "title": "WGCNA",
@@ -1007,7 +1070,12 @@
           "category": "数据集与资料",
           "subsection": "datasets",
           "updated": "2026-10-25T17:37:28.553Z",
-          "tags": []
+          "tags": [
+            "放射性颌骨骨坏死",
+            "单细胞测序",
+            "公共数据集",
+            "GEO"
+          ]
         },
         {
           "title": "scRNA-seq 数据（唯一可用）",
@@ -1017,7 +1085,12 @@
           "category": "数据集与资料",
           "subsection": "datasets",
           "updated": "2026-10-25T17:37:28.553Z",
-          "tags": []
+          "tags": [
+            "scRNA-seq",
+            "放射性口腔黏膜炎",
+            "公共数据集",
+            "GEO"
+          ]
         }
       ]
     },

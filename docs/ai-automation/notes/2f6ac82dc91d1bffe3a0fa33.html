@@ -122,7 +122,7 @@ body.image-viewer-open{overflow:hidden}
 <p>最好的办法就是使用svg代码绘制图像，然后到svg编辑器（比如开源的inkspace和破解版的Adobe illustrator）</p>
 <p>只有这样子出来的图片后期才可以手动编辑</p>
 <p>GPT给的建议也是这样：</p>
-<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/ItpPOnp3Ylhra4ryqyKMsfl0uKUH4otibIYB3libIWXgAHvczntRjSewsjEdKRAyKwZibKRHA5SUpzpXq5Q1BJwdVMbOyvuUsB0nHNGjo2sTpE/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/ItpPOnp3Ylhra4ryqyKMsfl0uKUH4otibIYB3libIWXgAHvczntRjSewsjEdKRAyKwZibKRHA5SUpzpXq5Q1BJwdVMbOyvuUsB0nHNGjo2sTpE/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片" loading="eager" decoding="async" fetchpriority="high"></p>
 <p>然后吧，我自己把上面几种方式都试了个遍，其实效果也没有那么好，而且这些付费工具贵得离谱</p>
 <p>![图片](data:image/svg+xml,%3C%3Fxml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;%3F%3E%3Csvg width=&#39;1px&#39; height=&#39;1px&#39; viewBox=&#39;0 0 1 1&#39; version=&#39;1.1&#39; xmlns=&#39;<a href="http://www.w3.org/2000/svg" target="_blank" rel="noopener noreferrer">http://www.w3.org/2000/svg</a>&#39; xmlns:xlink=&#39;<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg" target="_blank" rel="noopener noreferrer">http://www.w3.org/1999/xlink&#39;%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke=&#39;none&#39; stroke-width=&#39;1&#39; fill=&#39;none&#39; fill-rule=&#39;evenodd&#39; fill-opacity=&#39;0&#39;%3E%3Cg transform=&#39;translate(-249.000000, -126.000000)&#39; fill=&#39;%23FFFFFF&#39;%3E%3Crect x=&#39;249&#39; y=&#39;126&#39; width=&#39;1&#39; height=&#39;1&#39;%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E) ![图片](data:image/svg+xml,%3C%3Fxml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;%3F%3E%3Csvg width=&#39;1px&#39; height=&#39;1px&#39; viewBox=&#39;0 0 1 1&#39; version=&#39;1.1&#39; xmlns=&#39;<a href="http://www.w3.org/2000/svg" target="_blank" rel="noopener noreferrer">http://www.w3.org/2000/svg</a>&#39; xmlns:xlink=&#39;<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg" target="_blank" rel="noopener noreferrer">http://www.w3.org/1999/xlink&#39;%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke=&#39;none&#39; stroke-width=&#39;1&#39; fill=&#39;none&#39; fill-rule=&#39;evenodd&#39; fill-opacity=&#39;0&#39;%3E%3Cg transform=&#39;translate(-249.000000, -126.000000)&#39; fill=&#39;%23FFFFFF&#39;%3E%3Crect x=&#39;249&#39; y=&#39;126&#39; width=&#39;1&#39; height=&#39;1&#39;%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E)</p>
 <p>还有个工具叫vectorizer，好像要魔法才能进去，这个效果挺好的，png转成svg基本无损，但是也要收费</p>
@@ -206,7 +206,7 @@ body.image-viewer-open{overflow:hidden}
 <a class="image-viewer-action" id="image-open-original" href="#" target="_blank" rel="noopener noreferrer">新标签打开</a>
 <button class="image-viewer-action" id="image-viewer-close" type="button" aria-label="关闭图片查看器">关闭</button>
 </div></div>
-<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt=""></div>
+<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt="" loading="lazy" decoding="async"></div>
 </div>
 <script>
 (function(){
@@ -249,6 +249,6 @@ viewer.addEventListener("click",function(event){if(event.target===viewer)dismiss
 document.addEventListener("keydown",function(event){if(viewer.hidden)return;if(event.key==="Escape"){dismissViewer();}else if(event.key==="+"||event.key==="="){setZoom(true);}else if(event.key==="-"){setZoom(false);}});
 })();
 </script>
-<script src="../../assets/site.js?v=0bc9f3ec57"></script>
+<script src="../../assets/site.js?v=a2ace07d37"></script>
 </body>
 </html>

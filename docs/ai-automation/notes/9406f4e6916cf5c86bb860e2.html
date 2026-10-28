@@ -125,7 +125,7 @@ body.image-viewer-open{overflow:hidden}
 </ul>
 </blockquote>
 <p>徐 <em>2026年5月23日 10:19</em></p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/87nIoLjQzKVkpDINGkMJy9OtAcTfcvg6AxNYHKYht08IrunfnMcoONiaugGE0zx23lSZ4NqtCxh4CndwXWmTEokNHdNF4P54gU6qaqImjKvg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/87nIoLjQzKVkpDINGkMJy9OtAcTfcvg6AxNYHKYht08IrunfnMcoONiaugGE0zx23lSZ4NqtCxh4CndwXWmTEokNHdNF4P54gU6qaqImjKvg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片" loading="eager" decoding="async" fetchpriority="high"></p>
 <p>Windows 下其实从来不缺终端工具。</p>
 <p>系统自带有 Windows Terminal，远程连接可以用 Xshell，功能大而全的可以用 MobaXterm。它们当然都能用，而且很多人也用了很多年。</p>
 <p>但问题是，我一直觉得 Windows 下始终缺少一个“真正顺手”的终端。</p>
@@ -242,7 +242,7 @@ Markdown 文件可以直接预览
 <a class="image-viewer-action" id="image-open-original" href="#" target="_blank" rel="noopener noreferrer">新标签打开</a>
 <button class="image-viewer-action" id="image-viewer-close" type="button" aria-label="关闭图片查看器">关闭</button>
 </div></div>
-<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt=""></div>
+<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt="" loading="lazy" decoding="async"></div>
 </div>
 <script>
 (function(){
@@ -285,6 +285,6 @@ viewer.addEventListener("click",function(event){if(event.target===viewer)dismiss
 document.addEventListener("keydown",function(event){if(viewer.hidden)return;if(event.key==="Escape"){dismissViewer();}else if(event.key==="+"||event.key==="="){setZoom(true);}else if(event.key==="-"){setZoom(false);}});
 })();
 </script>
-<script src="../../assets/site.js?v=0bc9f3ec57"></script>
+<script src="../../assets/site.js?v=a2ace07d37"></script>
 </body>
 </html>

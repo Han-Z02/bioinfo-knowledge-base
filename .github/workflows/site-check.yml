@@ -1,0 +1,38 @@
+name: Site checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Compile Python scripts
+        run: python3 -m py_compile scripts/*.py
+
+      - name: Check JavaScript syntax
+        run: node --check docs/assets/site.js
+
+      - name: Test search UI behavior
+        run: node scripts/test_search_ui.js
+
+      - name: Validate generated site
+        run: python3 scripts/check_site.py

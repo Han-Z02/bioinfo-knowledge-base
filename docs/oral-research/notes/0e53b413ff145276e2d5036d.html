@@ -106,6 +106,7 @@ body.image-viewer-open{overflow:hidden}
 <h1>NCBI 下载方式变更速记</h1>
 
 <div class="meta-badges"><span class="badge badge-note-id">站内编号 KB-000011</span></div>
+<div class="tags"><span class="tag">NCBI</span><span class="tag">SRA</span><span class="tag">数据下载</span><span class="tag">生物信息学</span></div>
 
 
 </header>
@@ -186,7 +187,7 @@ curl -O https://sra-pub-run-odp.s3.amazonaws.com/sra/SRR38325455/SRR38325455
 <a class="image-viewer-action" id="image-open-original" href="#" target="_blank" rel="noopener noreferrer">新标签打开</a>
 <button class="image-viewer-action" id="image-viewer-close" type="button" aria-label="关闭图片查看器">关闭</button>
 </div></div>
-<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt=""></div>
+<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt="" loading="eager" decoding="async" fetchpriority="high"></div>
 </div>
 <script>
 (function(){
@@ -229,6 +230,6 @@ viewer.addEventListener("click",function(event){if(event.target===viewer)dismiss
 document.addEventListener("keydown",function(event){if(viewer.hidden)return;if(event.key==="Escape"){dismissViewer();}else if(event.key==="+"||event.key==="="){setZoom(true);}else if(event.key==="-"){setZoom(false);}});
 })();
 </script>
-<script src="../../assets/site.js?v=0bc9f3ec57"></script>
+<script src="../../assets/site.js?v=a2ace07d37"></script>
 </body>
 </html>

@@ -121,6 +121,7 @@ body.image-viewer-open{overflow:hidden}
 <h1>文献汇报：透明质酸与组织力学协同调控哺乳动物指端再生</h1>
 
 <div class="meta-badges"><span class="badge badge-note-id">站内编号 KB-000051</span></div>
+<div class="tags"><span class="tag">论文精读</span><span class="tag">透明质酸</span><span class="tag">组织力学</span><span class="tag">再生</span><span class="tag">纤维化</span></div>
 
 
 </header>
@@ -482,7 +483,7 @@ YAP/TAZ 重新入胞质 + F-actin 松弛
 <a class="image-viewer-action" id="image-open-original" href="#" target="_blank" rel="noopener noreferrer">新标签打开</a>
 <button class="image-viewer-action" id="image-viewer-close" type="button" aria-label="关闭图片查看器">关闭</button>
 </div></div>
-<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt=""></div>
+<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt="" loading="eager" decoding="async" fetchpriority="high"></div>
 </div>
 <script>
 (function(){
@@ -525,6 +526,6 @@ viewer.addEventListener("click",function(event){if(event.target===viewer)dismiss
 document.addEventListener("keydown",function(event){if(viewer.hidden)return;if(event.key==="Escape"){dismissViewer();}else if(event.key==="+"||event.key==="="){setZoom(true);}else if(event.key==="-"){setZoom(false);}});
 })();
 </script>
-<script src="../../assets/site.js?v=0bc9f3ec57"></script>
+<script src="../../assets/site.js?v=a2ace07d37"></script>
 </body>
 </html>

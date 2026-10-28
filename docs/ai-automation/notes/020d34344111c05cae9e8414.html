@@ -124,7 +124,7 @@ body.image-viewer-open{overflow:hidden}
 <p>逛逛 <em>2026年5月25日 13:02</em></p>
 <p>最近刷 X 的时候，发现一条推文被疯狂转发：</p>
 <p>Anthropic 悄悄发布了一个官方插件，叫 claude-code-setup，装上后你的 Claude Code 的体验会完全不一样。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/M2ibDBMdECU1GWu4csSHAH6iaHdkUmWD2HdZHUkrxU3CR4ATDvIheo2I17uMZ4RE3Edse691686SN2Skkiakw2XHicdXBrWnZ6icLha9wKBhwoEU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/M2ibDBMdECU1GWu4csSHAH6iaHdkUmWD2HdZHUkrxU3CR4ATDvIheo2I17uMZ4RE3Edse691686SN2Skkiakw2XHicdXBrWnZ6icLha9wKBhwoEU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片" loading="eager" decoding="async" fetchpriority="high"></p>
 <p>然后顺藤摸瓜，发现 Anthropic 其实已经把整个官方插件开源在 GitHub 上了，叫 claude-plugins-official。</p>
 <p>现在都 2 万多 Star 了，今天就来聊聊这个开源项目。</p>
 <p>01</p>
@@ -259,7 +259,7 @@ body.image-viewer-open{overflow:hidden}
 <a class="image-viewer-action" id="image-open-original" href="#" target="_blank" rel="noopener noreferrer">新标签打开</a>
 <button class="image-viewer-action" id="image-viewer-close" type="button" aria-label="关闭图片查看器">关闭</button>
 </div></div>
-<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt=""></div>
+<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt="" loading="lazy" decoding="async"></div>
 </div>
 <script>
 (function(){
@@ -302,6 +302,6 @@ viewer.addEventListener("click",function(event){if(event.target===viewer)dismiss
 document.addEventListener("keydown",function(event){if(viewer.hidden)return;if(event.key==="Escape"){dismissViewer();}else if(event.key==="+"||event.key==="="){setZoom(true);}else if(event.key==="-"){setZoom(false);}});
 })();
 </script>
-<script src="../../assets/site.js?v=0bc9f3ec57"></script>
+<script src="../../assets/site.js?v=a2ace07d37"></script>
 </body>
 </html>

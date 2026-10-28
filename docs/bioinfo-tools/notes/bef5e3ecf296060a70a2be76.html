@@ -137,7 +137,7 @@ body.image-viewer-open{overflow:hidden}
 <li>点离哪个角近 → 在相应组中<strong>相对比例高</strong>；离哪个角远 → 相对比例低。</li>
 <li>点的大小常映射平均丰度/占比。</li>
 </ul>
-<img src="../../assets/notes/bioinfo-tools/bef5e3ecf296060a70a2be76/489dbd.png" alt="三元图示例"><blockquote>
+<img src="../../assets/notes/bioinfo-tools/bef5e3ecf296060a70a2be76/489dbd.png" alt="三元图示例" loading="eager" decoding="async" fetchpriority="high"><blockquote>
 <p>三组联合展示示例：正三角形三点为组，圆点位置反映特征在三组的比例分布。</p>
 </blockquote>
 <h2 id="section-2">文献应用场景<a class="heading-anchor" href="#section-2" aria-label="链接到本节">#</a></h2>
@@ -200,7 +200,7 @@ body.image-viewer-open{overflow:hidden}
 <li><strong>三元图 + 箱线图</strong>：三元图看分布 + 箱线图突出三组特异特征累计丰度的组间差异（用同一色系横向比较）。</li>
 <li><strong>三元图 + 柱状图</strong>：三元图看群落分布 + 柱状图展示主要门相对丰度并加显著性标记（Kruskal-Wallis）。</li>
 </ul>
-<img src="../../assets/notes/bioinfo-tools/bef5e3ecf296060a70a2be76/adef16.png" alt="三元图结合箱线图"><blockquote>
+<img src="../../assets/notes/bioinfo-tools/bef5e3ecf296060a70a2be76/adef16.png" alt="三元图结合箱线图" loading="lazy" decoding="async"><blockquote>
 <p>三组比较的组合表达示例：三元图展示分布，箱线图/柱状图补充统计检验。</p>
 </blockquote>
 <h2 id="section-4">快查数据格式<a class="heading-anchor" href="#section-4" aria-label="链接到本节">#</a></h2>
@@ -248,7 +248,7 @@ body.image-viewer-open{overflow:hidden}
 <a class="image-viewer-action" id="image-open-original" href="#" target="_blank" rel="noopener noreferrer">新标签打开</a>
 <button class="image-viewer-action" id="image-viewer-close" type="button" aria-label="关闭图片查看器">关闭</button>
 </div></div>
-<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt=""></div>
+<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt="" loading="lazy" decoding="async"></div>
 </div>
 <script>
 (function(){
@@ -291,6 +291,6 @@ viewer.addEventListener("click",function(event){if(event.target===viewer)dismiss
 document.addEventListener("keydown",function(event){if(viewer.hidden)return;if(event.key==="Escape"){dismissViewer();}else if(event.key==="+"||event.key==="="){setZoom(true);}else if(event.key==="-"){setZoom(false);}});
 })();
 </script>
-<script src="../../assets/site.js?v=0bc9f3ec57"></script>
+<script src="../../assets/site.js?v=a2ace07d37"></script>
 </body>
 </html>

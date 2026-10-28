@@ -167,7 +167,7 @@ body.image-viewer-open{overflow:hidden}
 <p>今天，OmicOS 正式版（ <code>https://omicos.cn/</code> ）发布，我们希望，生物学家从此不再需要到处求人合作分析数据。</p>
 <p><em><strong>Steorra</strong></em></p>
 </blockquote>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwl98FUpdNF4OBhZkaSiaL7m2ibzub8T7STxXF58YO61Zrnhhqic9aAY5UqdxVpRWlOQRnhhbL8WcHN2Re1FbMAm2OOWV9V8CXyQIeU/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="OmicOS在BioRxiv上线了"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwl98FUpdNF4OBhZkaSiaL7m2ibzub8T7STxXF58YO61Zrnhhqic9aAY5UqdxVpRWlOQRnhhbL8WcHN2Re1FbMAm2OOWV9V8CXyQIeU/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="OmicOS在BioRxiv上线了" loading="eager" decoding="async" fetchpriority="high"></p>
 <p>OmicOS在BioRxiv上线了</p>
 <p>在2024年底，OmicOS项目立项，但中途一度夭折，因为Claude Code，Codex，opencode等工具的出现，似乎已经将Agent智能体的蓝海填满了。我一直在问自己，如果我继续做AI科学家，那么能做的比御三家的Agent产品要好吗？</p>
 <p><strong>答案是肯定的，我们不仅能做得更好，还要同时奠定AI4Bio时代的基础设施</strong></p>
@@ -176,23 +176,23 @@ body.image-viewer-open{overflow:hidden}
 <p>分析能力有多强呢？ <em><strong>通俗一点来说，给定一篇pdf，OmicOS可以自动下载数据，然后自动复现论文里的所有分析和图表</strong></em></p>
 <p>OmicVerse现在涵盖了 <strong>基因组学，转录组学，蛋白组学，代谢组学，微生物组学，表观基因组学，空间转录组，单细胞转录组，分子靶点对接分析，前沿可视化</strong> 等所有跟组学相关的内容，你没看错，是所有。并且统一了R下的Bioconductor/CRAN下的算法包，通过RebuildR将其重构成 <strong>更快，更准</strong> 的Python包。</p>
 <p>到此，一个AI时代的基础设施，初步形成。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwl9l8luc1j1W3iafKSZic62ib7xLjaicLt50NfxJ04gh04xaLzgbYNe1lWvoy0elujRicaALaWvmcuuQ17ByMZkLad0CAjuUrphib6Npo/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="OmicOS的五层架构"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwl9l8luc1j1W3iafKSZic62ib7xLjaicLt50NfxJ04gh04xaLzgbYNe1lWvoy0elujRicaALaWvmcuuQ17ByMZkLad0CAjuUrphib6Npo/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="OmicOS的五层架构" loading="lazy" decoding="async"></p>
 <p>OmicOS的五层架构</p>
 <h2 id="section-1">Benchmark测评<a class="heading-anchor" href="#section-1" aria-label="链接到本节">#</a></h2>
 <p>在OmicClaw这篇论文，我犯了一个错误，没有横向，充分地在生物学benchmark上去对比claude code，codex，biomni等Agent的能力，而是仅对比了OmicVerse+gpt5.5前后的能力差，并且任务也选的只有10个简单任务。</p>
 <p><strong>没有人相信你是世界最好，你不是最好谁又会用呢？</strong></p>
 <p>我们首先选取了BixBench-Verified-50，这是FutureHouse提出，Biomni精选的50道生物学分析问题，用于评估AI智能体的数据分析能力。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwlibPLRLVyibaE6VWgeYdFoAEP5jrpzWLkr0zjLzEIuwxC6g3efYlDXJL4T49l1NpNaVRjvNNmjrphtv23mtnOS6sBkyxYr7ynjfU/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="BixBench测评能力"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwlibPLRLVyibaE6VWgeYdFoAEP5jrpzWLkr0zjLzEIuwxC6g3efYlDXJL4T49l1NpNaVRjvNNmjrphtv23mtnOS6sBkyxYr7ynjfU/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="BixBench测评能力" loading="lazy" decoding="async"></p>
 <p>BixBench测评能力</p>
 <p>在50道题中，有45道题被OmicOS完美解决，而剩下的5道题，似乎OmicOS也答对了，但是答案的选取标准可能有一些问题，我们不敢说OmicOS能解决所有的生物学分析问题，但我们证明了一个事儿，那就是 <strong>OmicOS+deepseek-v4-pro</strong> 的组合，是目前世界上最具有竞争力，最便宜的分析框架体系。</p>
-<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwl9zUjCiboibt3S2yYusAib91c4Uj5exjg0FtEYYungiaoSUJNTWsZHNicS4hJeZIoibAf8IflMahab5BakgEwu98HWj6ibxHKJA1mkEOc/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="BixBench错题分析"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwl9zUjCiboibt3S2yYusAib91c4Uj5exjg0FtEYYungiaoSUJNTWsZHNicS4hJeZIoibAf8IflMahab5BakgEwu98HWj6ibxHKJA1mkEOc/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="BixBench错题分析" loading="lazy" decoding="async"></p>
 <p>BixBench错题分析</p>
 <p>当然，BixBench是面向结果的，而在真实的生物学分析里，是面向过程的，很多时候，我们需要去评估Agent智能体是否正确选择了方法，是否正常处理了数据，是否进行了可靠的生物学解释等，因此Phylo推出了一个新的Benchmark——BiomniBench，这是一个同时面向过程和结果的AI智能体的评估基准测试，过程的评价使用Gemini进行打分。</p>
-<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwl98CqQrS0vvEXtohial4tHiatsHyxeYBAbzW6IzlZgEkhia5iaCc3Ky3sGyX0yXNSuO8eDngYwNfSRoVskib5Qic7U6V0mRQk6275lbM/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="BiomniBench结果"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwl98CqQrS0vvEXtohial4tHiatsHyxeYBAbzW6IzlZgEkhia5iaCc3Ky3sGyX0yXNSuO8eDngYwNfSRoVskib5Qic7U6V0mRQk6275lbM/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="BiomniBench结果" loading="lazy" decoding="async"></p>
 <p>BiomniBench结果</p>
 <p>我们可以看见在BiomniBench的论文里的100道题下，Claude Code+Opus 4.7的得分是72.7，Codex+GPT5.5的得分是67，而Qwen，Kimi仅有60分，看起来都不高对吧。</p>
 <p>由于BiomniBench在HuggingFace上开放了其中的50道题，我们也因此能评估OmicOS与不同的大模型基座之间的能力， <strong>很有趣的是，OmicOS+ds4-pro的得分，也来到了72，价格仅是Claude Code+Opus的1/10。而OmicOS+GPT5.5的得分，来到了78.2，排除了BiomniBench上的错题，更是来到了81.2</strong> 。</p>
-<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwl8angvZDyPWiaIx3tbITFBO5vtAJzMOibXOQKEPb6j6MBElOjutg98c65WXlicIyFk8Y8TalbmJj6q5jibQasKSpQEyvWwoB9EgkVM/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="BiomniBench的详细任务"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwl8angvZDyPWiaIx3tbITFBO5vtAJzMOibXOQKEPb6j6MBElOjutg98c65WXlicIyFk8Y8TalbmJj6q5jibQasKSpQEyvWwoB9EgkVM/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="BiomniBench的详细任务" loading="lazy" decoding="async"></p>
 <p>BiomniBench的详细任务</p>
 <p>需要承认的是，目前国产大模型与国外前沿模型还是有一定差距，无论是长程能力的执行又或者是响应速度，Prompt的遵从性。</p>
 <p>但这也让我们看到了希望，原来做好Harness，是真能在垂类任务上追赶，甚至反超国外前沿大模型（注：GLM5.2没测是因为我抢不到Coding Plan）。</p>
@@ -200,13 +200,13 @@ body.image-viewer-open{overflow:hidden}
 <h2 id="section-2">OmicVerse对模型能力的提升<a class="heading-anchor" href="#section-2" aria-label="链接到本节">#</a></h2>
 <p>作为一个学术研究，我们既然说是 <strong>“重构AI4Bio的基础设施”</strong> ，那么少不了对模型添加OmicVerse前后的能力变化。为此我们不鼓吹OmicOS有多好，我们采用Mini-SWE-Agent，这是一个仅有100行代码的最简Agent。</p>
 <p>由于BixBench和BiomniBench在组学任务上没有覆盖完全，仅有转录组，GWAS等计算友好的类别，为此我们构建了OmicBench，这是一个涵盖了40个任务的基准测试，包含了7大组学的任务，在未来我们会继续扩充更多的内容进入该基准测试。</p>
-<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwl89GQhRGzINCJ8wuhKaZRqm9RJ8sypI9NCHD4icLPyscD6giaMgyAzJIpGA2WqDIukYdS4tUDYMLSTo6fiaaftcch2ZPVcGVbav3I/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="OmicBench概览"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwl89GQhRGzINCJ8wuhKaZRqm9RJ8sypI9NCHD4icLPyscD6giaMgyAzJIpGA2WqDIukYdS4tUDYMLSTo6fiaaftcch2ZPVcGVbav3I/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="OmicBench概览" loading="lazy" decoding="async"></p>
 <p>OmicBench概览</p>
 <p>我们发现，在结合了OmicVerse这个AI4Bio的基础设施后， <strong>本地开源小模型Qwen3.6-35b-A3b的能力提升了34.2%，直追大模型如Deepseek-V4-Pro。</strong> 一方面，这说明我们实现了模型平权和隐私保护，尤其是生物医学这块，我们可以完全让分析数据不脱离用户自己的电脑，这听起来很疯狂，但我们确实做到了。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwlicFu1lzrVXaXHiaLicjFFFy74sAEfibL9Ffo1s2PiachnR34X3P96pMTwAgQftuPKVmevwjIhED5ph9gbOicU93oExXzIju9HDVHIKM/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="模型能力的提升"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwlicFu1lzrVXaXHiaLicjFFFy74sAEfibL9Ffo1s2PiachnR34X3P96pMTwAgQftuPKVmevwjIhED5ph9gbOicU93oExXzIju9HDVHIKM/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="模型能力的提升" loading="lazy" decoding="async"></p>
 <p>模型能力的提升</p>
 <p>另一方面，这表明，对于绝大多数生物学分析任务而言，并不需要领域内最好的大模型， <strong>而缺的仅是一个真正意义上的AI4Bio的基础设施</strong> 。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwlic0a2nOKpGfuFqqr3XI93gMlE0X8frbPActGQAK5TfEKr6AuTDTVveIXvROqBxoicQ6nmZTDPg807b2NxA2LwZvjXUaS45dDxFg/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="模型提升的细则"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwlic0a2nOKpGfuFqqr3XI93gMlE0X8frbPActGQAK5TfEKr6AuTDTVveIXvROqBxoicQ6nmZTDPg807b2NxA2LwZvjXUaS45dDxFg/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="模型提升的细则" loading="lazy" decoding="async"></p>
 <p>模型提升的细则</p>
 <p>行文至此，还是很感慨，四年前的满腔热情，竟有希望成为AI4Bio一个重要的基础设施。</p>
 <h2 id="section-3">重构R语言生态体系<a class="heading-anchor" href="#section-3" aria-label="链接到本节">#</a></h2>
@@ -216,16 +216,16 @@ body.image-viewer-open{overflow:hidden}
 <p>当用户开始关心运行速度的时候，就会自然而然转向更快的Python生态体系，但是用户又不希望丢失R语言生态的算法，这自然而然地引出了一个两难的问题， <strong>如果能在Python里也使用R包就好了</strong></p>
 <p>这里指的不是通过Python使用rpy2等wrapper去调用R包，而是真正意义上使用Python的标准库进行重新实现。在Agent时代，这似乎并不是什么难事儿，但是缺乏一个标准， <strong>怎样重构的R包，才是好用的Python包？</strong></p>
 <p>我在两个月前发出了一个倡议，重构R语言生态体系（微信公众号链接），林林总总有十几个小伙伴响应了我的号召，我们在不到一个月的时间内，重构了58个R包，使其变成完全的Python包。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwlicD8E9uzzQUmnHxzFwyhe3Kwm47V4hV5UMU1ibDK5ORI2UCAC0sRW94UbsicCTOibF1uWgS02OIjxSdx5koulibSojkS45F1UGH4rg/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwlicD8E9uzzQUmnHxzFwyhe3Kwm47V4hV5UMU1ibDK5ORI2UCAC0sRW94UbsicCTOibF1uWgS02OIjxSdx5koulibSojkS45F1UGH4rg/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片" loading="lazy" decoding="async"></p>
 <p>并且我们也归纳总结出了一个通用的Agent转换协议RebuildR，该协议类似强化学习，主要分为三个步骤，（1）提出候选的重构算法设计思路；（2）每一个思路进行运行时间和准确性的评估；（3）迭代继续优化。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwlicQbuCGn3FTQyZkkzqMcFAWz9UnLBqrK5hNMYm19P81lMuOoAsbgDJMOrOfdFV8ibYTy82CjA5Ivcg3kCH4xXWdme1esUgBcvp8/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="RebuildR协议"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwlicQbuCGn3FTQyZkkzqMcFAWz9UnLBqrK5hNMYm19P81lMuOoAsbgDJMOrOfdFV8ibYTy82CjA5Ivcg3kCH4xXWdme1esUgBcvp8/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="RebuildR协议" loading="lazy" decoding="async"></p>
 <p>RebuildR协议</p>
 <p>听起来很简单，实际上这很工程学。对于重构后的算法，其实我并不需要结果完全一致，也可以是精度上的一致，例如小于1e7，还可以是数学上的子集优化，这意味着，我只需要找到数学上的近似优化，就可以不仅利用Python的运行速度优势，还可以利用数学上的计算优势，这才是真正意义上的，重构R/Python社区。</p>
 <p>我们进行了7种拟时序算法的R/Python实现的基准测试，发现RebuildR重构后的算法，不仅运行速度可以是原来的几十倍，准确度甚至略有提升。</p>
-<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwlicibsic0CFbSj3lia5zYCc3Taq8Uwb5Ac6CU9ftvzPJz29LcGHmwZrXqBib4fEl26V6SjVdzWVhYk45cnwJ3bhmdZofqP5lQmib9nBc/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="Benchmark对比拟时序"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwlicibsic0CFbSj3lia5zYCc3Taq8Uwb5Ac6CU9ftvzPJz29LcGHmwZrXqBib4fEl26V6SjVdzWVhYk45cnwJ3bhmdZofqP5lQmib9nBc/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="Benchmark对比拟时序" loading="lazy" decoding="async"></p>
 <p>Benchmark对比拟时序</p>
 <p>并且我们还将这些重构算法的进化迭代路径展现出来，发现重构并不是一簇而就的，而是像进化一样，有一个演化过程，这也反证我们RebuildR不是简单的算法重构，而是一个工程上，数学上都有意义的执行体系。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwlibh6nX1p5sViaic9D4PVS8ektPBczRFNzdF3QeXYYdGFUBAct9qwlvnR4iaZXun3sjCYic13tuyibBZzX0ibK7Mrz41YWwWcNAxs6SrU/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="PseudoTimeFate应用"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwlibh6nX1p5sViaic9D4PVS8ektPBczRFNzdF3QeXYYdGFUBAct9qwlvnR4iaZXun3sjCYic13tuyibBZzX0ibK7Mrz41YWwWcNAxs6SrU/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="PseudoTimeFate应用" loading="lazy" decoding="async"></p>
 <p>PseudoTimeFate应用</p>
 <p>并且OmicVerse可不是仅仅重构算法成Python包这么简单，我们既然构建的是基础设施， <strong>那么必定有一个统一的上层API函数，去容纳不同的算法包。</strong></p>
 <p>在这个例子里，我们演示的是 <code>omicverse.single.PseudotimeFate</code> 和 <code>omicverse.single.Traj</code> ，PseudotimeFate支持任何拟时序结果作为输入，可以进行谱系的预测，从而执行时序驱动基因的发现，而Traj支持method=‘任意拟时序算法名’，自动计算出pseudotime。</p>
@@ -234,77 +234,77 @@ body.image-viewer-open{overflow:hidden}
 <p>一个月前的Nature三连发，其中Robin提出了一个科学新发现的探索逻辑，组合不同文献里的知识，找出遗漏的内容，我认为这仅是第一层。</p>
 <p>而在OmicOS中，由于都在同一个生态体系内，因此， <strong>我们可以直接组合不同算法，结合不同算法对于数据挖掘的优势，将一个数据所有维度的内容分析出来</strong> ，我认为这是探索新科学发现的第二层。</p>
 <p><em><strong>第一层再怎么组合，也组合不出没进行过数据挖掘和分析的内容</strong></em></p>
-<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwlicgjkLeLTC6ib56jdJiaX8F3ib9ibjaKGibibNR4arlHHcSJVNaSticyu2jvm9M6lhEH3KVKbqnPibDnHCHvgR0V2UcyicePu1zPrGmKh7I/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="生态模块组合Agent"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwlicgjkLeLTC6ib56jdJiaX8F3ib9ibjaKGibibNR4arlHHcSJVNaSticyu2jvm9M6lhEH3KVKbqnPibDnHCHvgR0V2UcyicePu1zPrGmKh7I/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="生态模块组合Agent" loading="lazy" decoding="async"></p>
 <p>生态模块组合Agent</p>
 <p>这其实也是一个可以单独拿出来发顶会的设计，我们将OmicVerse生态抽象成16个套件，然后自由组合不同的套件，我们既可以得到“质控-预处理-细胞注释”这种传统的分析路径，也可以得到“空间单细胞定位-空间性状挖掘”这种需要跨领域知识的分析路径，通过打分Agent，我们找出一条或多条能充分挖掘该数据的分析思路，然后再交给OmicOS执行。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwl8XojZNdDZDVdv2pV9NFelpIxRtpAvR0KeNMvaoueTHGOEHylgibsBN6x6ccGnSgUD8AjrRRHPGHn3ic7ujd4uE71jJufMBBhtico/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="阿尔茨海默症图谱"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwl8XojZNdDZDVdv2pV9NFelpIxRtpAvR0KeNMvaoueTHGOEHylgibsBN6x6ccGnSgUD8AjrRRHPGHn3ic7ujd4uE71jJufMBBhtico/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="阿尔茨海默症图谱" loading="lazy" decoding="async"></p>
 <p>阿尔茨海默症图谱</p>
 <p>于是我们看见，OmicOS自动从GEO和cellxgene等数据库来源，跨越5个研究， <strong>下载并构建了一个跨越10个年龄段的小鼠单细胞全器官图谱</strong> ，然后调用CellTrek，CMAP等方法，将单细胞映射到空间位置上，然后使用gsmap将AD性状解析道空间位置上，将gsmap的结果从组织层提升到了细胞类型层。</p>
 <p>后续的分析由于我不是GWAS专业的，所以基本上都是Agent自行提出分析思路，我点击同意，然后自动下载数据，自动安装算法包，自动分析进行的，包括AD性状基因跟空间上皮marker的共定位（为了确定真是上皮细胞相关）。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwlibicSqeAJo9Xib0v6xH4AEVVPaKYoiajGBkZwlOUkvLV3PMaJpaflm5GV7BUBibEVqibNzk5hCoGfJ3nN8GWsWRL8CmtO39OGF2yUg8/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="基因共定位"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwlibicSqeAJo9Xib0v6xH4AEVVPaKYoiajGBkZwlOUkvLV3PMaJpaflm5GV7BUBibEVqibNzk5hCoGfJ3nN8GWsWRL8CmtO39OGF2yUg8/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="基因共定位" loading="lazy" decoding="async"></p>
 <p>基因共定位</p>
 <p>很有趣，我们下一步就会开展相关的小鼠实验验证这一生物学发现的真实性了。</p>
 <h2 id="section-5">OmicOS可扩展到任意科学发现<a class="heading-anchor" href="#section-5" aria-label="链接到本节">#</a></h2>
 <p>刚刚提出的很多内容，都是基于OmicVerse生态下的组学分析。实际上，我们的愿景是要打造一个真正的AI科学家，那么由于开发团队的限制，还有很多功能我们没法导入OmicVerse生态，例如HE病理图像处理。</p>
 <p>我们构建了PortBuild， <strong>这是一个可以将任意包的教程，源码，Notebook转换成Agent/Skill的工具体系</strong> ，我们利用了SkillOPT的优化思想，将Skill当成一个神经网络去训练，通过迭代优化，自动将包变成了Agent/Skill，然后我们用OmicOS调用LazySlide去看看效果。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwlibib83tkV8xKDsEI0DwB80IebLHDCt0bG1v0wLB1NkHfguzX3ZOS9zrEMIERib5ibFtTCD3QsjS83GhPpHRNy4LbwRJB183YxuZM4/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=16" alt="PortBuild概览"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwlibib83tkV8xKDsEI0DwB80IebLHDCt0bG1v0wLB1NkHfguzX3ZOS9zrEMIERib5ibFtTCD3QsjS83GhPpHRNy4LbwRJB183YxuZM4/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=16" alt="PortBuild概览" loading="lazy" decoding="async"></p>
 <p>PortBuild概览</p>
 <p>我们发现，OmicOS因此有了相当完善的HE分析能力，可以做特征提取，找出病理相关的特征，也可以调用OmicVerse本来的HE预测基因表能力去生成空间转录组学数据，还可以同时分析100及以上的HE病理切片大队列，找出生存分析相关的特征因素。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwlibicMcBKJZCgGpKdNnY1jCPUfkDuEFvAojw2hgu4J0jSSichMEIHoyoKmdkS2P0bpyibiarudicohHTicguHedYNIzqIfQZLgzNic1jJw/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=17" alt="大队列处理"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwlibicMcBKJZCgGpKdNnY1jCPUfkDuEFvAojw2hgu4J0jSSichMEIHoyoKmdkS2P0bpyibiarudicohHTicguHedYNIzqIfQZLgzNic1jJw/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=17" alt="大队列处理" loading="lazy" decoding="async"></p>
 <p>大队列处理</p>
 <h2 id="section-6">OmicOS 到底是什么？<a class="heading-anchor" href="#section-6" aria-label="链接到本节">#</a></h2>
 <p>我认为OmicOS是一个可成为任何人助手的AI科学家，并且分析完全在本地，你无需为数据上传而担忧，还可以自定义API来调用不同大模型的能力。</p>
 <p><strong>我是希望它成为科学家的Claude Code平替，甚至在未来成为上位替代</strong></p>
-<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwl878fA4qn1g2TrjgdBxf8KhibibHulI7koILfy7e5mkHYIfLEAOaZFQj7T3kicllICcpM1c0V3SMqokJShAQt5d1wVps6LIvHWDibw/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=18" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwl878fA4qn1g2TrjgdBxf8KhibibHulI7koILfy7e5mkHYIfLEAOaZFQj7T3kicllICcpM1c0V3SMqokJShAQt5d1wVps6LIvHWDibw/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=18" alt="图片" loading="lazy" decoding="async"></p>
 <h3 id="section-7">你的AI科学家<a class="heading-anchor" href="#section-7" aria-label="链接到本节">#</a></h3>
 <p>把公开数据、实验设计、文献证据和分析代码通通交给 OmicOS。它直接基于真实组学数据展开分析、提出假设，并产出每一步都可复核、可复现的 notebook，让你无需把复杂的科研问题强行压缩成一条提示词。</p>
-<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwl9wVYoibBDwLxibCarnwOoPKMw75qOic9fVlwjtcbDl50QFBnqtV6QWx6y5xJT2N1VxsQHtqYmicAOticKUUUTYZ9Xkrryp9KJiaibBmE/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=19" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwl9wVYoibBDwLxibCarnwOoPKMw75qOic9fVlwjtcbDl50QFBnqtV6QWx6y5xJT2N1VxsQHtqYmicAOticKUUUTYZ9Xkrryp9KJiaibBmE/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=19" alt="图片" loading="lazy" decoding="async"></p>
 <h3 id="section-8">交付可复现的科研成果<a class="heading-anchor" href="#section-8" aria-label="链接到本节">#</a></h3>
 <p>产出你可以直接评审、复核并写进论文的分析报告、出版级图表、差异基因与富集结果、方法学描述，以及每一步都能重跑的 notebook——不是一段聊天回答，而是带代码、带证据、可回溯的完整工作成果。</p>
-<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwl9jt16z84ppvVbLsHZGwCyhGiaJLqGY3uQd37X7X5Zm4fS7lxuOIu8jia6SRZgGo4bxkGHwrJDNI4fxxNuJdw3jxl0tHaCM2Q7icU/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=20" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwl9jt16z84ppvVbLsHZGwCyhGiaJLqGY3uQd37X7X5Zm4fS7lxuOIu8jia6SRZgGo4bxkGHwrJDNI4fxxNuJdw3jxl0tHaCM2Q7icU/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=20" alt="图片" loading="lazy" decoding="async"></p>
 <h3 id="section-9">和 AI 共享同一个 notebook<a class="heading-anchor" href="#section-9" aria-label="链接到本节">#</a></h3>
 <p>OmicOS 把分析放进一个活的 notebook：你和 AI 共享同一个 Python 内核和同一批变量，AI 能直接读你的 adata、跑下一格、画图，你也能随时改一行代码接着往下走。不是黑箱给答案，而是每一步都是真实、可编辑、可重跑的代码。</p>
-<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwlib23M5LdaY76E3s99cwBK3oZSibzibWvuS7HtjKZkmlk5AYNTBwgXmvibkbAB9via9Q1JGj4q7t3PHkNpyDSH3lam9HzjShHIsiabpg/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=21" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwlib23M5LdaY76E3s99cwBK3oZSibzibWvuS7HtjKZkmlk5AYNTBwgXmvibkbAB9via9Q1JGj4q7t3PHkNpyDSH3lam9HzjShHIsiabpg/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=21" alt="图片" loading="lazy" decoding="async"></p>
 <h3 id="section-10">每个结论，都能查到它从哪来<a class="heading-anchor" href="#section-10" aria-label="链接到本节">#</a></h3>
 <p>OmicOS 不会凭空给你一个数字。每一条结论都绑定生成它的代码格、用到的数据和引用的文献——点一下就能回溯到那一格重跑、那篇文章。没有跑过的代码，就没有结论；讲不清来源的，它会说&quot;不确定&quot;，而不是编一个。完整的轨迹分析可溯源，可追踪。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwlib7jQcROarJAJF4ytvWjyhUf9YruXibNh9lyAaaTOcnVPqVjGlzQGOwBpopKBn6g35F2omd79YicpkviaFvReA8amg8rBUrNHfUSo/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=22" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwlib7jQcROarJAJF4ytvWjyhUf9YruXibNh9lyAaaTOcnVPqVjGlzQGOwBpopKBn6g35F2omd79YicpkviaFvReA8amg8rBUrNHfUSo/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=22" alt="图片" loading="lazy" decoding="async"></p>
 <h3 id="section-11">不仅是一个 AI，更是一支组学团队<a class="heading-anchor" href="#section-11" aria-label="链接到本节">#</a></h3>
 <p>一个任务进来，编排智能体把它拆给合适的专家智能体：质控、预处理、注释、轨迹、富集、空间、微生物组……40+ 专科 agent、152 个精选分析技能各司其职。不归自己管的活，专家智能体会直接说&quot;这不是我的范围&quot;并转交给其他人，而不是硬答，这与真实的科研协作一样。</p>
-<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwl9qc8rZ21dicGRkT2lYEygnPSOc88CQlWB5MTTibowSypfkNtwm0MIRlDpLWb50FHGLwulLxUObAsKvNxcQ1ibJOWAHaicF3nkrvfU/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=23" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwl9qc8rZ21dicGRkT2lYEygnPSOc88CQlWB5MTTibowSypfkNtwm0MIRlDpLWb50FHGLwulLxUObAsKvNxcQ1ibJOWAHaicF3nkrvfU/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=23" alt="图片" loading="lazy" decoding="async"></p>
 <h3 id="section-12">你的数据，不出你的机器<a class="heading-anchor" href="#section-12" aria-label="链接到本节">#</a></h3>
 <p>OmicOS 运行在你的本地计算机，我并不同意phylo的思想，本地分析完全是可行的，数据上传风险很大，在omicos里，我们起一个 127.0.0.1 上的本地内核，所有计算、变量、图表和 notebook 都留在.omicos/ 工作区里。处理临床或未发表数据时，你不必把它交给任何云端。需要算力时，同一套还能在 HPC 上以终端模式（omicos cli）通过 SSH 直接跑。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwl9Gcjia8PPPD6TsOtC1n4N3iaClwL2Yz4xicjnHz0J3jJ8p1GyS96HssoiaMaukYDJyZUv6XWJdIricfYUtgLiaYc4yiaclw07HiaMstfw/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=24" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwl9Gcjia8PPPD6TsOtC1n4N3iaClwL2Yz4xicjnHz0J3jJ8p1GyS96HssoiaMaukYDJyZUv6XWJdIricfYUtgLiaYc4yiaclw07HiaMstfw/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=24" alt="图片" loading="lazy" decoding="async"></p>
 <h3 id="section-13">持续更新的工具体系<a class="heading-anchor" href="#section-13" aria-label="链接到本节">#</a></h3>
 <p>我们在OmicOS 1.0引入了单细胞数据查看器，ImageJ，Pymol，HE病理分析， <strong>这些工具体系可以直接通过AI对话使用，你将无需再学习复杂的软件操作过程</strong> 。</p>
-<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwlicsFT75kAYR8Fb9kVhWwuRtSonCY4qzOHqRGX3cOiaxwAUNc6JccXv7xg4JjbO51EK2qGO9SILRS3ZHRzZ6AibRNsgOkxVV8ykak/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=25" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwlicsFT75kAYR8Fb9kVhWwuRtSonCY4qzOHqRGX3cOiaxwAUNc6JccXv7xg4JjbO51EK2qGO9SILRS3ZHRzZ6AibRNsgOkxVV8ykak/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=25" alt="图片" loading="lazy" decoding="async"></p>
 <p>我是没学过ImageJ的，但在OmicOS，你可以直接通过对话，例如输入“请帮我实现细胞计数并且可视化轮廓”，那么就会自动完成ImageJ的分析</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwl8FUNFqpGBewGwaHV3MDmLKXzLmMErwbNE30u398L7NpcWeia1SIsQ656GuqATSpp2J1vEtkE4NFVChb931n01PEibD2jES5PoKU/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=26" alt="AI对话ImageJ"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwl8FUNFqpGBewGwaHV3MDmLKXzLmMErwbNE30u398L7NpcWeia1SIsQ656GuqATSpp2J1vEtkE4NFVChb931n01PEibD2jES5PoKU/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=26" alt="AI对话ImageJ" loading="lazy" decoding="async"></p>
 <p>AI对话ImageJ</p>
 <p>而对于某平台收费上千元的病理大模型HE分析，在OmicOS，你不需要学任何复杂的使用说明，只需要简单的对话，就能分析出HE特定的特征，例如找出切片上的免疫细胞。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/B5q0fKlEwl8LmC9qibdCYJle690wrg9FSAphYibMbgickJ2pUkcQ6f7caENMxibAxtG1bGdt7Ve7kExHRh4pj0o9AsYF9rZRxknn3XINJiad3bcg/640?wx_fmt=jpeg&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=27" alt="AI对话病理切片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/B5q0fKlEwl8LmC9qibdCYJle690wrg9FSAphYibMbgickJ2pUkcQ6f7caENMxibAxtG1bGdt7Ve7kExHRh4pj0o9AsYF9rZRxknn3XINJiad3bcg/640?wx_fmt=jpeg&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=27" alt="AI对话病理切片" loading="lazy" decoding="async"></p>
 <p>AI对话病理切片</p>
 <p>此外，我们也将分子动力学的一些功能做了初步的AI对话实现，例如计算相互作用力以及可视化等，科学家再也不用学习复杂的pymol操作，也能轻松完成分子动力学的一系列分析内容。</p>
-<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/B5q0fKlEwl96UqaOaw8sqHVHCLm8iaz61XK7qez8sDgYfbxq7ZVGs1e1mgjssuRZWqrw4mKKIibXdQ62qPTj9UecaeLTTtPicukftUACAUD4oQ/640?wx_fmt=jpeg&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=28" alt="AI对话分子动力学"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/B5q0fKlEwl96UqaOaw8sqHVHCLm8iaz61XK7qez8sDgYfbxq7ZVGs1e1mgjssuRZWqrw4mKKIibXdQ62qPTj9UecaeLTTtPicukftUACAUD4oQ/640?wx_fmt=jpeg&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=28" alt="AI对话分子动力学" loading="lazy" decoding="async"></p>
 <p>AI对话分子动力学</p>
 <h2 id="section-14">OmicOS移动端<a class="heading-anchor" href="#section-14" aria-label="链接到本节">#</a></h2>
 <p>对于科学家而言，我们不仅需要的是一个能在自己电脑运行的AI科学家，还需要这个AI科学家能24小时待命。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/B5q0fKlEwl94xg1licPzian8icbdAxiaj2V7B3eib5VntAS01EEVricYtHzEA35L5WVqlRczaBmBqMlJRuju6tHtY4mKibXlgtjCHv4GECCX1TRbwU/640?wx_fmt=jpeg&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=29" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/B5q0fKlEwl94xg1licPzian8icbdAxiaj2V7B3eib5VntAS01EEVricYtHzEA35L5WVqlRczaBmBqMlJRuju6tHtY4mKibXlgtjCHv4GECCX1TRbwU/640?wx_fmt=jpeg&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=29" alt="图片" loading="lazy" decoding="async"></p>
 <p>于是我们构建了OmicOS移动端，只要你在电脑和手机登录了相同的OmicOS账户，那么即使在户外，你也可以随时随地操控OmicOS</p>
-<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/B5q0fKlEwliboKNZGP25S783xyJzzMBvxvOqmofXibMXVqZa9cO4VW6IT0Byj1NORqibrxY2YT7bRhiaEQgickpIib1YXEpDadaA1hSWQdWkab3OI/640?wx_fmt=jpeg&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=30" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/B5q0fKlEwliboKNZGP25S783xyJzzMBvxvOqmofXibMXVqZa9cO4VW6IT0Byj1NORqibrxY2YT7bRhiaEQgickpIib1YXEpDadaA1hSWQdWkab3OI/640?wx_fmt=jpeg&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=30" alt="图片" loading="lazy" decoding="async"></p>
 <p>并且我们还设计了很多有意思的功能，作为AI科学家，那肯定不能是单打独斗，我们希望能学到其他AI科学家的知识，于是我们构建了AI实验室。</p>
 <p>这是一个群组功能，同一个实验室的用户，可以对另一个用户公开的分析过程，进行对话，了解与学习其他人是如何分析数据的。</p>
 <p><strong>该功能还在内测中，欢迎大家体验，如有bug也可以在用户群反馈</strong></p>
-<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/B5q0fKlEwlicgRsa9rj9enPcr45nyETe9toIzphib4Lx2mm0Qd0Sem51X6a18nNUvzMsf0391FJW0lzdSOibAFkaoSnwbia01BicyiawYlwNU7Hxw/640?wx_fmt=jpeg&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=31" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/B5q0fKlEwlicgRsa9rj9enPcr45nyETe9toIzphib4Lx2mm0Qd0Sem51X6a18nNUvzMsf0391FJW0lzdSOibAFkaoSnwbia01BicyiawYlwNU7Hxw/640?wx_fmt=jpeg&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=31" alt="图片" loading="lazy" decoding="async"></p>
 <h2 id="section-15">下载链接<a class="heading-anchor" href="#section-15" aria-label="链接到本节">#</a></h2>
 <h3 id="section-16">OmicOS网页版/桌面版<a class="heading-anchor" href="#section-16" aria-label="链接到本节">#</a></h3>
 <p>我们提供了免安装的桌面版，对于新用户而言，可以在官网 <strong>（阅读原文）</strong> 直接下载OmicOS客户端体验；对于老用户以及有服务器使用需求的用户而言，可以使用npm进行直接安装： <code>npm install -g @omicverse/omicos</code></p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwlicG05TliaiakgfbEvzKj0mbKKRncvHxSd5DDNkQWRCZ5mOK6H5nmxjTZwAOCShp137xU1FZFVtwoM7NXsOCgkw3nmxjAMqujA2Fw/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=32" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwlicG05TliaiakgfbEvzKj0mbKKRncvHxSd5DDNkQWRCZ5mOK6H5nmxjTZwAOCShp137xU1FZFVtwoM7NXsOCgkw3nmxjAMqujA2Fw/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=32" alt="图片" loading="lazy" decoding="async"></p>
 <h3 id="section-17">OmicOS移动端<a class="heading-anchor" href="#section-17" aria-label="链接到本节">#</a></h3>
 <p>苹果用户在App Store搜索OmicOS - AI科学家直接下载；安卓和鸿蒙用户请扫二维码获取安装apk。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwl9M96SDKKYwv4Z2nibGJz2XTO4LVW4uCCulTjuxlTL7A2icpxiaZXFF0W5YxU1Phkia23U9TJLBvs4gGN5J5vPRmrBuuyDrzia6wiaAw/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=33" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/B5q0fKlEwl9M96SDKKYwv4Z2nibGJz2XTO4LVW4uCCulTjuxlTL7A2icpxiaZXFF0W5YxU1Phkia23U9TJLBvs4gGN5J5vPRmrBuuyDrzia6wiaAw/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=33" alt="图片" loading="lazy" decoding="async"></p>
 <h2 id="section-18">技术报告<a class="heading-anchor" href="#section-18" aria-label="链接到本节">#</a></h2>
 <p>这是我第一次主导20个单位，25个作者的课题，作为一个科技导向的产品，我们提供了全文详尽的报告，在附录里还额外包括了：Supplementary Notes 1-8 and Tables 1-36</p>
-<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwlicrn9FR0oCnGIMpkJKJdteWcXrkllPr7MZZ97HARs1IcC5K1NBdsKGHNQd09jV99LG4NKWBdiacibTaoIUGrlL7jFWDtibwic0c4iaQ/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=34" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/B5q0fKlEwlicrn9FR0oCnGIMpkJKJdteWcXrkllPr7MZZ97HARs1IcC5K1NBdsKGHNQd09jV99LG4NKWBdiacibTaoIUGrlL7jFWDtibwic0c4iaQ/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=34" alt="图片" loading="lazy" decoding="async"></p>
 <ul>
 <li>OmicOS论文：<a href="https://www.biorxiv.org/content/10.64898/2026.06.11.731775v1" target="_blank" rel="noopener noreferrer">https://www.biorxiv.org/content/10.64898/2026.06.11.731775v1</a></li>
 <li>OmicOS使用教程：<a href="https://docs.omicos.cn/zh/" target="_blank" rel="noopener noreferrer">https://docs.omicos.cn/zh/</a></li>
@@ -320,7 +320,7 @@ body.image-viewer-open{overflow:hidden}
 <p>OmicOS本地端已同步开放MacOS，Windows下载安装，OmicOS CLI也已同步上线npm，使用 <code>npm install @omicverse/omicos</code>, OmicOS 远程服务端也已同步上线App Store，安卓apk可前往官网下载（ <strong>阅读原文</strong> ）。</p>
 <h2 id="section-20">交流群<a class="heading-anchor" href="#section-20" aria-label="链接到本节">#</a></h2>
 <p>如果你对OmicOS有任何问题，欢迎加入用户群与我们讨论！</p>
-<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/B5q0fKlEwl82RJCubTXRFrIoiavhrfWlPb8HUg0Uh34wzZgHI0xfmXOU2stHOIzCnMic51g8X1Gonksic84AJcCDHlibiawMVhFVbCMjnBf2pKWk/640?wx_fmt=jpeg&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=35" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/B5q0fKlEwl82RJCubTXRFrIoiavhrfWlPb8HUg0Uh34wzZgHI0xfmXOU2stHOIzCnMic51g8X1Gonksic84AJcCDHlibiawMVhFVbCMjnBf2pKWk/640?wx_fmt=jpeg&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=35" alt="图片" loading="lazy" decoding="async"></p>
 <h2 id="section-21">合作<a class="heading-anchor" href="#section-21" aria-label="链接到本节">#</a></h2>
 <p>源境解码成立于2026年5月，团队成员由 <strong>清华大学，斯坦福大学，中山大学</strong> 等顶尖高校的科学家创立， <strong>我们目前正在寻找下一阶段的同行者，包括投资人、产业伙伴和资源合作方</strong> 。</p>
 <p>如果你对我们正在做的事情感兴趣，对AI4Sci的项目投资感兴趣，欢迎联系 <strong><a href="mailto:contact@omicos.cn">contact@omicos.cn</a></strong> 。</p>
@@ -344,7 +344,7 @@ body.image-viewer-open{overflow:hidden}
 <a class="image-viewer-action" id="image-open-original" href="#" target="_blank" rel="noopener noreferrer">新标签打开</a>
 <button class="image-viewer-action" id="image-viewer-close" type="button" aria-label="关闭图片查看器">关闭</button>
 </div></div>
-<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt=""></div>
+<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt="" loading="lazy" decoding="async"></div>
 </div>
 <script>
 (function(){
@@ -387,6 +387,6 @@ viewer.addEventListener("click",function(event){if(event.target===viewer)dismiss
 document.addEventListener("keydown",function(event){if(viewer.hidden)return;if(event.key==="Escape"){dismissViewer();}else if(event.key==="+"||event.key==="="){setZoom(true);}else if(event.key==="-"){setZoom(false);}});
 })();
 </script>
-<script src="../../assets/site.js?v=0bc9f3ec57"></script>
+<script src="../../assets/site.js?v=a2ace07d37"></script>
 </body>
 </html>

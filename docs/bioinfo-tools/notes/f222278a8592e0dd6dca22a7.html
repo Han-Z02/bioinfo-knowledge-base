@@ -105,7 +105,7 @@ body.image-viewer-open{overflow:hidden}
 <details class="mobile-toc"><summary>板块与文章导航</summary><nav class="sidebar-section-nav" aria-label="生信教程与工具子栏目"><div class="sidebar-nav-title">生信教程与工具</div><a class="sidebar-link" href="../index.html"><span>全部笔记</span><span class="sidebar-count">36</span></a><a class="sidebar-link" href="../web-clips.html"><span>网页教程</span><span class="sidebar-count">15</span></a><a class="sidebar-link active" href="../workflows.html"><span>分析流程</span><span class="sidebar-count">6</span></a><a class="sidebar-link" href="../visualization.html"><span>可视化与配色</span><span class="sidebar-count">5</span></a><a class="sidebar-link" href="../ai-tools.html"><span>生信 AI 工具</span><span class="sidebar-count">1</span></a><a class="sidebar-link" href="../methods.html"><span>方法笔记</span><span class="sidebar-count">7</span></a><a class="sidebar-link" href="../other.html"><span>其他资料</span><span class="sidebar-count">2</span></a></nav><nav><a class="toc-link toc-h2" href="#section-1">代码实操</a></nav></details>
 <div class="content" id="article-content"><p>原创 华哥生信 <em>2026年4月12日 22:31</em></p>
 <p><em><strong>CNS | 参考文献</strong></em></p>
-<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/eFuEKVvrHhD6d2vDxwSAhHdwGcIFkaYbnQ3pcgJ8n4hiaVetaFGAaSHwW1tkh9WnB5jgqQfMhzrib7PyyvMuKGouzdhSBCLNLtFLwIjBIlM5E/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/eFuEKVvrHhD6d2vDxwSAhHdwGcIFkaYbnQ3pcgJ8n4hiaVetaFGAaSHwW1tkh9WnB5jgqQfMhzrib7PyyvMuKGouzdhSBCLNLtFLwIjBIlM5E/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片" loading="eager" decoding="async" fetchpriority="high"></p>
 <p><strong><strong>scSurv <strong><strong><strong><strong><strong>算法介绍</strong></strong></strong></strong></strong></strong></strong></p>
 <p><strong><strong><strong><strong>scSurv是一种面向单细胞层面的生存分析方法，其核心目标是解决“细胞异质性如何影响患者预后”的问题。该方法以单细胞RNA测序数据作为参考，通过深度生成模型学习细胞的潜在表达状态，并利用这些信息对具有临床随访数据的bulk RNA-seq样本进行单细胞级别的去卷积，从而推断每个样本中不同细胞状态的组成比例。在此基础上，scSurv将这些“细胞比例”作为协变量，引入扩展的Cox比例风险模型，进一步计算每一类细胞（甚至每一个细胞状态）对患者生存风险的贡献大小。与传统方法只能在“细胞类型”或“整体表达水平”上进行分析不同，scSurv实现了从“样本层→细胞层”的跨越，使研究者可以在单细胞分辨率下直接量化不同细胞对预后的正负影响，并进一步挖掘对应的关键基因和功能通路，为理解疾病机制提供更加精细和可解释的分析框架。</strong></strong></strong></strong></p>
 <p>![图片](data:image/svg+xml,%3C%3Fxml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;%3F%3E%3Csvg width=&#39;1px&#39; height=&#39;1px&#39; viewBox=&#39;0 0 1 1&#39; version=&#39;1.1&#39; xmlns=&#39;<a href="http://www.w3.org/2000/svg" target="_blank" rel="noopener noreferrer">http://www.w3.org/2000/svg</a>&#39; xmlns:xlink=&#39;<a href="http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg" target="_blank" rel="noopener noreferrer">http://www.w3.org/1999/xlink&#39;%3E%3Ctitle%3E%3C/title%3E%3Cg</a> stroke=&#39;none&#39; stroke-width=&#39;1&#39; fill=&#39;none&#39; fill-rule=&#39;evenodd&#39; fill-opacity=&#39;0&#39;%3E%3Cg transform=&#39;translate(-249.000000, -126.000000)&#39; fill=&#39;%23FFFFFF&#39;%3E%3Crect x=&#39;249&#39; y=&#39;126&#39; width=&#39;1&#39; height=&#39;1&#39;%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E)</p>
@@ -215,7 +215,7 @@ body.image-viewer-open{overflow:hidden}
 <a class="image-viewer-action" id="image-open-original" href="#" target="_blank" rel="noopener noreferrer">新标签打开</a>
 <button class="image-viewer-action" id="image-viewer-close" type="button" aria-label="关闭图片查看器">关闭</button>
 </div></div>
-<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt=""></div>
+<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt="" loading="lazy" decoding="async"></div>
 </div>
 <script>
 (function(){
@@ -258,6 +258,6 @@ viewer.addEventListener("click",function(event){if(event.target===viewer)dismiss
 document.addEventListener("keydown",function(event){if(viewer.hidden)return;if(event.key==="Escape"){dismissViewer();}else if(event.key==="+"||event.key==="="){setZoom(true);}else if(event.key==="-"){setZoom(false);}});
 })();
 </script>
-<script src="../../assets/site.js?v=0bc9f3ec57"></script>
+<script src="../../assets/site.js?v=a2ace07d37"></script>
 </body>
 </html>

@@ -104,7 +104,7 @@ body.image-viewer-open{overflow:hidden}
 </header>
 <details class="mobile-toc"><summary>板块与文章导航</summary><nav class="sidebar-section-nav" aria-label="AI 与自动化子栏目"><div class="sidebar-nav-title">AI 与自动化</div><a class="sidebar-link" href="../index.html"><span>全部笔记</span><span class="sidebar-count">22</span></a><a class="sidebar-link active" href="../clips.html"><span>网页剪藏</span><span class="sidebar-count">10</span></a><a class="sidebar-link" href="../claude-code.html"><span>Claude Code</span><span class="sidebar-count">4</span></a><a class="sidebar-link" href="../mcp.html"><span>MCP</span><span class="sidebar-count">2</span></a><a class="sidebar-link" href="../skills.html"><span>Skills</span><span class="sidebar-count">3</span></a><a class="sidebar-link" href="../automation.html"><span>自动化与工作流</span><span class="sidebar-count">1</span></a><a class="sidebar-link" href="../other.html"><span>其他资料</span><span class="sidebar-count">2</span></a></nav><nav><p class="toc-empty">正文暂无二级标题。</p></nav></details>
 <div class="content" id="article-content"><p><a href="https://code.claude.com/docs/en/overview#desktop-app" target="_blank" rel="noopener noreferrer">https://code.claude.com/docs/en/overview#desktop-app</a></p>
-<p><img src="https://i-blog.csdnimg.cn/direct/a7d728461c3044c7aed2a1cad9d2c296.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/direct/a7d728461c3044c7aed2a1cad9d2c296.png" alt="在这里插入图片描述" loading="eager" decoding="async" fetchpriority="high"></p>
 <p>我在官网下载了Claude 的桌面版，就是想在windows上安装Claude Desktop 使用Claude Cowork与Claude Code，但是出现了下面的问题</p>
 <p>报错内容为：<br>Download failed. Check your internet connection and try again.</p>
 <p>Diagnostic log saved to:<br>C:\Users\winston\AppData\Local\Temp\ClaudeSetup.log</p>
@@ -147,7 +147,7 @@ powershell1
 <a class="image-viewer-action" id="image-open-original" href="#" target="_blank" rel="noopener noreferrer">新标签打开</a>
 <button class="image-viewer-action" id="image-viewer-close" type="button" aria-label="关闭图片查看器">关闭</button>
 </div></div>
-<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt=""></div>
+<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt="" loading="lazy" decoding="async"></div>
 </div>
 <script>
 (function(){
@@ -190,6 +190,6 @@ viewer.addEventListener("click",function(event){if(event.target===viewer)dismiss
 document.addEventListener("keydown",function(event){if(viewer.hidden)return;if(event.key==="Escape"){dismissViewer();}else if(event.key==="+"||event.key==="="){setZoom(true);}else if(event.key==="-"){setZoom(false);}});
 })();
 </script>
-<script src="../../assets/site.js?v=0bc9f3ec57"></script>
+<script src="../../assets/site.js?v=a2ace07d37"></script>
 </body>
 </html>

@@ -145,18 +145,18 @@ body.image-viewer-open{overflow:hidden}
 <li><strong>生信与多组学</strong>：单细胞、转录组、蛋白组、代谢组与多组学整合。</li>
 <li><strong>其他扩展业务</strong>：中医药与天然产物研究、数据与试剂查询、科研助手等。</li>
 </ul>
-<img src="../../assets/notes/bioinfo-tools/88d405d8e08406545c3793e2/83d83c.png" alt="OpenMolLab_01.png"><h2 id="section-2">文章演示的分子对接流程<a class="heading-anchor" href="#section-2" aria-label="链接到本节">#</a></h2>
+<img src="../../assets/notes/bioinfo-tools/88d405d8e08406545c3793e2/83d83c.png" alt="OpenMolLab_01.png" loading="eager" decoding="async" fetchpriority="high"><h2 id="section-2">文章演示的分子对接流程<a class="heading-anchor" href="#section-2" aria-label="链接到本节">#</a></h2>
 <h3 id="section-3">1. 上传受体与配体<a class="heading-anchor" href="#section-3" aria-label="链接到本节">#</a></h3>
 <p>文章演示的是 AIDD 药物设计中的“蛋白与化合物对接”。左侧填写受体蛋白结构，截图显示支持 PDBQT 或 PDB 文件；右侧填写配体，来源可选本地文件上传或粘贴 SMILES，页面示例支持 MOL、MOL2、SDF、PDBQT 和 SMILES。平台会渲染配体的 2D 结构，便于快速核对分子是否识别正确。</p>
-<img src="../../assets/notes/bioinfo-tools/88d405d8e08406545c3793e2/744341.png" alt="OpenMolLab_02.png"><h3 id="section-4">2. 设置对接盒<a class="heading-anchor" href="#section-4" aria-label="链接到本节">#</a></h3>
+<img src="../../assets/notes/bioinfo-tools/88d405d8e08406545c3793e2/744341.png" alt="OpenMolLab_02.png" loading="lazy" decoding="async"><h3 id="section-4">2. 设置对接盒<a class="heading-anchor" href="#section-4" aria-label="链接到本节">#</a></h3>
 <p>页面提供“3D 蛋白结构窗口”和“对接盒控制面板”。文章示例优先使用“共晶配体”作为对接盒定位依据：平台识别到 <code>7XO Chain A - Res 1107 - 33 atoms</code>，点击“使用”后，系统显示已用 <code>7XO A:1107</code> 作为对接位点，并给出中心坐标和盒子尺寸。用户仍需确认口袋是否对应研究问题，再点击“确认对接盒”。</p>
-<img src="../../assets/notes/bioinfo-tools/88d405d8e08406545c3793e2/52c38f.png" alt="OpenMolLab_03.png"><h3 id="section-5">3. 追踪任务历史<a class="heading-anchor" href="#section-5" aria-label="链接到本节">#</a></h3>
+<img src="../../assets/notes/bioinfo-tools/88d405d8e08406545c3793e2/52c38f.png" alt="OpenMolLab_03.png" loading="lazy" decoding="async"><h3 id="section-5">3. 追踪任务历史<a class="heading-anchor" href="#section-5" aria-label="链接到本节">#</a></h3>
 <p>提交后可以在“我的任务”中查看任务名称、类型、任务 ID、计算队列、创建时间、运行时长、状态和数据下载入口。文章截图显示分子对接任务处于 <code>slurm_pending</code>，说明平台使用计算队列调度任务。其他截图还包含分子动力学任务及其完成或失败状态，可据此排查失败任务并下载结果。</p>
-<img src="../../assets/notes/bioinfo-tools/88d405d8e08406545c3793e2/edee29.png" alt="OpenMolLab_04.png"><h3 id="section-6">4. 查看对接结果<a class="heading-anchor" href="#section-6" aria-label="链接到本节">#</a></h3>
+<img src="../../assets/notes/bioinfo-tools/88d405d8e08406545c3793e2/edee29.png" alt="OpenMolLab_04.png" loading="lazy" decoding="async"><h3 id="section-6">4. 查看对接结果<a class="heading-anchor" href="#section-6" aria-label="链接到本节">#</a></h3>
 <p>对接结果页包含数据表格、能量图表、相互作用、3D 视图和运行日志。文章重点演示“相互作用”页中的蛋白-配体互作分析，可通过按钮进入 PLIP Interaction Studio，查看 2D 相互作用图和 3D 复合视角。</p>
-<img src="../../assets/notes/bioinfo-tools/88d405d8e08406545c3793e2/dbafe9.png" alt="OpenMolLab_05.png"><h3 id="section-7">5. PLIP 2D/3D 作图<a class="heading-anchor" href="#section-7" aria-label="链接到本节">#</a></h3>
+<img src="../../assets/notes/bioinfo-tools/88d405d8e08406545c3793e2/dbafe9.png" alt="OpenMolLab_05.png" loading="lazy" decoding="async"><h3 id="section-7">5. PLIP 2D/3D 作图<a class="heading-anchor" href="#section-7" aria-label="链接到本节">#</a></h3>
 <p>PLIP Figure Studio 支持按构图类型、氢键、疏水作用、盐桥、π-π 相互作用等调整显示样式。3D 视图可标注关键残基和作用距离；2D 视图可显示残基节点、氢键和疏水作用，并调整背景、残基样式、字体和距离标注，最后导出 SVG、PNG 或 PDF。</p>
-<img src="../../assets/notes/bioinfo-tools/88d405d8e08406545c3793e2/525099.png" alt="OpenMolLab_06.png"><img src="../../assets/notes/bioinfo-tools/88d405d8e08406545c3793e2/367793.png" alt="OpenMolLab_07.png"><h2 id="section-8">使用建议<a class="heading-anchor" href="#section-8" aria-label="链接到本节">#</a></h2>
+<img src="../../assets/notes/bioinfo-tools/88d405d8e08406545c3793e2/525099.png" alt="OpenMolLab_06.png" loading="lazy" decoding="async"><img src="../../assets/notes/bioinfo-tools/88d405d8e08406545c3793e2/367793.png" alt="OpenMolLab_07.png" loading="lazy" decoding="async"><h2 id="section-8">使用建议<a class="heading-anchor" href="#section-8" aria-label="链接到本节">#</a></h2>
 <ul>
 <li>选结构时先确认研究问题对应的蛋白状态、生物学组装体、口袋完整性和共晶配体，不要只看分辨率或最低对接分。</li>
 <li>有共晶配体时优先检查它是否与目标配体机制相似；没有共晶配体时，可结合文献位点、口袋预测或残基选择，并保留选择依据。</li>
@@ -188,7 +188,7 @@ body.image-viewer-open{overflow:hidden}
 <a class="image-viewer-action" id="image-open-original" href="#" target="_blank" rel="noopener noreferrer">新标签打开</a>
 <button class="image-viewer-action" id="image-viewer-close" type="button" aria-label="关闭图片查看器">关闭</button>
 </div></div>
-<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt=""></div>
+<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt="" loading="lazy" decoding="async"></div>
 </div>
 <script>
 (function(){
@@ -231,6 +231,6 @@ viewer.addEventListener("click",function(event){if(event.target===viewer)dismiss
 document.addEventListener("keydown",function(event){if(viewer.hidden)return;if(event.key==="Escape"){dismissViewer();}else if(event.key==="+"||event.key==="="){setZoom(true);}else if(event.key==="-"){setZoom(false);}});
 })();
 </script>
-<script src="../../assets/site.js?v=0bc9f3ec57"></script>
+<script src="../../assets/site.js?v=a2ace07d37"></script>
 </body>
 </html>

@@ -52,23 +52,48 @@ python3 scripts/inject-wiki-gallery.py --wiki ... --revert
 
 脚本幂等：内容没变时不会改动文件；重复跑只会报「跳过：已注入 N」。
 
-## 公开版发布后检查
+## 公开版发布前检查
 
-重新生成 `docs/` 后，先补 canonical、sitemap 和 robots 指令，再运行站点自检：
+先对本地知识库源 Markdown 做一次泄漏扫描。脚本只报告文件和行号，不打印敏感值：
 
 ```bash
+python3 scripts/scan_source_secrets.py --source /path/to/local-wiki
+```
+
+重新生成 `docs/` 后，先优化搜索索引和图片加载、补 canonical/sitemap/robots，再运行站点自检：
+
+```bash
+python3 scripts/optimize_site.py
+python3 scripts/curate_tags.py
+python3 scripts/curate_home.py
 python3 scripts/build_sitemap.py
 python3 scripts/check_site.py
 ```
+
+`optimize_site.py` 会把 `search.html` 中的全文索引外置为
+`docs/search-index.json`，让搜索页只在首次输入时加载索引；同时为笔记图片补
+`loading="lazy"`/`decoding="async"`、刷新 CSS/JS 版本号，并用 manifest 时间校正首页生成时间。
+该脚本可重复运行。
+
+`curate_tags.py` 为当前无标签的 13 篇笔记补充可检索标签，并同步更新
+manifest、搜索索引、笔记页和板块卡片；如果后续在源知识库中维护标签，可跳过此脚本。
+
+`curate_home.py` 会把 5 个库索引页从首页“最近更新”中排除，并从搜索索引补齐
+最新 10 篇内容笔记，避免导航页长期占据更新列表。
 
 `build_sitemap.py` 会为除 `404.html` 外的页面写入 canonical，并重建
 `docs/sitemap.xml`。`check_site.py` 会检查：
 
 - manifest、页面和搜索索引的笔记数量及 URL 是否一致；
+- 搜索页是否已外置索引，以及搜索索引是否超过大小预算；
 - 站内链接、canonical、sitemap、robots 是否完整；
 - 是否残留口令门、`site-lock`、加密 payload 或 `noindex`；
 - 是否残留手机号、公网 IP 地址、共享账号凭据、本地用户绝对路径；
-- 是否出现“未命名笔记”“中文标题”或重复标题等发布质量问题。
+- 是否出现“未命名笔记”“中文标题”或重复标题等发布质量问题；
+- 多图页面是否遗漏图片懒加载。
+
+仓库内的 `.github/workflows/site-check.yml` 会在 push/PR 时自动运行同一套
+Python/JavaScript 静态检查。CI 只检查已生成站点；源 Markdown 仍须在构建前单独扫描。
 
 本地预览：
 

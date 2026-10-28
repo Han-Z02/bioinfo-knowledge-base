@@ -121,6 +121,7 @@ body.image-viewer-open{overflow:hidden}
 <h1>文献汇报 | Zhang et al. 2026 | PAT–KYN–铁蛋白自噬轴介导铁死亡抵抗</h1>
 
 <div class="meta-badges"><span class="badge badge-note-id">站内编号 KB-000042</span></div>
+<div class="tags"><span class="tag">论文精读</span><span class="tag">铁死亡</span><span class="tag">犬尿氨酸</span><span class="tag">铁蛋白自噬</span><span class="tag">肿瘤免疫</span></div>
 
 
 </header>
@@ -732,7 +733,7 @@ IDO1/TDO2双重抑制 ──→ 降低KYN/3-HK ──→ 恢复铁死亡敏感�
 <a class="image-viewer-action" id="image-open-original" href="#" target="_blank" rel="noopener noreferrer">新标签打开</a>
 <button class="image-viewer-action" id="image-viewer-close" type="button" aria-label="关闭图片查看器">关闭</button>
 </div></div>
-<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt=""></div>
+<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt="" loading="eager" decoding="async" fetchpriority="high"></div>
 </div>
 <script>
 (function(){
@@ -775,6 +776,6 @@ viewer.addEventListener("click",function(event){if(event.target===viewer)dismiss
 document.addEventListener("keydown",function(event){if(viewer.hidden)return;if(event.key==="Escape"){dismissViewer();}else if(event.key==="+"||event.key==="="){setZoom(true);}else if(event.key==="-"){setZoom(false);}});
 })();
 </script>
-<script src="../../assets/site.js?v=0bc9f3ec57"></script>
+<script src="../../assets/site.js?v=a2ace07d37"></script>
 </body>
 </html>

@@ -186,7 +186,7 @@ body.image-viewer-open{overflow:hidden}
 <li>细胞嵌入通过对抗判别器进行跨模态对齐，保证不同组学中的相同细胞状态落入相近潜在空间。</li>
 </ul>
 <p><strong>方法价值：</strong> 该设计把“先验调控知识”从预处理阶段推进到了模型主体中，是 GLUE 区别于普通整合算法的关键。</p>
-<img src="../../assets/notes/literature/1d8d3773afef60167ef4118a/1f291f.webp" alt="Figure-1.webp"><blockquote>
+<img src="../../assets/notes/literature/1d8d3773afef60167ef4118a/1f291f.webp" alt="Figure-1.webp" loading="eager" decoding="async" fetchpriority="high"><blockquote>
 <p><strong>图注：</strong> Figure 1. GLUE 框架示意图。图中展示了指导图、不同组学专属编码器/解码器、特征嵌入、细胞嵌入，以及用于跨模态对齐的判别器共同组成统一学习框架。</p>
 </blockquote>
 <hr>
@@ -200,7 +200,7 @@ body.image-viewer-open{overflow:hidden}
 <li>在中等规模数据上表现最好；当样本数低于约 1000 个细胞时，性能开始明显受影响，揭示其对数据规模存在一定依赖。</li>
 </ul>
 <p><strong>方法价值：</strong> GLUE 不是只在“某一个指标”上占优，而是在整合精度、鲁棒性和规模适应性三方面取得平衡。</p>
-<img src="../../assets/notes/literature/1d8d3773afef60167ef4118a/a84003.webp" alt="Figure-2.webp"><blockquote>
+<img src="../../assets/notes/literature/1d8d3773afef60167ef4118a/a84003.webp" alt="Figure-2.webp" loading="lazy" decoding="async"><blockquote>
 <p><strong>图注：</strong> Figure 2. 系统基准测试结果。包括总体整合得分、FOSCTTM、对错误先验知识的鲁棒性，以及在不同细胞数量下的表现变化，显示 GLUE 在多维度均优于基线方法。</p>
 </blockquote>
 <hr>
@@ -214,7 +214,7 @@ body.image-viewer-open{overflow:hidden}
 <li>三组学联合建模还揭示了不同表观遗传层对基因表达预测的非冗余贡献，其中 mCH 对神经元基因表达的解释力尤其突出。</li>
 </ul>
 <p><strong>方法价值：</strong> GLUE 证明了“多于两层”的整合是可行的，而且不只是技术上可整合，还能产出新的生物学解释。</p>
-<img src="../../assets/notes/literature/1d8d3773afef60167ef4118a/ff8265.webp" alt="Figure-3.webp"><blockquote>
+<img src="../../assets/notes/literature/1d8d3773afef60167ef4118a/ff8265.webp" alt="Figure-3.webp" loading="lazy" decoding="async"><blockquote>
 <p><strong>图注：</strong> Figure 3. 小鼠皮层三组学整合。图中展示了三种组学在统一嵌入空间中的对齐结果、标签转移后的细胞类型映射，以及不同表观遗传层对表达预测的贡献比较。</p>
 </blockquote>
 <hr>
@@ -228,7 +228,7 @@ body.image-viewer-open{overflow:hidden}
 <li>作者还进一步推导了 TF—靶基因网络，并发现其与 TRRUST v2 手工整理网络的一致性更高。</li>
 </ul>
 <p><strong>方法价值：</strong> 这一步让 GLUE 从“整合算法”升级为“整合 + 调控推断”框架，是该文最具方法学延展性的贡献之一。</p>
-<img src="../../assets/notes/literature/1d8d3773afef60167ef4118a/cf4133.webp" alt="Figure-4.webp"><blockquote>
+<img src="../../assets/notes/literature/1d8d3773afef60167ef4118a/cf4133.webp" alt="Figure-4.webp" loading="lazy" decoding="async"><blockquote>
 <p><strong>图注：</strong> Figure 4. PBMC 中的整合式调控推断。图中展示调控评分与距离、相关性的关系，以及利用 pcHi-C / eQTL 验证调控预测有效性，并给出 NCF2 与 CD83 的实例。</p>
 </blockquote>
 <hr>
@@ -242,7 +242,7 @@ body.image-viewer-open{overflow:hidden}
 <li>对照方法中，online iNMF 虽可扩展，但整合质量较差；Seurat v3 则无法在完整规模上有效运行。</li>
 </ul>
 <p><strong>方法价值：</strong> 该结果证明 GLUE 不只是实验室规模方法，而是具备 atlas 级应用潜力。</p>
-<img src="../../assets/notes/literature/1d8d3773afef60167ef4118a/adb91c.webp" alt="Figure-5.webp"><blockquote>
+<img src="../../assets/notes/literature/1d8d3773afef60167ef4118a/adb91c.webp" alt="Figure-5.webp" loading="lazy" decoding="async"><blockquote>
 <p><strong>图注：</strong> Figure 5. 多组学人类细胞图谱整合。图中展示了 GLUE 在百万细胞级别的人类 RNA / ATAC 图谱对齐效果及其对原始细胞注释的修正能力。</p>
 </blockquote>
 <hr>
@@ -305,7 +305,7 @@ body.image-viewer-open{overflow:hidden}
 <a class="image-viewer-action" id="image-open-original" href="#" target="_blank" rel="noopener noreferrer">新标签打开</a>
 <button class="image-viewer-action" id="image-viewer-close" type="button" aria-label="关闭图片查看器">关闭</button>
 </div></div>
-<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt=""></div>
+<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt="" loading="lazy" decoding="async"></div>
 </div>
 <script>
 (function(){
@@ -348,6 +348,6 @@ viewer.addEventListener("click",function(event){if(event.target===viewer)dismiss
 document.addEventListener("keydown",function(event){if(viewer.hidden)return;if(event.key==="Escape"){dismissViewer();}else if(event.key==="+"||event.key==="="){setZoom(true);}else if(event.key==="-"){setZoom(false);}});
 })();
 </script>
-<script src="../../assets/site.js?v=0bc9f3ec57"></script>
+<script src="../../assets/site.js?v=a2ace07d37"></script>
 </body>
 </html>

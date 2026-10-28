@@ -368,31 +368,31 @@ body.image-viewer-open{overflow:hidden}
 </code></pre>
 <h2 id="section-9">主要结果精读<a class="heading-anchor" href="#section-9" aria-label="链接到本节">#</a></h2>
 <h3 id="section-10">Result 1：BCA 将 Human Cell Atlas 扩展到材料诱导的细胞响应<a class="heading-anchor" href="#section-10" aria-label="链接到本节">#</a></h3>
-<img src="../../assets/notes/literature/2aba8dc19772ea1014758faf/eb77da.jpg" alt="Figure 1 | BCA concept"><p><strong>图 1 对应结果：</strong> 这张图把 BCA 分成生物安全性、生物活性和免疫微环境三类响应，强调生物材料进入组织后并非静态支架，而是会持续与宿主细胞发生相互作用。图源：PMC12356410 / ScienceDirect 官方图像。</p>
+<img src="../../assets/notes/literature/2aba8dc19772ea1014758faf/eb77da.jpg" alt="Figure 1 | BCA concept" loading="eager" decoding="async" fetchpriority="high"><p><strong>图 1 对应结果：</strong> 这张图把 BCA 分成生物安全性、生物活性和免疫微环境三类响应，强调生物材料进入组织后并非静态支架，而是会持续与宿主细胞发生相互作用。图源：PMC12356410 / ScienceDirect 官方图像。</p>
 <p>作者把 BCA 定义为一种连接材料科学和细胞生物学的框架：材料的表面形貌、硬度、降解产物、离子释放、药物/因子递送和生物活性涂层都会塑造局部细胞状态。BCA 的关键不是“多做一套单细胞图”，而是把材料线索和细胞图谱绑定起来，解释为什么同一种材料在不同组织、疾病状态或免疫环境中会产生不同效果。</p>
 <p>这对你的生信/材料交叉方向很有用：如果研究对象是口腔种植体、骨再生支架、软组织封闭或异物反应，BCA 可以作为“实验设计和数据解释框架”。它要求至少同时回答三件事：材料改变了哪些细胞、这些细胞位于哪里、这些变化能否反推材料优化。</p>
 <h3 id="section-11">Result 2：scRNA-seq 是解析材料周围细胞异质性的基础工具<a class="heading-anchor" href="#section-11" aria-label="链接到本节">#</a></h3>
-<img src="../../assets/notes/literature/2aba8dc19772ea1014758faf/d2a0f4.jpg" alt="Figure 2 | scRNA-seq workflow for biomaterials"><p><strong>图 2 对应结果：</strong> 图中概括了 bulk sequencing 与 single-cell sequencing 的差异，并把单细胞流程拆成细胞悬液、GEM/library、测序和分析，后续再接 DEG、拟时序和细胞通讯。图源：PMC12356410 / ScienceDirect 官方图像。</p>
+<img src="../../assets/notes/literature/2aba8dc19772ea1014758faf/d2a0f4.jpg" alt="Figure 2 | scRNA-seq workflow for biomaterials" loading="lazy" decoding="async"><p><strong>图 2 对应结果：</strong> 图中概括了 bulk sequencing 与 single-cell sequencing 的差异，并把单细胞流程拆成细胞悬液、GEM/library、测序和分析，后续再接 DEG、拟时序和细胞通讯。图源：PMC12356410 / ScienceDirect 官方图像。</p>
 <p>文章强调，bulk 数据会把材料周围不同细胞群的信号平均掉，尤其容易漏掉稀有亚群、过渡状态和材料界面特异反应。scRNA-seq 的价值在于把“材料有效/无效”的终点判断拆解为细胞层面的变化：哪些细胞增加，哪些细胞转为促炎/抗炎/成骨/成纤维状态，哪些配体-受体关系被材料改变。</p>
 <p>在分析流程上，作者把常用任务整理为：细胞注释、差异基因、富集分析、拟时序、RNA velocity、CellPhoneDB/CellChat/NicheNet、STRING/PPI、Seurat/Scanpy/SingleR 等。对实际再分析而言，这篇可以当作 biomaterial scRNA-seq 的方法清单，但不能替代每个原始研究的数据质控和统计设计。</p>
 <h3 id="section-12">Result 3：单细胞结果需要从“细胞类型”推进到“状态、通路和通讯”<a class="heading-anchor" href="#section-12" aria-label="链接到本节">#</a></h3>
-<img src="../../assets/notes/literature/2aba8dc19772ea1014758faf/3fb38d.jpg" alt="Figure 3 | cellular heterogeneity and DEG"><p><strong>图 3 对应结果：</strong> 图中用 GelMA wound model 和 Ti-DOPA-CO implant coating 两类案例说明，材料硬度、交联程度或功能涂层可以重塑巨噬细胞、成纤维细胞和细胞因子表达谱。图源：PMC12356410 / ScienceDirect 官方图像。</p>
+<img src="../../assets/notes/literature/2aba8dc19772ea1014758faf/3fb38d.jpg" alt="Figure 3 | cellular heterogeneity and DEG" loading="lazy" decoding="async"><p><strong>图 3 对应结果：</strong> 图中用 GelMA wound model 和 Ti-DOPA-CO implant coating 两类案例说明，材料硬度、交联程度或功能涂层可以重塑巨噬细胞、成纤维细胞和细胞因子表达谱。图源：PMC12356410 / ScienceDirect 官方图像。</p>
 <p>作者用多个案例说明，BCA 的分析不能停留在“UMAP 上有几个 cluster”。例如不同交联程度的 GelMA 会改变伤口巨噬细胞亚群比例；Ti-DOPA-CO 涂层会改变软组织界面的细胞因子谱，并与巨噬细胞 M2 极化、PI3K-Akt、ECM 组织和胶原合成相关。</p>
 <p>我的理解是：这类结果的真正价值在于把材料参数和细胞功能状态联系起来。对于口腔种植或骨再生方向，类似逻辑可以转化成问题：不同表面处理是否改变 <code>SPP1+ macrophage</code>、<code>MGP+ MSC/OP</code>、<code>CXCL/CCL chemokine fibroblast</code> 或 endothelial angiogenic program；这种变化是否能解释软组织封闭、骨结合或炎症持续。</p>
 <h3 id="section-13">Result 4：空间转录组把材料界面中的关键细胞放回组织位置<a class="heading-anchor" href="#section-13" aria-label="链接到本节">#</a></h3>
-<img src="../../assets/notes/literature/2aba8dc19772ea1014758faf/a86aa1.jpg" alt="Figure 6 | spatial mapping in bone regeneration"><p><strong>图 6 对应结果：</strong> 该图展示了空间转录组在骨缺损修复中的应用：先做组织空间聚类，再把 scRNA-seq 定义的 MSC/osteoprogenitor 亚群映射回缺损区域，识别具有空间偏好的 Mgp high MSC/OPs2。图源：PMC12356410 / ScienceDirect 官方图像。</p>
+<img src="../../assets/notes/literature/2aba8dc19772ea1014758faf/a86aa1.jpg" alt="Figure 6 | spatial mapping in bone regeneration" loading="lazy" decoding="async"><p><strong>图 6 对应结果：</strong> 该图展示了空间转录组在骨缺损修复中的应用：先做组织空间聚类，再把 scRNA-seq 定义的 MSC/osteoprogenitor 亚群映射回缺损区域，识别具有空间偏好的 Mgp high MSC/OPs2。图源：PMC12356410 / ScienceDirect 官方图像。</p>
 <p>scRNA-seq 的主要短板是组织解离会丢失空间位置，还可能引入应激基因表达和细胞损失。空间转录组可以弥补这一点：材料-组织界面最关心的是细胞在材料表面、纤维囊、骨缺损边缘、血管周围还是炎症灶中出现。作者以 collagen/nano-hydroxyapatite hydrogel 相关骨再生研究为例，说明空间数据能够定位 MSC 亚群和 Mgp 表达热点。</p>
 <p>这对再分析特别重要。仅有单细胞数据时，我们可以说某个细胞群存在；加入空间数据后，才能说该群是否真正位于材料作用区域，是否靠近血管、免疫细胞、骨祖细胞或纤维化区域。对于种植体周围炎或植入周纤维化，空间定位往往比单纯 marker 更能说明机制。</p>
 <h3 id="section-14">Result 5：BCA 的目标是形成“机制发现 -&gt; 材料优化”的反馈闭环<a class="heading-anchor" href="#section-14" aria-label="链接到本节">#</a></h3>
-<img src="../../assets/notes/literature/2aba8dc19772ea1014758faf/16cab3.jpg" alt="Figure 7 | BCA feedback loop"><p><strong>图 7 对应结果：</strong> 图中把 BCA 连接到材料-细胞相互作用和下一代材料优化，强调生物学机制研究与材料设计之间应形成反馈，而不是两个割裂步骤。图源：PMC12356410 / ScienceDirect 官方图像。</p>
+<img src="../../assets/notes/literature/2aba8dc19772ea1014758faf/16cab3.jpg" alt="Figure 7 | BCA feedback loop" loading="lazy" decoding="async"><p><strong>图 7 对应结果：</strong> 图中把 BCA 连接到材料-细胞相互作用和下一代材料优化，强调生物学机制研究与材料设计之间应形成反馈，而不是两个割裂步骤。图源：PMC12356410 / ScienceDirect 官方图像。</p>
 <p>文章把 BCA 的意义分成两层。第一层是解释生物响应：材料是否安全、是否促再生、是否造成异常免疫或纤维化。第二层是指导材料设计：识别关键细胞、关键通路和关键空间生态位后，通过材料成分、力学、表面形貌、涂层或递送系统定向调控。</p>
 <p>这个框架比“材料 A 优于材料 B”的比较更强，因为它要求提出可验证机制。例如，如果单细胞发现材料诱导的骨修复依赖 Spp1/Cxcl12 或 Mdk-Lrp1/SPP1-integrin 轴，那么下一步材料设计就不应只调整形貌，而应测试能否局部递送或增强这些通路。</p>
 <h3 id="section-15">Result 6：单细胞机制可以直接转化为免疫调节型材料设计<a class="heading-anchor" href="#section-15" aria-label="链接到本节">#</a></h3>
-<img src="../../assets/notes/literature/2aba8dc19772ea1014758faf/e4af9a.jpg" alt="Figure 14 | MEBTHS design for diabetic mandibular defect"><p><strong>图 14 对应结果：</strong> 该案例用 scRNA-seq 发现糖尿病下颌骨缺损中 NO/ROS 阻碍巨噬细胞代谢转换和再极化，据此设计含 ruthenium nanozyme 的多酶水凝胶支架，清除 NO/ROS 并改善成骨、血管生成和巨噬细胞状态。图源：PMC12356410 / ScienceDirect 官方图像。</p>
+<img src="../../assets/notes/literature/2aba8dc19772ea1014758faf/e4af9a.jpg" alt="Figure 14 | MEBTHS design for diabetic mandibular defect" loading="lazy" decoding="async"><p><strong>图 14 对应结果：</strong> 该案例用 scRNA-seq 发现糖尿病下颌骨缺损中 NO/ROS 阻碍巨噬细胞代谢转换和再极化，据此设计含 ruthenium nanozyme 的多酶水凝胶支架，清除 NO/ROS 并改善成骨、血管生成和巨噬细胞状态。图源：PMC12356410 / ScienceDirect 官方图像。</p>
 <p>这部分是全篇最接近“从图谱到材料设计”的例子。糖尿病骨缺损中，过量 NO 和 ROS 使巨噬细胞难以从促炎状态转向修复状态，阻断糖酵解到氧化磷酸化的代谢转换。研究者据此设计 MEBTHS，用 Ru nanozyme 同时清除 NO/ROS，从而促进 CD206 上升、CD86 下降，并保护 BMSC 和 endothelial cell 的再生功能。</p>
 <p>对你的方向可借鉴的不是这个材料本身，而是逻辑：先用单细胞找疾病/材料界面的“卡点”，再设计材料去解除卡点。对于种植体周围炎、骨结合失败或软组织封闭不佳，类似卡点可能是持续 M1-like macrophage、CXCL13+ inflammatory fibroblast、S100A8/A9 neutrophil、SPP1+ osteoclast/macrophage 或 angiogenesis failure。</p>
 <h3 id="section-16">Result 7：BCA 未来会走向多组学、AI 和个体化材料<a class="heading-anchor" href="#section-16" aria-label="链接到本节">#</a></h3>
-<img src="../../assets/notes/literature/2aba8dc19772ea1014758faf/e182ad.jpg" alt="Figure 15 | BCA outlook"><p><strong>图 15 对应结果：</strong> 作者把未来分成四步：扩展 cell-material interaction data，整合成多组学 life atlas，用 AI 建立 intelligent life atlas，最后走向临床转化和个体化生物材料。图源：PMC12356410 / ScienceDirect 官方图像。</p>
+<img src="../../assets/notes/literature/2aba8dc19772ea1014758faf/e182ad.jpg" alt="Figure 15 | BCA outlook" loading="lazy" decoding="async"><p><strong>图 15 对应结果：</strong> 作者把未来分成四步：扩展 cell-material interaction data，整合成多组学 life atlas，用 AI 建立 intelligent life atlas，最后走向临床转化和个体化生物材料。图源：PMC12356410 / ScienceDirect 官方图像。</p>
 <p>作者对未来的设想比较宏观：从单一 scRNA-seq 扩展到基因组、表观组、转录组、蛋白组、代谢组，再用 AI 预测材料植入后的细胞响应，最终发展为 patient-specific digital twin 或 virtual implantation。这个愿景目前还偏概念化，真正落地需要高质量、多中心、跨材料类型的数据标准和可复用 benchmark。</p>
 <p>实际风险是：如果没有标准化 metadata，BCA 会变成一堆不可比较的单细胞项目。材料参数、动物模型、组织部位、取样时间、消化条件、测序平台、空间分辨率和下游算法都可能造成强批次效应。未来最需要的是标准化的 biomaterial perturbation atlas，而不仅是更多单篇研究。</p>
 <h2 id="section-17">机制模型<a class="heading-anchor" href="#section-17" aria-label="链接到本节">#</a></h2>
@@ -629,7 +629,7 @@ body.image-viewer-open{overflow:hidden}
 <a class="image-viewer-action" id="image-open-original" href="#" target="_blank" rel="noopener noreferrer">新标签打开</a>
 <button class="image-viewer-action" id="image-viewer-close" type="button" aria-label="关闭图片查看器">关闭</button>
 </div></div>
-<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt=""></div>
+<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt="" loading="lazy" decoding="async"></div>
 </div>
 <script>
 (function(){
@@ -672,6 +672,6 @@ viewer.addEventListener("click",function(event){if(event.target===viewer)dismiss
 document.addEventListener("keydown",function(event){if(viewer.hidden)return;if(event.key==="Escape"){dismissViewer();}else if(event.key==="+"||event.key==="="){setZoom(true);}else if(event.key==="-"){setZoom(false);}});
 })();
 </script>
-<script src="../../assets/site.js?v=0bc9f3ec57"></script>
+<script src="../../assets/site.js?v=a2ace07d37"></script>
 </body>
 </html>

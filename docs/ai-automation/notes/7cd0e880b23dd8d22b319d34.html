@@ -138,7 +138,7 @@ body.image-viewer-open{overflow:hidden}
 <div class="content" id="article-content"><h2 id="section-1">Semantic Scholar API - 教程<a class="heading-anchor" href="#section-1" aria-label="链接到本节">#</a></h2>
 <p><strong>开始使用 Semantic Scholar API</strong></p>
 <p>学习如何搜索论文和作者、下载数据集等等。</p>
-<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/6462a2d97df4b1fcdf6b814e_api-tutorials.png" alt="Quick guide to get started with Semantic Scholar API"></p>
+<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/6462a2d97df4b1fcdf6b814e_api-tutorials.png" alt="Quick guide to get started with Semantic Scholar API" loading="eager" decoding="async" fetchpriority="high"></p>
 <h2 id="section-2">介绍<a class="heading-anchor" href="#section-2" aria-label="链接到本节">#</a></h2>
 <p>Semantic Scholar REST API 使用标准的 HTTP 动词、响应代码和身份验证。本教程将教您如何通过发送请求和分析响应来与 API 进行交互。所有代码示例均使用 Python 编写。如果您更喜欢无需编写代码的体验，可以使用 <a href="https://www.postman.com/science-operator-43364886/workspace/semantic-scholar-examples/collection/37460422-e99f1d74-d11c-48c8-93a8-f33ec0e0aea1" target="_blank" rel="noopener noreferrer">Semantic Scholar Postman Collection</a> ，它允许您在 Postman（一个流行的免费 API 测试平台）上测试 API。</p>
 <h3 id="section-3">什么是应用程序编程接口（API）？<a class="heading-anchor" href="#section-3" aria-label="链接到本节">#</a></h3>
@@ -147,7 +147,7 @@ body.image-viewer-open{overflow:hidden}
 <ul>
 <li>API 端点，即请求发送到的 URL。该 URL 由 API 的基本 URL 和特定端点的资源路径组成（参见图 1）。</li>
 <li>请求方法，例如 GET 或 POST。它会在 HTTP 请求中发送，并告诉 API 要执行哪种类型的操作。
-<img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/65553b12d016d1fc01d52f2d_GS_endpointUrlExample.png" alt="a diagram displaying the base url [https://api.semanticscholar.org/graph/v1/] and resource path [/paper/search]"></li>
+<img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/65553b12d016d1fc01d52f2d_GS_endpointUrlExample.png" alt="a diagram displaying the base url [https://api.semanticscholar.org/graph/v1/] and resource path [/paper/search]" loading="lazy" decoding="async"></li>
 </ul>
 <p>图 1. Semantic Scholar <a href="https://api.semanticscholar.org/api-docs/#tag/Paper-Data/operation/get_graph_paper_relevance_search" target="_blank" rel="noopener noreferrer">论文相关性搜索端点</a> 的端点。  </p>
 <p>每个 API 请求可能还包含：  </p>
@@ -305,7 +305,7 @@ response = requests.get(url, params=query_params, headers=headers).json()
 </code></pre>
 <p>The request is formatted and sent to the API endpoint, and the response is captured in the variable <strong>response</strong>.</p>
 <p>According to the API documentation, if the request was successful, with status code 200, the <strong>response</strong> variable contains three fields:</p>
-<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/66eb4661fd8c190e301b9031_keyword%20search%20response.png" alt="Postman Request"></p>
+<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/66eb4661fd8c190e301b9031_keyword%20search%20response.png" alt="Postman Request" loading="lazy" decoding="async"></p>
 <p>Figure 6. The API documentation lists the data format of the response schema.  </p>
 <p>The <strong>total</strong> parameter is an estimate of how many papers were found that matched the search request, the <strong>token</strong> parameter is used for <a href="https://www.semanticscholar.org/product/api/tutorial#pagination" target="_blank" rel="noopener noreferrer">pagination</a>, and the <strong>data</strong> parameter contains the data returned from the endpoint. Note that the paper bulk search endpoint’s use of tokens to handle pagination is unlike the paper relevance search endpoint’s use of the <strong>offset</strong> and <strong>limit</strong> query parameters for <a href="#pagination">pagination</a>.  </p>
 <p>The next part of our code saves the data returned from the endpoint to a json file titled <strong>papers.json</strong> and prints the code’s progress to the console. If the <strong>token</strong> parameter is present, fetch the next batch of responses.  </p>
@@ -357,7 +357,7 @@ print(f&quot;Done! Retrieved {retrieved} papers total&quot;)
 <p>Two <a href="https://api.semanticscholar.org/api-docs/recommendations" target="_blank" rel="noopener noreferrer">Recommendations API</a> endpoints can recommend papers: one gives recommendations <a href="https://api.semanticscholar.org/api-docs/recommendations#tag/Paper-Recommendations/operation/get_papers_for_paper" target="_blank" rel="noopener noreferrer">based on a single seed paper</a> from the user, while <a href="https://api.semanticscholar.org/api-docs/recommendations#tag/Paper-Recommendations/operation/post_papers" target="_blank" rel="noopener noreferrer">the other takes a list</a> of positive seed papers and a list of negative seed papers from the user. Both endpoints return an array of papers in descending order of relevance.  </p>
 <p>We will use the endpoint that takes two lists of positive and negative seed papers, with the URL: <a href="http://api.semanticscholar.org/recommendations/v1/papers" target="_blank" rel="noopener noreferrer">http://api.semanticscholar.org/recommendations/v1/papers</a>  </p>
 <p>This is a POST request, so we need to check the endpoint’s Request Body Schema section in the API documentation, to see the format in which the data must be sent in the body of the request.  </p>
-<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/66ec6711bb047c13032e7e6d_keyword%20search%20request%20body.png" alt=""></p>
+<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/66ec6711bb047c13032e7e6d_keyword%20search%20request%20body.png" alt="" loading="lazy" decoding="async"></p>
 <p>Figure 7. The Request Body Schema section describes how to format the data in a POST request.  </p>
 <p>The positive and negative seed paperIds need to be sent as two arrays, <strong>positivePaperIds</strong> and <strong>negativePaperIds</strong>.  </p>
 <p>For <strong>positivePaperIds</strong>, we’ll use two positive seed papers:  </p>
@@ -576,7 +576,7 @@ response = requests.get(base_url)
 print(response.json())
 </code></pre>
 <p>The response is a list of release dates, which contain all releases through the date the request was made:  </p>
-<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/655bd7bb84b2a03165c620d7_Screen%20Shot%202023-11-20%20at%202.00.38%20PM.png" alt=""></p>
+<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/655bd7bb84b2a03165c620d7_Screen%20Shot%202023-11-20%20at%202.00.38%20PM.png" alt="" loading="lazy" decoding="async"></p>
 <h4>Step 2: See all datasets for a given release date</h4>
 <p>Use the <a href="https://api.semanticscholar.org/api-docs/datasets#tag/Release-Data/operation/get_release" target="_blank" rel="noopener noreferrer">list of datasets in a release</a> endpoint to see all datasets contained in a given release. The endpoint takes the <strong>release_id</strong>, which is simply the release date, as a query parameter. The <strong>release_id</strong> can also be set to “latest” instead of the actual date value to retrieve datasets from the latest release.</p>
 <pre><code class="language-python">import requests
@@ -592,7 +592,7 @@ response = requests.get(base_url + release_id)
 # Print the response data
 print(response.json())
 </code></pre>
-<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/655bdc2deb85e4b98b73c257_Screen%20Shot%202023-11-20%20at%202.19.07%20PM.png" alt=""></p>
+<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/655bdc2deb85e4b98b73c257_Screen%20Shot%202023-11-20%20at%202.19.07%20PM.png" alt="" loading="lazy" decoding="async"></p>
 <h4>Step 3: Get download links for datasets</h4>
 <p>Use the <a href="https://api.semanticscholar.org/api-docs/datasets#tag/Release-Data/operation/get_dataset" target="_blank" rel="noopener noreferrer">download links for a dataset</a> endpoint to get download links for a specific dataset at a specific release date. This step requires the use of a Semantic Scholar API key.</p>
 <pre><code class="language-python">import requests
@@ -616,7 +616,7 @@ response = requests.get(base_url + release_id + &#39;/dataset/&#39; + dataset_na
 print(response.json())
 </code></pre>
 <p>The response contains the dataset name, description, a README with license and usage information, and temporary, pre-signed download links for the dataset files:</p>
-<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/655be047f947be0e9b7aab23_Screen%20Shot%202023-11-20%20at%202.38.16%20PM.png" alt=""></p>
+<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/655be047f947be0e9b7aab23_Screen%20Shot%202023-11-20%20at%202.38.16%20PM.png" alt="" loading="lazy" decoding="async"></p>
 <h2 id="section-15">How to update datasets with incremental diffs<a class="heading-anchor" href="#section-15" aria-label="链接到本节">#</a></h2>
 <p>The <a href="https://api.semanticscholar.org/api-docs/datasets#tag/Incremental-Updates/operation/get_diff" target="_blank" rel="noopener noreferrer">incremental diffs</a> endpoint in the Datasets API allows users to get a comprehensive list of changes—or “diffs”—between any two releases. Full datasets can be updated from one release to another to avoid downloading and processing data that hasn&#39;t changed. This endpoint requires the use of a Semantic Scholar API key.</p>
 <p>This endpoint returns a list of all the &quot;diffs&quot; required to catch a given dataset up from the start release date to the end release date, with each “diff” object containing only the changes from one release to the next sequential release.</p>
@@ -642,7 +642,7 @@ response = requests.get(url, headers=headers)
 diffs = response.json()[&#39;diffs&#39;]
 print(diffs)
 </code></pre>
-<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/6584a5de65866f1255d31b92_image3.png" alt=""></p>
+<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/6584a5de65866f1255d31b92_image3.png" alt="" loading="lazy" decoding="async"></p>
 <h2 id="section-16">Tips for working with downloaded datasets<a class="heading-anchor" href="#section-16" aria-label="链接到本节">#</a></h2>
 <p>Explore the following sections for inspiration on leveraging your downloaded data. Please be aware that the tools, libraries, and frameworks mentioned below are not a comprehensive list and their performance will vary based on the size of your data and machine’s capabilities. They are all external tools with no affiliation to Semantic Scholar, and are simply offered as suggestions to facilitate your initial exploration of our data.</p>
 <h4>Command line tools</h4>
@@ -650,13 +650,13 @@ print(diffs)
 <p><strong>1. The more command</strong></p>
 <p>You can use the <strong>more</strong> command without installing any external tool or library. This command is used to display the contents of a file in a paginated manner and lets you page through the contents of your downloaded file in chunks without loading up the entire dataset. It shows one screen of text at a time and allows you to navigate through the file using the <strong>spacebar</strong> (move forward one screen) and <strong>Enter</strong> (move forward one line) commands.</p>
 <p><strong>Example</strong>: You downloaded the papers dataset, and renamed the file to “papersDataset”. Use the “more papersDataset” command to view the file:</p>
-<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/659454c9457f8c0452e28db5_image7.png" alt="more papersDataset output"></p>
+<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/659454c9457f8c0452e28db5_image7.png" alt="more papersDataset output" loading="lazy" decoding="async"></p>
 <p><strong>2. The</strong> <a href="https://jqlang.github.io/jq/" target="_blank" rel="noopener noreferrer"><strong>jq</strong></a> <strong>tool</strong>  </p>
 <p><a href="https://jqlang.github.io/jq/" target="_blank" rel="noopener noreferrer">jq</a> is a lightweight and flexible command-line tool for exploring and manipulating JSON data. With <em>jq</em>, you can easily view formatted json output, select and view specific fields, filter data based on conditions, and more.  </p>
 <p><strong>Example</strong>: You downloaded the papers dataset, and renamed the file to “papersDataset”. The <em>jq</em> command to format output is jq ‘.’ <file-name>, so use the jq. papersDataset command to view the formatted file:  </p>
-<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/659455b9acf84e2f7019920b_image13.png" alt="jq . papersDataset output"></p>
+<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/659455b9acf84e2f7019920b_image13.png" alt="jq . papersDataset output" loading="lazy" decoding="async"></p>
 <p><strong>Example:</strong> You want to filter publication venues that are only journals. You can use <em>jq</em> to filter json objects by a condition with the command jq ‘. | select(has(“type”) and.type == “journal”)’ publicationVenues</p>
-<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/659474d82ee7700345492769_image1.png" alt="jq Output"></p>
+<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/659474d82ee7700345492769_image1.png" alt="jq Output" loading="lazy" decoding="async"></p>
 <h4>Python Pandas library</h4>
 <p><a href="https://pandas.pydata.org/docs/index.html" target="_blank" rel="noopener noreferrer">Pandas</a> is a powerful and easy-to-use data analysis and manipulation library available in Python. Using Pandas, you can effortlessly import, clean, and explore your data. One of the key structures in Pandas is a <a href="https://pandas.pydata.org/docs/user_guide/dsintro.html#dataframe" target="_blank" rel="noopener noreferrer">DataFrame</a>, which can be thought of as a table of information, akin to a spreadsheet with rows and columns. Each column has a name, similar to a header in Excel, and each row represents a set of related data. With a DataFrame, tasks like sorting, filtering, and analyzing your data are straightforward. Now we will see how to leverage basic Pandas functions to view and explore our Semantic Scholar data in a DataFrame.  </p>
 <p><strong>Example</strong>: The <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.head.html#pandas-dataframe-head" target="_blank" rel="noopener noreferrer"><strong>head</strong></a> function. In Pandas you can use the <em>head( )</em> function to view the initial few rows of your dataframe.  </p>
@@ -669,13 +669,13 @@ df = pd.read_json(&#39;publication venues dataset&#39;, lines=True)
 print(df.head())
 </code></pre>
 <p>The output is below. You will notice that this is a very wide dataframe, where each column represents a field in our json object (e.g. id, name, issn, url, etc.). By default pandas only shows the first and last columns. To view all the columns, you can configure the pandas display settings before printing your output, with pd.set_option(&#39;display.max_columns&#39;, None)  </p>
-<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/65945831f2fb6b7e8199199d_image4.png" alt="Pandas head output"></p>
+<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/65945831f2fb6b7e8199199d_image4.png" alt="Pandas head output" loading="lazy" decoding="async"></p>
 <p><strong>Example</strong>: The <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.count.html#pandas-dataframe-count" target="_blank" rel="noopener noreferrer"><strong>count</strong></a> function. We can use the <em>count( )</em> function to count the number of rows that have data in them (e.g. not null). This can be useful to test the quality of your dataset.  </p>
 <pre><code class="language-python"># Display count of non-null values for each column
 print(df.count())
 </code></pre>
 <p>Output:  </p>
-<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/659459ad86a6cba3dcdbaf42_image17.png" alt="Pandas count output"></p>
+<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/659459ad86a6cba3dcdbaf42_image17.png" alt="Pandas count output" loading="lazy" decoding="async"></p>
 <p><strong>Example:</strong> Filtering. We can filter our data by specifying conditions. For example, let’s assume we have loaded our authors&#39; dataset into a dataframe, and want to filter by authors who have written at least 5 papers and been cited at least 10 times. After applying this filter, let&#39;s select and display only the <em>authorid</em>, <em>name</em>, <em>papercount</em>, and <em>citationcount</em> fields.  </p>
 <pre><code class="language-python">#filter dataframe by authors who have more than 5 publications and have been cited at least 10 times
 df = df[(df.papercount &gt;= 5) &amp; (df.citationcount &gt;= 10)]
@@ -684,19 +684,19 @@ df = df[(df.papercount &gt;= 5) &amp; (df.citationcount &gt;= 10)]
 print(df&lt;a href=&quot;&amp;#39;authorid&amp;#39;%2C%20&amp;#39;name&amp;#39;%2C%20&amp;#39;papercount&amp;#39;%2C%20&amp;#39;citationcount&amp;#39;&quot;&gt;&amp;#39;authorid&amp;#39;, &amp;#39;name&amp;#39;, &amp;#39;papercount&amp;#39;, &amp;#39;citationcount&amp;#39;&lt;/a&gt;)
 </code></pre>
 <p>Output:  </p>
-<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/659467173c5db5bf0ec05946_image12.png" alt="Python Pandas Filtering Output"></p>
+<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/659467173c5db5bf0ec05946_image12.png" alt="Python Pandas Filtering Output" loading="lazy" decoding="async"></p>
 <p><strong>Example:</strong> Sorting. Pandas offers a variety of sorting functions to organize our data. In the example below, we use the <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.sort_values.html#pandas-dataframe-sort-values" target="_blank" rel="noopener noreferrer"><em>sort_values( )</em></a> function to sort the dataframe by the “name” column and only display the <em>authorid</em> and <em>name</em> columns. The default is ascending order, so in this case our output will list authors in alphabetical order. e can filter our data by specifying conditions. For example, let’s assume we have loaded our authors&#39; dataset into a dataframe, and want to filter by authors who have written at least 5 papers and been cited at least 10 times. After applying this filter, let&#39;s select and display only the <em>authorid</em>, <em>name</em>, <em>papercount</em>, and <em>citationcount</em> fields.  </p>
 <pre><code class="language-python">#Let&#39;s sort our authors in alphabetical order
 df = df.sort_values(by=&#39;name&#39;)
 </code></pre>
 <p>Output:  </p>
-<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/6594676bbfe185b021779b9c_image6.png" alt="Python Pandas Sorting Output"></p>
+<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/6594676bbfe185b021779b9c_image6.png" alt="Python Pandas Sorting Output" loading="lazy" decoding="async"></p>
 <p><strong>Example:</strong> Check for missing values. Let’s say we want to assess the quality of our data by checking for missing (null) values. We can count how many missing values we have by using the <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.isnull.html#pandas-dataframe-isnull" target="_blank" rel="noopener noreferrer">isnull()</a> and <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.sum.html#pandas-dataframe-sum" target="_blank" rel="noopener noreferrer">sum()</a> functions.  </p>
 <pre><code class="language-python"># Count and print the number of missing values for each author attribute
 print(df.isnull().sum())
 </code></pre>
 <p>Output:  </p>
-<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/659467bbec1d5d39423ebfa2_image2.png" alt="Python Pandas Checking for missing values Output"></p>
+<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/659467bbec1d5d39423ebfa2_image2.png" alt="Python Pandas Checking for missing values Output" loading="lazy" decoding="async"></p>
 <h4>Apache Spark (Python examples)</h4>
 <p><a href="https://spark.apache.org/" target="_blank" rel="noopener noreferrer">Apache Spark</a> is a fast and powerful processing engine that can analyze large-scale data faster than traditional methods via in-memory caching and optimized query execution. Spark offers APIs for a variety of programming languages, so you can utilize its capabilities regardless of the language you are coding in. In our examples we will showcase the <a href="https://spark.apache.org/docs/latest/api/python/index.html" target="_blank" rel="noopener noreferrer">Spark Python API</a>, commonly known as <em>PySpark</em>.  </p>
 <p><strong>Example:</strong> The <a href="https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrame.show.html#pyspark-sql-dataframe-show" target="_blank" rel="noopener noreferrer"><strong>show</strong></a> function. PySpark’s <em>show( )</em> function is similar to <em>print( )</em> or <em>head( )</em> in pandas and will display the first few rows of data. Let’s load up our <em>publication venues</em> data into a PySpark DataFrame and see how it looks:  </p>
@@ -712,25 +712,25 @@ df = spark.read.json(&quot;publication venues dataset&quot;)
 df.show()
 </code></pre>
 <p>Output:  </p>
-<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/65945aa7757080f139e86549_image14.png" alt="Apache Spark Show output"></p>
+<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/65945aa7757080f139e86549_image14.png" alt="Apache Spark Show output" loading="lazy" decoding="async"></p>
 <p><strong>Example:</strong> The <a href="https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrame.printSchema.html#pyspark-sql-dataframe-printschema" target="_blank" rel="noopener noreferrer"><strong>printSchema</strong></a> function. PySpark offers a handy <em>printSchema( )</em> function if you want to explore the structure of your data  </p>
 <pre><code class="language-python"># Display the object schema
 
 df.printSchema()
 </code></pre>
 <p>Output:  </p>
-<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/65945b8dacf84e2f701d43e4_image18.png" alt="Apache Spark print schema output"></p>
+<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/65945b8dacf84e2f701d43e4_image18.png" alt="Apache Spark print schema output" loading="lazy" decoding="async"></p>
 <p><strong>Example:</strong> Summary statistics. PySpark offers a handy <a href="https://spark.apache.org/docs/3.1.1/api/python/reference/api/pyspark.sql.DataFrame.describe.html#pyspark-sql-dataframe-describe" target="_blank" rel="noopener noreferrer"><em>describe( )</em></a> function to delve into and display summary statistics for the specified columns in our dataset. In this example we describe the papercount, <em>citationcount</em>, and orderBy attributes of our author data. In the results we can see the average papercount of authors in this dataset, along with their average <em>citationcount</em>, <em>hindex</em>, and other common statistical measures.  </p>
 <pre><code class="language-python">df.describe([&quot;papercount&quot;, &quot;citationcount&quot;, &quot;hindex&quot;]).show()
 </code></pre>
 <p>Output:  </p>
-<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/6594681f97fb083e30e5b889_image5.png" alt="Apache Spark Summary Statistics Output"></p>
+<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/6594681f97fb083e30e5b889_image5.png" alt="Apache Spark Summary Statistics Output" loading="lazy" decoding="async"></p>
 <p><strong>Example:</strong> Sorting. We can call the <a href="https://spark.apache.org/docs/3.1.1/api/python/reference/api/pyspark.sql.DataFrame.orderBy.html#pyspark-sql-dataframe-orderby" target="_blank" rel="noopener noreferrer">orderBy( )</a> function and specify the column we want to sort by, in this case papercount. We also call the desc() function to sort in descending order (from highest to lowest papercount). We also only want to display the <em>authorid, name, and papercount</em> fields, and display the top 3 records.  </p>
 <pre><code class="language-python">df = df.orderBy(col(&quot;papercount&quot;).desc())
 df.select(&quot;authorid&quot;, &quot;name&quot;, &quot;papercount&quot;).show(3)
 </code></pre>
 <p>Output:  </p>
-<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/65946a3beb365dc2cda25cee_image10.png" alt="Apache Spark Summary Sorting Output"></p>
+<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/65946a3beb365dc2cda25cee_image10.png" alt="Apache Spark Summary Sorting Output" loading="lazy" decoding="async"></p>
 <h4>MongoDB</h4>
 <p><a href="https://www.mongodb.com/" target="_blank" rel="noopener noreferrer">MongoDB</a> is a fast and flexible database tool built for exploring and analyzing large scale datasets. Think of it as a robust digital warehouse where you can efficiently organize, store, and retrieve large volumes of data. In addition, MongoDB is a NoSQL database that stores data in a flexible schema-less format, scales horizontally, supports various data models, and is optimized for performance. MongoDB offers both <a href="https://www.mongodb.com/try/download/community" target="_blank" rel="noopener noreferrer">on-premise</a> and fully managed cloud options (<a href="https://www.mongodb.com/atlas" target="_blank" rel="noopener noreferrer">Atlas</a>) and can be accessed via the Mongo shell or a GUI (known as <a href="https://www.mongodb.com/products/tools/compass" target="_blank" rel="noopener noreferrer">Mongo Compass</a>). You can check out our guide on <a href="https://docs.google.com/document/d/1Ej5vCd-LZiOxo03b0D7XwgFKQt82v9yz2LaBgWrQQvE/edit#heading=h.2pwe9hxzxy1m" target="_blank" rel="noopener noreferrer">setting up Mongo</a> if you need help getting started. In the example below, we have imported a <em>papers</em> dataset into a Mongo Atlas cluster and show you how to leverage the Mongo Compass GUI to view and explore your data.  </p>
 <p>Once you have imported your data, you can view it via Compass as shown in the example below. You can leverage the <a href="https://www.mongodb.com/docs/compass/current/" target="_blank" rel="noopener noreferrer">Compass documentation</a> to discover all its capabilities. We have listed some key items on the user interface to get you acquainted:  </p>
@@ -739,7 +739,7 @@ df.select(&quot;authorid&quot;, &quot;name&quot;, &quot;papercount&quot;).show(3
 <li>You can filter and analyze your data using the filter pane at the top of the screen, and click on the <em>Explain</em> button to see how your filters were applied to obtain your result set. Note that since Mongo is a NoSQL database, it has a slightly different query language from SQL to use for filtering and manipulation.</li>
 <li>The default tab is the <em>Documents</em> tab where you can view and scroll through your data. You can also switch to the <em>Aggregations tab</em> to transform, filter, group, and perform aggregate operations on your dataset. In the <em>Schema</em> tab, Mongo provides an analysis of the schema of your dataset. When you click on the <em>Indexes</em> tab, you will find that the default index for searches is Mongo’s <em>ObjectId</em>. If you believe you will perform frequent searches using another attribute (e.g. <em>corpusid)</em>, you can add an additional index to optimize performance.</li>
 <li>You can always add more data to your dataset via the green <em>Add Data</em> button right under the filter query bar
-<img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/65945c8bb49bc14ebd8513d0_image8.png" alt="MongoDB UI"></li>
+<img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/65945c8bb49bc14ebd8513d0_image8.png" alt="MongoDB UI" loading="lazy" decoding="async"></li>
 </ul>
 <h5>Setting Up MongoDB</h5>
 <p>You have the option of installing MongoDB onto your machine, or using their managed database-as-a-service option on the cloud, otherwise known as <a href="https://www.mongodb.com/atlas" target="_blank" rel="noopener noreferrer">Atlas</a>. Once you set up your database, you can download the GUI tool (<a href="https://www.mongodb.com/products/tools/compass" target="_blank" rel="noopener noreferrer">Mongo Compass</a>) and connect it to your database to visually interact with your data. If you are new to mongo and want to just explore, you can setup a free cluster on Atlas with just a few easy steps:  </p>
@@ -775,9 +775,9 @@ df.select(&quot;authorid&quot;, &quot;name&quot;, &quot;papercount&quot;).show(3
    }
 }
 </code></pre>
-<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/6594740968bc21f84a11da81_image11.png" alt="MongoDB"></p>
+<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/6594740968bc21f84a11da81_image11.png" alt="MongoDB" loading="lazy" decoding="async"></p>
 <p><strong>Output:</strong>  </p>
-<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/65947442eea5f60bdc1b7328_image16.png" alt="MongoDB Output"></p>
+<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/65947442eea5f60bdc1b7328_image16.png" alt="MongoDB Output" loading="lazy" decoding="async"></p>
 <h3 id="section-17">Working with Multiple Datasets<a class="heading-anchor" href="#section-17" aria-label="链接到本节">#</a></h3>
 <p>Oftentimes we may want to combine information from multiple datasets to gather insights. Consider the following example:  </p>
 <p><strong>Use case:</strong> Let’s delve into a publication venue, such as the “Journal of the Geological Society”, and learn more about the papers that have been published in it. Perhaps we would like to gather the names of authors who have published a paper in this journal, but only those whose papers have been cited at least 15 times. We can combine information from the <em>publication venues</em> dataset and the <em>papers</em> dataset to find the authors that meet this criteria. To do this, we can load our datasets into pandas dataframes and retrieve the publication venue ID associated with the “Journal of the Geological Society” from the <em>publication venues</em> dataset. Then we can search the <em>papers</em> dataset for papers that have a <em>citationcount</em> of at least 15 and are tagged to that venue ID. Finally we can collect the names of authors associated with each of those papers that met our criteria. From this point you can explore other possibilities, such as viewing other papers published by those authors, checking out their homepage on the Semantic Scholar website, and more.  </p>
@@ -805,7 +805,7 @@ print(&quot;Authors associated with papers from the Journal of the Geological So
 print(*author_names, sep=&quot;\n&quot;)
 </code></pre>
 <p><strong>Output:</strong>  </p>
-<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/6594759dbfe185b0217fe46c_image15.png" alt="Multiple Datasets Output"></p>
+<p><img src="https://cdn.prod.website-files.com/605236bb767e9a5bb229c63c/6594759dbfe185b0217fe46c_image15.png" alt="Multiple Datasets Output" loading="lazy" decoding="async"></p>
 
 <footer class="doc-footer">
 <div>板块：AI 与自动化 · 分类：Skills · 更新：2026/10/26</div>
@@ -820,7 +820,7 @@ print(*author_names, sep=&quot;\n&quot;)
 <a class="image-viewer-action" id="image-open-original" href="#" target="_blank" rel="noopener noreferrer">新标签打开</a>
 <button class="image-viewer-action" id="image-viewer-close" type="button" aria-label="关闭图片查看器">关闭</button>
 </div></div>
-<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt=""></div>
+<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt="" loading="lazy" decoding="async"></div>
 </div>
 <script>
 (function(){
@@ -863,6 +863,6 @@ viewer.addEventListener("click",function(event){if(event.target===viewer)dismiss
 document.addEventListener("keydown",function(event){if(viewer.hidden)return;if(event.key==="Escape"){dismissViewer();}else if(event.key==="+"||event.key==="="){setZoom(true);}else if(event.key==="-"){setZoom(false);}});
 })();
 </script>
-<script src="../../assets/site.js?v=0bc9f3ec57"></script>
+<script src="../../assets/site.js?v=a2ace07d37"></script>
 </body>
 </html>

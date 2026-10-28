@@ -18,6 +18,16 @@ BASE_URL = "https://han-z02.github.io/bioinfo-knowledge-base"
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
 MANIFEST = DOCS / "site-manifest.json"
+SEARCH_INDEX = DOCS / "search-index.json"
+MAX_SEARCH_HTML_BYTES = 300_000
+MAX_SEARCH_INDEX_BYTES = 2_000_000
+INDEX_NOTE_IDS = {
+    "KB-000133",
+    "KB-000134",
+    "KB-000135",
+    "KB-000136",
+    "KB-000137",
+}
 PLACEHOLDER_TITLES = {"未命名笔记", "中文标题", "文献汇报"}
 CHINESE_MOBILE = re.compile(r"(?<!\d)1[3-9]\d{9}(?!\d)")
 PUBLIC_IP_URL = re.compile(
@@ -85,6 +95,7 @@ def main() -> int:
     if len(notes) != len(note_pages):
         errors.append(f"manifest notes={len(notes)} but note pages={len(note_pages)}")
     manifest_urls = {DOCS / note["url"] for note in notes}
+    manifest_url_strings = {note["url"] for note in notes}
     if manifest_urls != set(note_pages):
         missing = sorted(str(page.relative_to(DOCS)) for page in manifest_urls - set(note_pages))
         orphaned = sorted(str(page.relative_to(DOCS)) for page in set(note_pages) - manifest_urls)
@@ -99,31 +110,89 @@ def main() -> int:
     for title, count in titles.items():
         if count > 1:
             warnings.append(f"duplicate title ({count}): {title[:100]}")
+    untagged = [
+        note.get("kb_id") or note.get("kbId")
+        for note in notes
+        if not note.get("tags")
+    ]
+    if untagged:
+        warnings.append(f"untagged notes ({len(untagged)}): {', '.join(untagged[:8])}")
+    home_text = (DOCS / "index.html").read_text(encoding="utf-8")
+    recent_match = re.search(
+        r'<div class="recent-grid">(.*?)</div></section>',
+        home_text,
+        re.DOTALL,
+    )
+    if not recent_match:
+        errors.append("index.html: recent-grid block is missing")
+    else:
+        recent = recent_match.group(1)
+        if recent.count('<article class="recent-item">') != 10:
+            warnings.append("index.html: recent-update list does not contain 10 cards")
+        leaked_index_ids = sorted(kb_id for kb_id in INDEX_NOTE_IDS if kb_id in recent)
+        if leaked_index_ids:
+            errors.append(
+                "index.html: library index notes remain in recent updates: "
+                + ", ".join(leaked_index_ids)
+            )
 
     search_file = DOCS / "search.html"
     search_text = search_file.read_text(encoding="utf-8")
-    match = re.search(
+    search_html_bytes = len(search_text.encode("utf-8"))
+    if search_html_bytes > MAX_SEARCH_HTML_BYTES:
+        errors.append(
+            f"search.html: {search_html_bytes:,} B exceeds "
+            f"{MAX_SEARCH_HTML_BYTES:,} B; run optimize_site.py"
+        )
+    if not re.search(r'<script id="kb-search-data"[^>]*data-src="search-index\.json"', search_text):
+        errors.append("search.html: external search-index.json reference is missing")
+    inline_match = re.search(
         r'<script id="kb-search-data" type="application/json">(.*?)</script>',
         search_text,
         re.DOTALL,
     )
-    if not match:
-        errors.append("search.html: kb-search-data is missing")
+    if inline_match and len(inline_match.group(1).strip()) > 1000:
+        errors.append("search.html: inline search payload remains; run optimize_site.py")
+
+    search_notes = None
+    search_payload = ""
+    if not SEARCH_INDEX.is_file():
+        errors.append("docs/search-index.json is missing")
     else:
+        search_index_text = SEARCH_INDEX.read_text(encoding="utf-8")
+        index_bytes = len(search_index_text.encode("utf-8"))
+        if index_bytes > MAX_SEARCH_INDEX_BYTES:
+            errors.append(
+                f"search-index.json: {index_bytes:,} B exceeds "
+                f"{MAX_SEARCH_INDEX_BYTES:,} B"
+            )
         try:
-            search_notes = json.loads(match.group(1))
+            search_notes = json.loads(search_index_text)
         except json.JSONDecodeError as exc:
-            errors.append(f"search.html: invalid search JSON: {exc}")
+            errors.append(f"search-index.json: invalid JSON: {exc}")
         else:
-            if len(search_notes) != len(notes):
+            search_payload = json.dumps(search_notes, ensure_ascii=False)
+            if not isinstance(search_notes, list):
+                errors.append("search-index.json: payload must be a JSON array")
+                search_notes = None
+            elif len(search_notes) != len(notes):
                 errors.append(
                     f"search notes={len(search_notes)} but manifest notes={len(notes)}"
                 )
-            if len({item["url"] for item in search_notes}) != len(search_notes):
-                errors.append("search.html: duplicate note URLs")
-            search_payload = json.dumps(search_notes, ensure_ascii=False)
+            elif len({item["url"] for item in search_notes}) != len(search_notes):
+                errors.append("search-index.json: duplicate note URLs")
+            elif {item["url"] for item in search_notes} != manifest_url_strings:
+                errors.append("search-index.json: URLs do not match the manifest")
             if EMAIL_WITH_PASSWORD.search(search_payload):
-                errors.append("search.html: email/password pair remains in search payload")
+                errors.append("search-index.json: email/password pair remains")
+            if CHINESE_MOBILE.search(search_payload):
+                errors.append("search-index.json: Chinese mobile number remains")
+            if PUBLIC_IP_URL.search(search_payload):
+                errors.append("search-index.json: literal public IP URL remains")
+            if SECRET_TOKEN.search(search_payload):
+                errors.append("search-index.json: high-confidence secret token remains")
+            if any(path in search_payload for path in LOCAL_USER_PATHS):
+                errors.append("search-index.json: local user path remains")
     if f"在 {len(notes)} 篇笔记" not in search_text:
         errors.append(f"search.html: note-count copy does not equal {len(notes)}")
 
@@ -134,6 +203,9 @@ def main() -> int:
     ).hexdigest()[:10]
     for page in pages:
         text = page.read_text(encoding="utf-8")
+        images = re.findall(r"<img\b[^>]*>", text, flags=re.IGNORECASE)
+        if len(images) > 1 and any("loading=" not in tag for tag in images[1:]):
+            warnings.append(f"{page.relative_to(ROOT)}: deferred images lack loading= attributes")
         if page.name != "404.html":
             canonical = f'<link rel="canonical" href="{public_url(page)}">'
             if text.count(canonical) != 1:

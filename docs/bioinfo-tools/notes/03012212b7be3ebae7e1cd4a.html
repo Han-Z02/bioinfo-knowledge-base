@@ -128,7 +128,7 @@ body.image-viewer-open{overflow:hidden}
 </blockquote>
 <h2 id="section-1">写在开头<a class="heading-anchor" href="#section-1" aria-label="链接到本节">#</a></h2>
 <p><strong>上周末在长沙参与了 暑期特训长沙站：Codex赋能单细胞+空间转录组线下培训班来袭！ ,在单细胞课程中，学习到了同事分享的三种单细胞数据保存方法。</strong></p>
-<img src="../../assets/notes/bioinfo-tools/03012212b7be3ebae7e1cd4a/427dd3.png" alt="img_1.png"><p>这三种方式本质上都是将 R 内存中的对象序列化后保存到磁盘，以便在之后的分析中重新读取。它们与 CSV、TSV 这类通用表格格式不同，主要面向 R 对象，可以保存矩阵、列表、因子、稀疏矩阵，以及 Seurat、SingleCellExperiment 等结构复杂的对象。</p>
+<img src="../../assets/notes/bioinfo-tools/03012212b7be3ebae7e1cd4a/427dd3.png" alt="img_1.png" loading="eager" decoding="async" fetchpriority="high"><p>这三种方式本质上都是将 R 内存中的对象序列化后保存到磁盘，以便在之后的分析中重新读取。它们与 CSV、TSV 这类通用表格格式不同，主要面向 R 对象，可以保存矩阵、列表、因子、稀疏矩阵，以及 Seurat、SingleCellExperiment 等结构复杂的对象。</p>
 <p><strong>平时做单细胞分析时，我用得最多的是 RDS，另外两种方式接触得相对少一些。正好借着这次课程，把三种格式放在一起梳理一下，看看它们分别适合什么场景。</strong></p>
 <h2 id="section-2">.RData / .rda格式<a class="heading-anchor" href="#section-2" aria-label="链接到本节">#</a></h2>
 <p><code>.RData</code>和<code>.rda</code>是同一种格式，只是扩展名习惯不同。它们通过<code>save()</code>保存，通过<code>load()</code>读取。最大的特点是：<strong>一个文件可以同时保存多个带名称的 R 对象</strong>。</p>
@@ -144,7 +144,7 @@ body.image-viewer-open{overflow:hidden}
 <p>读取时：</p>
 <pre><code class="language-r">load(&quot;sce_total.RData&quot;)
 </code></pre>
-<img src="../../assets/notes/bioinfo-tools/03012212b7be3ebae7e1cd4a/c5e58c.png" alt="img_2.png"><h4>优点</h4>
+<img src="../../assets/notes/bioinfo-tools/03012212b7be3ebae7e1cd4a/c5e58c.png" alt="img_2.png" loading="lazy" decoding="async"><h4>优点</h4>
 <p>（1）可以一次保存多个对象：例如单细胞分析中，可以把表达对象、分组信息和差异分析结果一起保存；</p>
 <p>（2）对象名称也会被保存：不需要读取时重新指定名称，原来叫<code>sce.all</code>的对象，加载后仍然叫<code>sce.all</code>。</p>
 <p>（3）不需要安装额外软件包，在绝大多数 R 环境中都可以直接使用。</p>
@@ -191,7 +191,7 @@ body.image-viewer-open{overflow:hidden}
 <p>（1）通常面向更快的读写性能设计，对于大型单细胞对象，尤其是大矩阵、列表和复杂对象，通常值得测试。</p>
 <p>（2）在部分大型对象上，<code>.qs2</code>可以在读写速度和文件大小之间取得较好的平衡。不过，文件是否比 RDS 更小取决于对象结构和压缩参数，不能一概而论。</p>
 <p>以我这次使用的单细胞对象为例，<code>.qs2</code>文件比对应的<code>.rds</code>文件更小。不过，这只是当前数据上的结果，不同对象的测试结果可能不同。</p>
-<img src="../../assets/notes/bioinfo-tools/03012212b7be3ebae7e1cd4a/9553f8.png" alt="img_3.png"><p>（3）可以与 RDS 转换，由于<code>.qs2</code>使用 R 序列化机制，可以转换成 RDS：</p>
+<img src="../../assets/notes/bioinfo-tools/03012212b7be3ebae7e1cd4a/9553f8.png" alt="img_3.png" loading="lazy" decoding="async"><p>（3）可以与 RDS 转换，由于<code>.qs2</code>使用 R 序列化机制，可以转换成 RDS：</p>
 <pre><code class="language-r">qs2::qs_to_rds(  input_file = &quot;sce.all.qs2&quot;,  output_file = &quot;sce.all.rds&quot;)
 </code></pre>
 <p>转换完成后：</p>
@@ -221,7 +221,7 @@ body.image-viewer-open{overflow:hidden}
 <a class="image-viewer-action" id="image-open-original" href="#" target="_blank" rel="noopener noreferrer">新标签打开</a>
 <button class="image-viewer-action" id="image-viewer-close" type="button" aria-label="关闭图片查看器">关闭</button>
 </div></div>
-<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt=""></div>
+<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt="" loading="lazy" decoding="async"></div>
 </div>
 <script>
 (function(){
@@ -264,6 +264,6 @@ viewer.addEventListener("click",function(event){if(event.target===viewer)dismiss
 document.addEventListener("keydown",function(event){if(viewer.hidden)return;if(event.key==="Escape"){dismissViewer();}else if(event.key==="+"||event.key==="="){setZoom(true);}else if(event.key==="-"){setZoom(false);}});
 })();
 </script>
-<script src="../../assets/site.js?v=0bc9f3ec57"></script>
+<script src="../../assets/site.js?v=a2ace07d37"></script>
 </body>
 </html>

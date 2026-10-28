@@ -177,7 +177,7 @@ body.image-viewer-open{overflow:hidden}
 <td>Interaction count 与 FeaturePlot 密度优化</td>
 </tr>
 </tbody></table></div>
-<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/TnAo9V46ClomN6qWe0LmfQRETtzIJuRHgRnSmLKDtq7gzJBYibelEjd02T49rrib9qjKs3w0ewcbUAl11Kvnhic9LEibTBpv0qVrETao0z8gLBQ/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="核心色板适用场景示例"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/TnAo9V46ClomN6qWe0LmfQRETtzIJuRHgRnSmLKDtq7gzJBYibelEjd02T49rrib9qjKs3w0ewcbUAl11Kvnhic9LEibTBpv0qVrETao0z8gLBQ/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="核心色板适用场景示例" loading="eager" decoding="async" fetchpriority="high"></p>
 <h2 id="section-2">色板速查<a class="heading-anchor" href="#section-2" aria-label="链接到本节">#</a></h2>
 <ul>
 <li><strong>01 多色</strong>：<code>Subset_color_panel1</code>（19 色）、<code>Subset_color_panel2</code>（9 色）、<code>Subset_color_panel3</code>（pal_npg 9 色）→ UMAP/t-SNE 大群数分群</li>
@@ -237,7 +237,7 @@ Subset_color_panel &lt;- c(
 <blockquote>
 <p>拆解论文：张泽民团队《Liver tumour immune microenvironment subtypes and neutrophil heterogeneity》。色板分多色、三色、两色、连续变量映射四类，颜色代码见下。</p>
 </blockquote>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/TnAo9V46ClqDoDZ9zxKt18qsR8jxxxz0XumrbDaB4oVFOXhyARGlTN0lMwQbI51LypywhGuY4fwGZ7x9icHByMePErLN0Ubp2laicNJXC6nw4/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="02 色板示例-多色"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/TnAo9V46ClqDoDZ9zxKt18qsR8jxxxz0XumrbDaB4oVFOXhyARGlTN0lMwQbI51LypywhGuY4fwGZ7x9icHByMePErLN0Ubp2laicNJXC6nw4/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="02 色板示例-多色" loading="lazy" decoding="async"></p>
 <h2 id="section-4">R 颜色代码<a class="heading-anchor" href="#section-4" aria-label="链接到本节">#</a></h2>
 <pre><code class="language-r"># ===== 01 多色（UMAP / t-SNE 亚群）=====
 my_palette1 &lt;- c(
@@ -349,7 +349,7 @@ my_colors &lt;- colorRampPalette(rev(brewer.pal(11, &quot;YlOrRd&quot;)))(50)
 <a class="image-viewer-action" id="image-open-original" href="#" target="_blank" rel="noopener noreferrer">新标签打开</a>
 <button class="image-viewer-action" id="image-viewer-close" type="button" aria-label="关闭图片查看器">关闭</button>
 </div></div>
-<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt=""></div>
+<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt="" loading="lazy" decoding="async"></div>
 </div>
 <script>
 (function(){
@@ -392,6 +392,6 @@ viewer.addEventListener("click",function(event){if(event.target===viewer)dismiss
 document.addEventListener("keydown",function(event){if(viewer.hidden)return;if(event.key==="Escape"){dismissViewer();}else if(event.key==="+"||event.key==="="){setZoom(true);}else if(event.key==="-"){setZoom(false);}});
 })();
 </script>
-<script src="../../assets/site.js?v=0bc9f3ec57"></script>
+<script src="../../assets/site.js?v=a2ace07d37"></script>
 </body>
 </html>

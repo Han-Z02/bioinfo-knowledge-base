@@ -121,6 +121,7 @@ body.image-viewer-open{overflow:hidden}
 <h1>功能性抑制 LEPR+ 骨骼细胞防治植入周纤维化</h1>
 
 <div class="meta-badges"><span class="badge badge-note-id">站内编号 KB-000025</span></div>
+<div class="tags"><span class="tag">论文精读</span><span class="tag">LEPR+骨骼细胞</span><span class="tag">植入周纤维化</span><span class="tag">ADGRF5</span><span class="tag">骨形成</span></div>
 
 
 </header>
@@ -303,7 +304,7 @@ ADGRF5维持其增殖与致纤维化状态
 <a class="image-viewer-action" id="image-open-original" href="#" target="_blank" rel="noopener noreferrer">新标签打开</a>
 <button class="image-viewer-action" id="image-viewer-close" type="button" aria-label="关闭图片查看器">关闭</button>
 </div></div>
-<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt=""></div>
+<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt="" loading="eager" decoding="async" fetchpriority="high"></div>
 </div>
 <script>
 (function(){
@@ -346,6 +347,6 @@ viewer.addEventListener("click",function(event){if(event.target===viewer)dismiss
 document.addEventListener("keydown",function(event){if(viewer.hidden)return;if(event.key==="Escape"){dismissViewer();}else if(event.key==="+"||event.key==="="){setZoom(true);}else if(event.key==="-"){setZoom(false);}});
 })();
 </script>
-<script src="../../assets/site.js?v=0bc9f3ec57"></script>
+<script src="../../assets/site.js?v=a2ace07d37"></script>
 </body>
 </html>

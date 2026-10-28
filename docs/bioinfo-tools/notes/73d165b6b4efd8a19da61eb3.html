@@ -120,7 +120,7 @@ body.image-viewer-open{overflow:hidden}
 <p>点击上方</p>
 <p>蓝字</p>
 <p>关注我们</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/I1K1qRMFqAibQcpzLibNVr3fnaiccCAUS5WehCF9UcCxHPyFXoOUIPnAAH2s015vypclyZ0hOguAdMpKZQyHOObjuvPbH8W14RyxmUpvzj2OOk/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/I1K1qRMFqAibQcpzLibNVr3fnaiccCAUS5WehCF9UcCxHPyFXoOUIPnAAH2s015vypclyZ0hOguAdMpKZQyHOObjuvPbH8W14RyxmUpvzj2OOk/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片" loading="eager" decoding="async" fetchpriority="high"></p>
 <p>最近在网上看到一些SHAP相关绘图，也太好看了，现在SHAP绘图都进化到这个地步了嘛，所以尝试来复现一下，复现效果展示如下：</p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=Mzg3NDExNDUzOQ==&mid=2247515224&idx=1&sn=7acaf1467afc6f4cbbac586fac8f20f7&scene=21#wechat_redirect" target="_blank" rel="noopener noreferrer">顶刊直接预定！|超绝贝叶斯优化+CatBoost+SHAP+PDP绘图可视化|替换数据直接用</a></p>
 <p>之前给大家展示了贝叶斯优化CatBoost，这期的案例是优化XGBoost，之前出过很多集成算法的SHAP分析，都可以直接套用</p>
@@ -187,7 +187,7 @@ body.image-viewer-open{overflow:hidden}
 <a class="image-viewer-action" id="image-open-original" href="#" target="_blank" rel="noopener noreferrer">新标签打开</a>
 <button class="image-viewer-action" id="image-viewer-close" type="button" aria-label="关闭图片查看器">关闭</button>
 </div></div>
-<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt=""></div>
+<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt="" loading="lazy" decoding="async"></div>
 </div>
 <script>
 (function(){
@@ -230,6 +230,6 @@ viewer.addEventListener("click",function(event){if(event.target===viewer)dismiss
 document.addEventListener("keydown",function(event){if(viewer.hidden)return;if(event.key==="Escape"){dismissViewer();}else if(event.key==="+"||event.key==="="){setZoom(true);}else if(event.key==="-"){setZoom(false);}});
 })();
 </script>
-<script src="../../assets/site.js?v=0bc9f3ec57"></script>
+<script src="../../assets/site.js?v=a2ace07d37"></script>
 </body>
 </html>

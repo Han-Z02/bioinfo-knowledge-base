@@ -124,6 +124,7 @@ body.image-viewer-open{overflow:hidden}
 <h1>代谢支持保护放射性黏膜炎中的黏膜免受铁死亡</h1>
 
 <div class="meta-badges"><span class="badge badge-note-id">站内编号 KB-000032</span></div>
+<div class="tags"><span class="tag">论文精读</span><span class="tag">放射性黏膜炎</span><span class="tag">铁死亡</span><span class="tag">成纤维细胞</span><span class="tag">多胺</span></div>
 
 
 </header>
@@ -535,7 +536,7 @@ body.image-viewer-open{overflow:hidden}
 <a class="image-viewer-action" id="image-open-original" href="#" target="_blank" rel="noopener noreferrer">新标签打开</a>
 <button class="image-viewer-action" id="image-viewer-close" type="button" aria-label="关闭图片查看器">关闭</button>
 </div></div>
-<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt=""></div>
+<div class="image-viewer-stage" id="image-viewer-stage"><img id="image-viewer-img" alt="" loading="eager" decoding="async" fetchpriority="high"></div>
 </div>
 <script>
 (function(){
@@ -578,6 +579,6 @@ viewer.addEventListener("click",function(event){if(event.target===viewer)dismiss
 document.addEventListener("keydown",function(event){if(viewer.hidden)return;if(event.key==="Escape"){dismissViewer();}else if(event.key==="+"||event.key==="="){setZoom(true);}else if(event.key==="-"){setZoom(false);}});
 })();
 </script>
-<script src="../../assets/site.js?v=0bc9f3ec57"></script>
+<script src="../../assets/site.js?v=a2ace07d37"></script>
 </body>
 </html>
