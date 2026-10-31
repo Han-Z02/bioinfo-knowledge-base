@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "siteUrl": "https://han-z02.github.io/bioinfo-knowledge-base",
-  "generatedAt": "2026-10-27T16:58:19Z",
+  "generatedAt": "2026-10-31T08:26:56.7294584Z",
   "sections": [
     {
       "id": "literature",
@@ -40,6 +40,28 @@
         }
       ],
       "notes": [
+        {
+          "title": "单细胞多组学速率深度模型预测 B 细胞中的功能缺失与救援扰动",
+          "subtitle": "Deep dynamical models of single-cell multiomic velocities predict loss-of-function and rescue perturbations in B cells",
+          "kb_id": "KB-000054",
+          "url": "literature/notes/5473cf0204b4980eeec9b3f6.html",
+          "category": "论文精读",
+          "subsection": "papers",
+          "updated": "2026-10-31T08:25:42.815Z",
+          "tags": [
+            "论文精读",
+            "DynaVelo",
+            "单细胞多组学",
+            "RNA velocity",
+            "染色质可及性",
+            "神经常微分方程",
+            "基因调控网络",
+            "生发中心B细胞",
+            "遗传扰动",
+            "clippings",
+            "暂未试用"
+          ]
+        },
         {
           "title": "巨噬细胞—伤害感受器机械感受中继驱动慢性内脏痛",
           "subtitle": "An autonomous macrophage-nociceptor mechanosensory relay drives chronic visceral pain",
@@ -132,28 +154,6 @@
           "updated": "2026-10-25T17:37:28.582Z",
           "tags": [
             "zotero"
-          ]
-        },
-        {
-          "title": "单细胞多组学速率深度模型预测 B 细胞中的功能缺失与救援扰动",
-          "subtitle": "Deep dynamical models of single-cell multiomic velocities predict loss-of-function and rescue perturbations in B cells",
-          "kb_id": "KB-000054",
-          "url": "literature/notes/5473cf0204b4980eeec9b3f6.html",
-          "category": "论文精读",
-          "subsection": "papers",
-          "updated": "2026-10-25T17:37:28.581Z",
-          "tags": [
-            "论文精读",
-            "DynaVelo",
-            "单细胞多组学",
-            "RNA velocity",
-            "染色质可及性",
-            "神经常微分方程",
-            "基因调控网络",
-            "生发中心B细胞",
-            "遗传扰动",
-            "clippings",
-            "暂未试用"
           ]
         },
         {
@@ -484,7 +484,7 @@
           "url": "literature/notes/18276c7b3db06390c3d53980.html",
           "category": "论文精读",
           "subsection": "papers",
-          "updated": "2026-10-25T17:37:28.570Z",
+          "updated": "2026-10-25T17:37:28.57Z",
           "tags": [
             "痤疮",
             "单细胞转录组",
@@ -781,7 +781,7 @@
           "url": "literature/notes/a6030a68d4ac122f47c7c68d.html",
           "category": "网页文献",
           "subsection": "web-clips",
-          "updated": "2026-10-25T17:37:28.560Z",
+          "updated": "2026-10-25T17:37:28.56Z",
           "tags": [
             "clippings"
           ]
@@ -1212,7 +1212,7 @@
           "url": "bioinfo-tools/notes/aa00ead1f7501943993a8bcf.html",
           "category": "分析流程",
           "subsection": "workflows",
-          "updated": "2026-10-25T17:37:28.600Z",
+          "updated": "2026-10-25T17:37:28.6Z",
           "tags": [
             "clippings"
           ]
@@ -1224,7 +1224,7 @@
           "url": "bioinfo-tools/notes/4a475990112d9760e7c6242d.html",
           "category": "分析流程",
           "subsection": "workflows",
-          "updated": "2026-10-25T17:37:28.600Z",
+          "updated": "2026-10-25T17:37:28.6Z",
           "tags": [
             "clippings"
           ]
@@ -1559,7 +1559,7 @@
           "url": "bioinfo-tools/notes/7239435486bc4c763354f9bc.html",
           "category": "网页教程",
           "subsection": "web-clips",
-          "updated": "2026-10-25T17:37:28.590Z",
+          "updated": "2026-10-25T17:37:28.59Z",
           "tags": [
             "clippings",
             "单细胞",
@@ -1575,7 +1575,7 @@
           "url": "bioinfo-tools/notes/ff81043997e0f2b297654b7d.html",
           "category": "网页教程",
           "subsection": "web-clips",
-          "updated": "2026-10-25T17:37:28.590Z",
+          "updated": "2026-10-25T17:37:28.59Z",
           "tags": [
             "clippings",
             "生信教程",
@@ -1856,7 +1856,7 @@
           "url": "ai-automation/notes/f0c3a2f799f779874c25991b.html",
           "category": "Skills",
           "subsection": "skills",
-          "updated": "2026-10-25T17:59:31.850Z",
+          "updated": "2026-10-25T17:59:31.85Z",
           "tags": [
             "claude-code",
             "skill",
