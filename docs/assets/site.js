@@ -5,6 +5,8 @@ var theme=document.getElementById("site-theme");
 function syncTheme(){if(theme){theme.textContent=root.dataset.theme==="dark"?"浅色":"深色";}}
 if(theme){theme.addEventListener("click",function(){root.dataset.theme=root.dataset.theme==="dark"?"light":"dark";try{localStorage.setItem("kb-site-theme",root.dataset.theme);}catch(_){}syncTheme();});}
 syncTheme();
+var lock=document.getElementById("site-lock");
+if(lock){lock.addEventListener("click",function(){try{sessionStorage.removeItem("kb-unlock-key");}catch(_){}location.reload();});}
 var search=document.getElementById("section-search");
 if(search){
 var cards=Array.from(document.querySelectorAll(".kb-note-card"));
@@ -15,11 +17,20 @@ function apply(){var terms=search.value.normalize("NFKC").trim().toLocaleLowerCa
 search.addEventListener("input",apply);
 buttons.forEach(function(button){button.setAttribute("aria-pressed","false");button.addEventListener("click",function(){var next=button.dataset.category;active=active===next?"":next;buttons.forEach(function(item){item.classList.toggle("active",item.dataset.category===active);item.setAttribute("aria-pressed",String(item.dataset.category===active));});apply();});});apply();
 }
+function bytesFromBase64(value){var raw=atob(value);var out=new Uint8Array(raw.length);for(var i=0;i<raw.length;i++)out[i]=raw.charCodeAt(i);return out;}
+var protectedMedia=Array.from(document.querySelectorAll("[data-kb-src]"));
+if(protectedMedia.length&&window.crypto&&crypto.subtle){
+var storedKey;try{storedKey=sessionStorage.getItem("kb-unlock-key");}catch(_){}
+if(storedKey){Promise.all(protectedMedia.map(async function(item){try{var response=await fetch(item.dataset.kbSrc,{cache:"no-store"});if(!response.ok)throw new Error("HTTP "+response.status);var bytes=new Uint8Array(await response.arrayBuffer());var key=await crypto.subtle.importKey("raw",bytesFromBase64(storedKey),"AES-GCM",false,["decrypt"]);var plain=await crypto.subtle.decrypt({name:"AES-GCM",iv:bytes.slice(0,12)},key,bytes.slice(12));var url=URL.createObjectURL(new Blob([plain],{type:item.dataset.kbType||"application/octet-stream"}));item.src=url;item.dataset.kbObjectUrl=url;}catch(error){console.warn("受保护图片解密失败",error);item.setAttribute("aria-label","受保护图片加载失败");}}));window.addEventListener("pagehide",function(){protectedMedia.forEach(function(item){if(item.dataset.kbObjectUrl)URL.revokeObjectURL(item.dataset.kbObjectUrl);});});}
+}
 })();
 ;(function initSearch(engine) {
   var payload = document.getElementById('kb-search-data');
   var input = document.getElementById('global-search');
   if (!payload || !input) return;
+  var notes;
+  try { notes = engine.prepare(JSON.parse(payload.textContent)); }
+  catch (_) { document.getElementById('search-status').textContent = '搜索索引加载失败，请刷新页面。'; return; }
   var section = document.getElementById('search-section');
   var sort = document.getElementById('search-sort');
   var results = document.getElementById('search-results');
@@ -27,27 +38,7 @@ buttons.forEach(function(button){button.setAttribute("aria-pressed","false");but
   var more = document.getElementById('search-more');
   var clear = document.getElementById('search-clear');
   var limit = 40, timer, composing = false;
-  var notes = null;
-  var loading = null;
-  var indexUrl = payload.dataset.src || 'search-index.json';
   function node(tag, className, text) { var el = document.createElement(tag); if (className) el.className = className; if (text !== undefined) el.textContent = text; return el; }
-  function setStatus(text) { status.textContent = text; }
-  function loadIndex() {
-    if (notes) return Promise.resolve(notes);
-    if (loading) return loading;
-    setStatus('正在载入索引…');
-    var inline = (payload.textContent || '').trim();
-    if (inline) {
-      try { notes = engine.prepare(JSON.parse(inline)); return Promise.resolve(notes); }
-      catch (_) { setStatus('搜索索引加载失败，请刷新页面。'); return Promise.reject(new Error('invalid inline search index')); }
-    }
-    loading = fetch(indexUrl, { credentials: 'same-origin' })
-      .then(function(response) { if (!response.ok) throw new Error('HTTP ' + response.status); return response.json(); })
-      .then(function(data) { notes = engine.prepare(data); return notes; })
-      .catch(function(error) { loading = null; setStatus('搜索索引加载失败，请刷新页面。'); throw error; });
-    return loading;
-  }
-  function whenReady(callback) { loadIndex().then(callback).catch(function() {}); }
   function highlight(el, text, query) {
     var terms = engine.tokens(query);
     if (!terms.length) { el.textContent = text; return; }
@@ -65,7 +56,6 @@ buttons.forEach(function(button){button.setAttribute("aria-pressed","false");but
     sort.value = params.get('sort') === 'updated' ? 'updated' : 'relevance';
   }
   function render(updateURL) {
-    if (!notes) { setStatus('正在载入索引…'); return; }
     var query = input.value.trim(), matches = engine.search(notes, query, section.value, sort.value);
     results.replaceChildren();
     matches.slice(0, limit).forEach(function(match) {
@@ -88,21 +78,18 @@ buttons.forEach(function(button){button.setAttribute("aria-pressed","false");but
       try { history.replaceState(null, '', url); } catch (_) { /* Search also works without history access. */ }
     }
   }
-  function schedule() { clearTimeout(timer); if (composing) return; timer = setTimeout(function() { whenReady(function() { limit = 40; render(true); }); }, 120); }
+  function schedule() { clearTimeout(timer); if (composing) return; timer = setTimeout(function() { limit = 40; render(true); }, 120); }
   input.addEventListener('compositionstart', function() { composing = true; });
   input.addEventListener('compositionend', function() { composing = false; schedule(); });
   input.addEventListener('input', schedule);
-  input.addEventListener('focus', function() { whenReady(function() { if (!input.value.trim() && !section.value) render(false); }); }, { once: true });
-  section.addEventListener('change', function() { whenReady(function() { limit = 40; render(true); }); });
-  sort.addEventListener('change', function() { whenReady(function() { limit = 40; render(true); }); });
-  more.addEventListener('click', function() { if (!notes) return; limit += 40; render(false); });
-  clear.addEventListener('click', function() { input.value = ''; section.value = ''; limit = 40; results.replaceChildren(); more.hidden = true; clear.disabled = true; setStatus('输入关键词开始搜索。'); });
-  input.addEventListener('keydown', function(event) { if (event.key === 'Escape') { clearTimeout(timer); input.value = ''; results.replaceChildren(); more.hidden = true; clear.disabled = true; setStatus('输入关键词开始搜索。'); } });
-  window.addEventListener('popstate', function() { stateFromURL(); if (input.value.trim() || section.value) whenReady(function() { limit = 40; render(false); }); else { results.replaceChildren(); more.hidden = true; clear.disabled = true; setStatus('输入关键词开始搜索。'); } });
+  section.addEventListener('change', function() { limit = 40; render(true); });
+  sort.addEventListener('change', function() { limit = 40; render(true); });
+  more.addEventListener('click', function() { limit += 40; render(false); });
+  clear.addEventListener('click', function() { input.value = ''; section.value = ''; limit = 40; render(true); input.focus(); });
+  input.addEventListener('keydown', function(event) { if (event.key === 'Escape') { clearTimeout(timer); input.value = ''; render(true); } });
+  window.addEventListener('popstate', function() { stateFromURL(); limit = 40; render(false); });
   document.addEventListener('keydown', function(event) { if (event.key === '/' && !/input|textarea|select/i.test(document.activeElement.tagName) && !document.activeElement.isContentEditable) { event.preventDefault(); input.focus(); } });
-  stateFromURL();
-  if (input.value.trim() || section.value) whenReady(function() { render(false); });
-  else { clear.disabled = true; setStatus('输入关键词开始搜索。'); }
+  stateFromURL(); render(false);
 })((function createSearchEngine() {
   function normalise(value) { return String(value || '').normalize('NFKC').toLocaleLowerCase('zh-CN').replace(/\s+/g, ' ').trim(); }
   function tokens(query) { return [...new Set(normalise(query).slice(0, 300).split(' ').filter(Boolean))]; }
